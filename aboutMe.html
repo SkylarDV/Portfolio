@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skylar</div>        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1.html">Web Development</a>
+                    <a href="ProjectPages/project2.html">Mobile App</a>
+                    <a href="ProjectPages/project3.html">Full-Stack Solution</a>
+                </div>
+            </div>
+            <a href="aboutMe.html" class="nav-link active">About Me</a>
+            <div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="en" selected>EN</option>
+                    <option value="nl">NL</option>
+                </select>
+                <span class="language-selector-arrow">▼</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero" id="about">
+            <h1>About Me</h1>
+            <p>Get to know the person behind the code</p>
+        </section>
+
+        <section class="about-content">
+            <h2>Who I Am</h2>
+            <p>
+                Hello! I'm Skylar, a passionate developer with a love for creating beautiful and functional digital experiences. 
+                My journey in web development started with curiosity and has grown into a deep passion for crafting code that makes a difference.
+            </p>
+            <p>
+                I specialize in modern web technologies and enjoy working on projects that challenge me to learn and grow. 
+                Whether it's building responsive websites, developing mobile applications, or creating full-stack solutions, 
+                I approach each project with dedication and attention to detail.
+            </p>
+            <p>
+                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+                or sharing knowledge with fellow developers. I believe in continuous learning and staying up-to-date 
+                with the latest trends in the ever-evolving world of technology.
+            </p>
+        </section>
+    </div>
+
+    <!-- Sparkle Trail Effect -->
+    <script src="sparkle-trail.js"></script>
+    
+    <script>
+        // Language selector functionality (placeholder for future multilingual feature)
+        document.querySelector('.language-selector').addEventListener('change', function(e) {
+            console.log('Language changed to:', e.target.value);
+            // This will be implemented when adding multilingual support
+        });
+    </script>
+</body>
+</html>

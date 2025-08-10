@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Application - My Portfolio</title>    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skylar</div>        <div class="nav-links">
+            <a href="../index.html" class="nav-link">Home</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle active">Projects</span>
+                <div class="dropdown-content">
+                    <a href="project1.html">Web Development</a>
+                    <a href="project2.html">Mobile App</a>
+                    <a href="project3.html">Full-Stack Solution</a>
+                </div>
+            </div>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="en" selected>EN</option>
+                    <option value="nl">NL</option>
+                </select>
+                <span class="language-selector-arrow">▼</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero">
+            <h1>Modern Web Application</h1>
+            <p>Responsive design meets cutting-edge technology</p>
+        </section>
+
+        <section class="project-content">
+            <h2>Project Overview</h2>
+            <p>
+                This modern web application showcases the latest in web development technologies, 
+                combining responsive design principles with interactive user experiences. Built with 
+                a focus on performance and accessibility, this project demonstrates advanced front-end 
+                development skills and modern best practices.
+            </p>
+
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>HTML5 & Semantic Markup</li>
+                <li>CSS3 with Advanced Features (Grid, Flexbox, Animations)</li>
+                <li>JavaScript ES6+ & Modern APIs</li>
+                <li>Responsive Design & Mobile-First Approach</li>
+                <li>Progressive Web App (PWA) Features</li>
+                <li>Performance Optimization Techniques</li>
+            </ul>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Fully responsive design across all devices</li>
+                <li>Interactive user interface with smooth animations</li>
+                <li>Optimized performance and fast loading times</li>
+                <li>Accessibility compliance (WCAG 2.1)</li>
+                <li>Cross-browser compatibility</li>
+                <li>SEO optimized structure</li>
+            </ul>
+
+            <h3>Development Process</h3>
+            <p>
+                The development process followed modern best practices, starting with wireframing and 
+                prototyping, followed by iterative development with continuous testing. The application 
+                was built using a mobile-first approach, ensuring optimal performance across all devices.
+            </p>
+
+            <a href="#" class="btn">View Live Demo</a>
+            <a href="#" class="btn">View Source Code</a>
+        </section>
+    </div>
+
+    <!-- Sparkle Trail Effect -->
+    <script src="../sparkle-trail.js"></script>
+    
+    <script>
+        // Language selector functionality (placeholder for future multilingual feature)
+        document.querySelector('.language-selector').addEventListener('change', function(e) {
+            console.log('Language changed to:', e.target.value);
+            // This will be implemented when adding multilingual support
+        });
+    </script>
+</body>
+</html>

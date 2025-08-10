@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skylar</div>        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1.html">Web Development</a>
+                    <a href="ProjectPages/project2.html">Mobile App</a>
+                    <a href="ProjectPages/project3.html">Full-Stack Solution</a>
+                </div>
+            </div>
+            <a href="aboutMe.html" class="nav-link">About Me</a><div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="en" selected>EN</option>
+                    <option value="nl">NL</option>
+                </select>
+                <span class="language-selector-arrow">▼</span>
+            </div>
+        </div>
+    </nav>    <div class="container main-content">
+        <section class="hero" id="home">
+            <h1>Hello, I'm Skylar</h1>
+            <p>A passionate developer creating amazing digital experiences</p>
+        </section><section class="projects" id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">                <div class="project-card" id="project1">
+                    <h3>Modern Web Application</h3>
+                    <p>A responsive web application built with modern technologies including HTML5, CSS3, and JavaScript. Features interactive user interfaces, smooth animations, and optimized performance across all devices.</p>
+                    <div class="project-status">In Development</div>
+                    <a href="ProjectPages/project1.html" class="btn">View Project</a>
+                </div>
+
+                <div class="project-card" id="project2">
+                    <h3>Mobile Application</h3>
+                    <p>An innovative mobile application designed to solve real-world problems. Includes user authentication, data visualization, push notifications, and seamless cross-platform performance.</p>
+                    <div class="project-status">Completed</div>
+                    <a href="ProjectPages/project2.html" class="btn">View Project</a>
+                </div>
+
+                <div class="project-card" id="project3">
+                    <h3>Full-Stack Web Solution</h3>
+                    <p>A comprehensive full-stack application combining modern frontend frameworks with robust backend architecture. Features include RESTful API development, database management, and cloud deployment.</p>
+                    <div class="project-status">Coming Soon</div>
+                    <a href="ProjectPages/project3.html" class="btn">View Project</a>
+                </div>
+            </div>        </section>
+    </div>
+
+    <!-- Sparkle Trail Effect -->
+    <script src="sparkle-trail.js"></script>
+    
+    <script>
+        // Language selector functionality (placeholder for future multilingual feature)
+        document.querySelector('.language-selector').addEventListener('change', function(e) {
+            console.log('Language changed to:', e.target.value);
+            // This will be implemented when adding multilingual support
+        });
+    </script>
+</body>
+</html>

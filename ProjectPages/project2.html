@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Application - My Portfolio</title>    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skylar</div>        <div class="nav-links">
+            <a href="../index.html" class="nav-link">Home</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle active">Projects</span>
+                <div class="dropdown-content">
+                    <a href="project1.html">Web Development</a>
+                    <a href="project2.html">Mobile App</a>
+                    <a href="project3.html">Full-Stack Solution</a>
+                </div>
+            </div>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="en" selected>EN</option>
+                    <option value="nl">NL</option>
+                </select>
+                <span class="language-selector-arrow">▼</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero">
+            <h1>Mobile Application</h1>
+            <p>Innovation meets functionality in mobile development</p>
+        </section>
+
+        <section class="project-content">
+            <h2>Project Overview</h2>
+            <p>
+                This innovative mobile application demonstrates advanced mobile development skills and 
+                modern app design principles. Built to solve real-world problems, the app features 
+                intuitive user interfaces, robust functionality, and seamless performance across 
+                multiple platforms.
+            </p>
+
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>React Native / Flutter for Cross-Platform Development</li>
+                <li>Native iOS (Swift) and Android (Kotlin) Components</li>
+                <li>RESTful API Integration</li>
+                <li>Real-time Data Synchronization</li>
+                <li>Push Notifications & Background Services</li>
+                <li>Device Hardware Integration (Camera, GPS, Sensors)</li>
+            </ul>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>User authentication and secure login system</li>
+                <li>Interactive data visualization and charts</li>
+                <li>Real-time notifications and alerts</li>
+                <li>Offline functionality with data synchronization</li>
+                <li>Multi-language support</li>
+                <li>Dark mode and accessibility features</li>
+                <li>Social media integration</li>
+            </ul>
+
+            <h3>Development Highlights</h3>
+            <p>
+                The development process emphasized user experience design, with extensive user testing 
+                and iterative improvements. The app follows platform-specific design guidelines while 
+                maintaining a consistent brand experience. Performance optimization ensures smooth 
+                operation even on older devices.
+            </p>
+
+            <h3>Technical Achievements</h3>
+            <ul>
+                <li>Achieved 99.9% crash-free rate in production</li>
+                <li>Optimized app size to under 25MB</li>
+                <li>Implemented secure data encryption</li>
+                <li>Created reusable component library</li>
+                <li>Automated testing coverage of 90%+</li>
+            </ul>
+
+            <a href="#" class="btn">Download App</a>
+            <a href="#" class="btn">View Screenshots</a>
+        </section>
+    </div>
+
+    <!-- Sparkle Trail Effect -->
+    <script src="../sparkle-trail.js"></script>
+    
+    <script>
+        // Language selector functionality (placeholder for future multilingual feature)
+        document.querySelector('.language-selector').addEventListener('change', function(e) {
+            console.log('Language changed to:', e.target.value);
+            // This will be implemented when adding multilingual support
+        });
+    </script>
+</body>
+</html>
