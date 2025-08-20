@@ -10,6 +10,7 @@
     <nav class="navbar">
         <div class="logo">Skylar</div>        <div class="nav-links">
             <a href="../indexEN.html" class="nav-link">Home</a>
+            <a href="../aboutMeEN.html" class="nav-link">About Me</a>
             <div class="dropdown">
                 <span class="nav-link dropdown-toggle active">Projects</span>
                 <div class="dropdown-content">
@@ -18,13 +19,12 @@
                     <a href="project3EN.html">Full-Stack Solution</a>
                 </div>
             </div>
-            <a href="../aboutMeEN.html" class="nav-link">About Me</a>
-            <div class="language-selector-wrapper">
-                <select class="language-selector">
-                    <option value="en" selected>EN</option>
-                    <option value="nl">NL</option>
-                </select>
-                <span class="language-selector-arrow">▼</span>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -91,11 +91,12 @@
     <script src="../sparkle-trail.js"></script>
     
     <script>
-        // Language selector functionality (placeholder for future multilingual feature)
-        document.querySelector('.language-selector').addEventListener('change', function(e) {
-            console.log('Language changed to:', e.target.value);
-            // This will be implemented when adding multilingual support
-        });
+        function switchLanguage(lang) {
+            if (lang === 'nl') {
+                window.location.href = '../../PortfolioNL/ProjectPages/project2NL.html';
+            }
+            // For 'en', we're already on the English page
+        }
     </script>
 </body>
 </html>

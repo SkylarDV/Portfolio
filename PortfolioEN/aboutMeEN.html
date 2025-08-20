@@ -11,6 +11,7 @@
     <nav class="navbar">
         <div class="logo">Skylar</div>        <div class="nav-links">
             <a href="indexEN.html" class="nav-link">Home</a>
+            <a href="aboutMeEN.html" class="nav-link active">About Me</a>
             <div class="dropdown">
                 <span class="nav-link dropdown-toggle">Projects</span>
                 <div class="dropdown-content">
@@ -19,13 +20,12 @@
                     <a href="ProjectPages/project3EN.html">Full-Stack Solution</a>
                 </div>
             </div>
-            <a href="aboutMeEN.html" class="nav-link active">About Me</a>
-            <div class="language-selector-wrapper">
-                <select class="language-selector">
-                    <option value="en" selected>EN</option>
-                    <option value="nl">NL</option>
-                </select>
-                <span class="language-selector-arrow">▼</span>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -33,15 +33,13 @@
     <div class="container main-content">
         <section class="hero" id="about">
             <h1>About Me</h1>
-            <p>Developer • Student • Creative Problem Solver</p>
+            <p>Developer • Student • Designer</p>
         </section>
 
         <section class="about-content">
             <h2>Who Am I?</h2>
-            <p>
-                I'm a passionate developer who loves turning ideas into digital reality. With a keen eye for design 
-                and a love for clean, efficient code, I create web experiences that are both beautiful and functional.
-            </p>
+            <p> I'm a passionate web designer and developer with a love for creating beautiful and functional websites, programs or other online platforms. I find joy in putting together efficient code that improves user experience.</p>
+            <p> While my preference lies with coding, my experience with design allows for additional insight in the creation process for an overall smootherconversation and cooperation experience.</p>
         </section>
 
         <div class="about-sections-grid">
@@ -49,11 +47,10 @@
                 <h2>Education</h2>
                 <div class="education-item">
                     <h3>Thomas More University of Applied Sciences</h3>
-                    <p class="degree">Bachelor in Applied Computer Science</p>
+                    <p class="degree">Bachelor in Digital Experience Design</p>
                     <p class="year">2023 - Present</p>
                     <p class="description">
-                        Specializing in software development, web technologies, and digital innovation. 
-                        Focus on modern programming languages, database management, and user experience design.
+                        A three-year, hands-on program focused on designing and building real digital products and immersive experiences. Students develop practical skills through project-based learning, presenting their work to professional juries for feedback. Graduates gain experience in UX/UI design, web development, and digital strategy, creating solutions that are both socially relevant and commercially viable.
                     </p>
                 </div>
             </section>
@@ -83,11 +80,10 @@
                 <div class="skill-category">
                     <h3>Frontend Development</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">p5.js</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -101,9 +97,9 @@
                 <div class="skill-category">
                     <h3>Tools & Technologies</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Unity</span>
                         <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Blender</span>
                         <span class="skill-tag">Adobe Illustrator</span>
                         <span class="skill-tag">Webflow</span>
                     </div>
@@ -150,10 +146,10 @@
     
     <script>
         // Language selector functionality (placeholder for future multilingual feature)
-        document.querySelector('.language-selector').addEventListener('change', function(e) {
-            console.log('Language changed to:', e.target.value);
+        function switchLanguage(lang) {
+            console.log('Language changed to:', lang);
             // This will be implemented when adding multilingual support
-        });
+        }
     </script>
 </body>
 </html>
