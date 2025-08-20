@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skylar</div>        <div class="nav-links">
+            <a href="indexEN.html" class="nav-link">Home</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1EN.html">Web Development</a>
+                    <a href="ProjectPages/project2EN.html">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3EN.html">Full-Stack Solution</a>
+                </div>
+            </div>
+            <a href="aboutMeEN.html" class="nav-link active">About Me</a>
+            <div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="en" selected>EN</option>
+                    <option value="nl">NL</option>
+                </select>
+                <span class="language-selector-arrow">▼</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero" id="about">
+            <h1>About Me</h1>
+            <p>Developer • Student • Creative Problem Solver</p>
+        </section>
+
+        <section class="about-content">
+            <h2>Who Am I?</h2>
+            <p>
+                I'm a passionate developer who loves turning ideas into digital reality. With a keen eye for design 
+                and a love for clean, efficient code, I create web experiences that are both beautiful and functional.
+            </p>
+        </section>
+
+        <div class="about-sections-grid">
+            <section class="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Thomas More University of Applied Sciences</h3>
+                    <p class="degree">Bachelor in Applied Computer Science</p>
+                    <p class="year">2023 - Present</p>
+                    <p class="description">
+                        Specializing in software development, web technologies, and digital innovation. 
+                        Focus on modern programming languages, database management, and user experience design.
+                    </p>
+                </div>
+            </section>
+
+            <section class="contact-info">
+                <h2>Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>dorienvermeulen26@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3><i class="fas fa-phone"></i> Phone</h3>
+                        <p>+32 0468 30 04 99</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <p>Kapelle-op-den-Bos, Belgium</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">p5.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe Illustrator</span>
+                        <span class="skill-tag">Webflow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="languages">
+            <h2>Languages</h2>
+            <div class="language-grid">
+                <div class="language-item">
+                    <h3>Dutch</h3>
+                    <div class="proficiency">
+                        <span class="level">Native</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <h3>English</h3>
+                    <div class="proficiency">
+                        <span class="level">Fluent</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <h3>French</h3>
+                    <div class="proficiency">
+                        <span class="level">Intermediate</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sparkle Trail Effect -->
+    <script src="../sparkle-trail.js"></script>
+    
+    <script>
+        // Language selector functionality (placeholder for future multilingual feature)
+        document.querySelector('.language-selector').addEventListener('change', function(e) {
+            console.log('Language changed to:', e.target.value);
+            // This will be implemented when adding multilingual support
+        });
+    </script>
+</body>
+</html>
