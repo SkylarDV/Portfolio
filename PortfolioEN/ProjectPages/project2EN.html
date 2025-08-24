@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Organizer & Formatter Prototype - My Portfolio</title>
+    <link rel="icon" type="image/png" href="../../LogoIcon.png">
     <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Skylar</div>        <div class="nav-links">
+        <div class="logo">
+            <img src="../../LogoIcon.png" alt="Logo" class="logo-icon">
+            Skylar V.
+        </div>        <div class="nav-links">
             <a href="../indexEN.html" class="nav-link">Home</a>
             <a href="../aboutMeEN.html" class="nav-link">About Me</a>
             <div class="dropdown">
@@ -32,70 +36,877 @@
     <div class="container main-content">
         <section class="hero">
             <h1>Data Organizer & Formatter Prototype</h1>
-            <p>Innovation meets functionality in data processing</p>
+            <p>For convenience, speed and clarity</p>
         </section>
 
         <section class="project-content">
             <h2>Project Overview</h2>
+            <p>This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. 
+                The preview below is a recreation of the original task with a full rundown of the project, or you can <a href="#demonstration">jump straight ahead</a> to the demonstration</p>
+            <p>I was not hired as a developer, but rather as a student assistant to one of the long-term employees. 
+                After disclosing my education, he then asked for me to make the following project during the hours I was listed to assist him.</p>
+            
+            <h3>The Original Vision</h3>
             <p>
-                This innovative data processing application demonstrates advanced web development skills and 
-                modern application design principles. Built to solve real-world data management problems, the app features 
-                intuitive user interfaces, robust functionality, and seamless performance across 
-                multiple platforms.
+                The export department of the company receives quarterly to yearly reports of the sales of their distributors.
+                Each of these has their own style of noting down the information in a spreadsheet and thus getting a complete overview of the total sales made was inconvenient. 
+                For this reason, my supervisor was looking into a solution and eventually asked me if I knew of a way to streamline this process.
+            </p>
+            <p>
+                My proposed solution was to create a webpage with PHP and SQL that would take these excel files (exported as csv files) and automatically add them to the grand overarching database. 
+                Once there, the data could be sorted, filtered and searched conveniently.
             </p>
 
-            <h3>Technologies Used</h3>
-            <ul>
-                <li>React Native / Flutter for Cross-Platform Development</li>
-                <li>Native iOS (Swift) and Android (Kotlin) Components</li>
-                <li>RESTful API Integration</li>
-                <li>Real-time Data Synchronization</li>
-                <li>Push Notifications & Background Services</li>
-                <li>Device Hardware Integration (Camera, GPS, Sensors)</li>
-            </ul>
-
-            <h3>Key Features</h3>
-            <ul>
-                <li>User authentication and secure login system</li>
-                <li>Interactive data visualization and charts</li>
-                <li>Real-time notifications and alerts</li>
-                <li>Offline functionality with data synchronization</li>
-                <li>Multi-language support</li>
-                <li>Dark mode and accessibility features</li>
-                <li>Social media integration</li>
-            </ul>
-
-            <h3>Development Highlights</h3>
+            <h3>What went wrong?</h3>
             <p>
-                The development process emphasized user experience design, with extensive user testing 
-                and iterative improvements. The app follows platform-specific design guidelines while 
-                maintaining a consistent brand experience. Performance optimization ensures smooth 
-                operation even on older devices.
+                Due to an unforeseen and unannounced strengthening of security measures pushed by the Spanish branch of the company (being the head of all departments globally), several issues arose: 
+                The key functionality of uploading files into this website was blocked on all work devices due to privacy and sensitive data concerns, along with the firewall blocking the server I was running for my development process. 
+                Because of these factors, it was agreed that the development would no longer continue, but my supervisor had no objections to me including this recreation in my portfolio website with reference to him.
             </p>
 
-            <h3>Technical Achievements</h3>
-            <ul>
-                <li>Achieved 99.9% crash-free rate in production</li>
-                <li>Optimized app size to under 25MB</li>
-                <li>Implemented secure data encryption</li>
-                <li>Created reusable component library</li>
-                <li>Automated testing coverage of 90%+</li>
-            </ul>
+            <h3>The Development Process</h3>
+            <p>
+                From the initial briefing, functionality had been indicated as the core concern regarding the project, with little to no cares regarding the aesthetics. 
+                This meant that I did not draft any page design before I jumped into the programming phase, deciding to stick to the company colours and a very minimal styling. 
+                Because of the way my employment was handled, I had limited time to work on the project, so I decided to distribute all my hours carefully, thus deciding not to have a design phase.
+            </p>
+            <p>
+                My client had already outlined certain steps for me to take since he did know how tight of a time window I was working with, and so offered me the core functionalities he would like to see in the order of importance. 
+                He asked me to prioritize the handling of data sourced from the biggest distributor first, a file that consisted of over 22 000 lines. Because of this, the code had to be significantly optimized for wait times to be reasonable. 
+                Unfortunately, once I had gotten to the point where after the uploading the file a searchable table was created, the aforementioned security update happened and I could no longer continue.
+            </p>
 
-            <a href="#" class="btn">Download App</a>
-            <a href="#" class="btn">View Screenshots</a>
+            <h3 id="demonstration">A Demonstration Of The Prototype</h3>
+            
+            <div class="disclaimer-box">
+                <div class="disclaimer-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="disclaimer-content">
+                    <strong>Note:</strong> The code below is not a 1 to 1 reconstruction of the original project, the most prominent difference being that within this portfolio I do not work with a database. All entries are stored locally and will be forgotten upon page reload.
+                </div>
+            </div>
+            
+            <p>
+                The file below is a zip file with 3 different sources of dummy sales data in CSV format that can be used to test the prototype. 
+                If you would prefer not to download this file, there is also a recording of myself using this program.
+            </p>
+            <a href="../../DummyData.zip" download="DummyData.zip" class="btn">Download Sample Data For Testing</a>
+            <a href="javascript:void(0)" class="btn btn2" onclick="showVideoInstead()"> Watch The Video Instead</a>
+            
+            <p>
+            </p>
+
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="17,8 12,3 7,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="upload-content">
+                    <h4>Upload CSV File</h4>
+                    <p>Drag and drop one of the downloaded CSV files here, or click to browse</p>
+                </div>
+                <input type="file" id="csvFileInput" accept=".csv" hidden>
+            </div>
+            
+            <div id="fileStatus" class="file-status" style="display: none;"></div>
+            
+            <!-- Distributor Selection and Processing -->
+            <div id="processingSection" class="processing-section" style="display: none;">
+                <h3>Data Processing Options</h3>
+                <p>Please select the distributor that provided the uploaded file:</p>
+                
+                <div class="distributor-selection">
+                    <label for="distributorType">Distributor Source:</label>
+                    <select id="distributorType" class="distributor-dropdown">
+                        <option value="">Select a distributor...</option>
+                        <option value="distributor1">Distributor 1</option>
+                        <option value="distributor2">Distributor 2</option>
+                        <option value="distributor3">Distributor 3</option>
+                    </select>
+                </div>
+                
+                <div class="processing-actions">
+                    <button id="processDataBtn" class="btn process-btn" disabled>Process Data</button>
+                    <button id="cancelProcessBtn" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+            
+            <!-- CSV Data Table Display -->
+            <div id="csvTableContainer" class="csv-table-container" style="display: none;">
+                <h3>Distributor Data 2o25</h3>
+                
+                <!-- Search and Data Controls -->
+                <div id="sortingControls" class="sorting-controls">
+                    <!-- Search Section -->
+                    <div class="search-section">
+                        <div class="sorting-group">
+                            <label for="searchInput">Search Data:</label>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search by selected categories...">
+                        </div>
+                        <div class="search-options">
+                            <label class="search-category-label">Search in:</label>
+                            <div class="search-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="searchClient" class="search-checkbox" checked>
+                                    Client
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="searchProduct" class="search-checkbox" checked>
+                                    Product
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="searchTime" class="search-checkbox">
+                                    Time
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="searchAmount" class="search-checkbox">
+                                    Amount
+                                </label>
+                            </div>
+                        </div>
+                        <div class="search-actions">
+                            <button id="clearSearchBtn" class="btn btn-secondary search-btn" style="display: none;">Clear Search</button>
+                            <button id="clearTableBtn" class="btn btn-warning search-btn">Clear All Data</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table id="csvTable" class="csv-table">
+                        <thead id="csvTableHead"></thead>
+                        <tbody id="csvTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </div>
 
     <!-- Sparkle Trail Effect -->
-    <script src="../sparkle-trail.js"></script>
+    <script src="../../sparkle-trail.js"></script>
     
     <script>
+        function showVideoInstead() {
+            const uploadZone = document.getElementById('uploadZone');
+            
+            // Create video container
+            const videoContainer = document.createElement('div');
+            videoContainer.className = 'video-container';
+            videoContainer.id = 'videoContainer';
+            
+            // Create video element
+            const video = document.createElement('video');
+            video.controls = true;
+            video.width = '100%';
+            video.style.maxWidth = '800px';
+            video.style.height = 'auto';
+            video.style.borderRadius = '8px';
+            
+            // Add video source
+            video.innerHTML = `
+                <source src="../../datapreviewvid.mp4" type="video/mp4">
+                <p>Your browser does not support the video tag. Please <a href="../../datapreviewvid.mp4" download>download the video</a> instead.</p>
+            `;
+            
+            // Create a note about the video
+            const videoNote = document.createElement('p');
+            videoNote.className = 'video-note';
+            videoNote.innerHTML = 'Video demonstration of the Data Organizer & Formatter Prototype.';
+            videoNote.style.textAlign = 'center';
+            videoNote.style.marginTop = '1rem';
+            videoNote.style.color = '#cbd5e1';
+            
+            // Add video and note to container
+            videoContainer.appendChild(video);
+            videoContainer.appendChild(videoNote);
+            
+            // Replace upload zone with video container
+            uploadZone.parentNode.replaceChild(videoContainer, uploadZone);
+            
+            // Scroll to video
+            videoContainer.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+        
+        function showUploadZone() {
+            const videoContainer = document.getElementById('videoContainer');
+            
+            // Recreate upload zone
+            const uploadZone = document.createElement('div');
+            uploadZone.className = 'upload-zone';
+            uploadZone.id = 'uploadZone';
+            
+            uploadZone.innerHTML = `
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="17,8 12,3 7,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="upload-content">
+                    <h4>Upload CSV File</h4>
+                    <p>Drag and drop one of the downloaded CSV files here, or click to browse</p>
+                </div>
+                <input type="file" id="csvFileInput" accept=".csv" hidden>
+            `;
+            
+            // Replace video container with upload zone
+            videoContainer.parentNode.replaceChild(uploadZone, videoContainer);
+            
+            // Re-initialize upload zone functionality
+            initializeUploadZone();
+            
+            // Scroll to upload zone
+            uploadZone.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+        
+        function initializeUploadZone() {
+            const uploadZone = document.getElementById('uploadZone');
+            const fileInput = document.getElementById('csvFileInput');
+            
+            // Click to upload
+            uploadZone.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            // Drag and drop functionality
+            uploadZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadZone.classList.add('drag-over');
+            });
+
+            uploadZone.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove('drag-over');
+            });
+
+            uploadZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove('drag-over');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFile(files[0]);
+                }
+            });
+
+            // File input change
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+        }
+
         function switchLanguage(lang) {
             if (lang === 'nl') {
                 window.location.href = '../../PortfolioNL/ProjectPages/project2NL.html';
             }
             // For 'en', we're already on the English page
+        }
+
+        // Upload Zone Functionality
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('csvFileInput');
+        const fileStatus = document.getElementById('fileStatus');
+        const processingSection = document.getElementById('processingSection');
+        const distributorType = document.getElementById('distributorType');
+        const processDataBtn = document.getElementById('processDataBtn');
+        const cancelProcessBtn = document.getElementById('cancelProcessBtn');
+        
+        // Search controls
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+        const clearTableBtn = document.getElementById('clearTableBtn');
+        
+        // Search category checkboxes
+        const searchClient = document.getElementById('searchClient');
+        const searchProduct = document.getElementById('searchProduct');
+        const searchTime = document.getElementById('searchTime');
+        const searchAmount = document.getElementById('searchAmount');
+        
+        let currentCsvContent = null;
+        let currentTableData = { headers: [], rows: [] };
+        let originalTableData = { headers: [], rows: [] };
+        let filteredTableData = { headers: [], rows: [] };
+
+        // Initialize upload zone functionality
+        initializeUploadZone();
+
+        function handleFile(file) {
+            // Check if file is CSV
+            if (!file.name.toLowerCase().endsWith('.csv')) {
+                showFileStatus('error', 'Please select a CSV file only.');
+                return;
+            }
+
+            // Check file size (optional - limit to 10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                showFileStatus('error', 'File size must be less than 10MB.');
+                return;
+            }
+
+            showFileStatus('success', `File "${file.name}" uploaded successfully! (${formatFileSize(file.size)})`);
+            
+            // Read the CSV file and store content
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentCsvContent = e.target.result;
+                showProcessingSection();
+            };
+            reader.readAsText(file);
+        }
+
+        function showProcessingSection() {
+            processingSection.style.display = 'block';
+            processingSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        // Enable/disable process button based on selection
+        distributorType.addEventListener('change', function() {
+            processDataBtn.disabled = !this.value;
+        });
+
+        // Process data button click
+        processDataBtn.addEventListener('click', function() {
+            const selectedType = distributorType.value;
+            
+            if (selectedType === 'distributor1') {
+                parseAndDisplayCSV(currentCsvContent, 'distributor1'); // Transform data for distributor 1
+            } else if (selectedType === 'distributor2') {
+                parseAndDisplayCSV(currentCsvContent, 'distributor2'); // Transform data for distributor 2
+            } else {
+                parseAndDisplayCSV(currentCsvContent, 'distributor3'); // Show original format for distributor 3
+            }
+            
+            // Hide processing section
+            processingSection.style.display = 'none';
+        });
+
+        // Cancel button click
+        cancelProcessBtn.addEventListener('click', function() {
+            processingSection.style.display = 'none';
+            currentCsvContent = null;
+            distributorType.value = '';
+            processDataBtn.disabled = true;
+            
+            // Hide table if shown
+            document.getElementById('csvTableContainer').style.display = 'none';
+            
+            // Reset search
+            clearSearch();
+        });
+
+        // Search event listeners
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.trim();
+            if (searchTerm) {
+                searchData(searchTerm);
+                clearSearchBtn.style.display = 'inline-block';
+            } else {
+                clearSearch();
+            }
+        });
+
+        // Search category checkboxes change events
+        [searchClient, searchProduct, searchTime, searchAmount].forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    searchData(searchTerm);
+                }
+            });
+        });
+
+        clearSearchBtn.addEventListener('click', function() {
+            clearSearch();
+        });
+
+        // Clear all data button
+        clearTableBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
+                clearAllData();
+            }
+        });
+
+        function parseAndDisplayCSV(csvContent, distributorType = 'distributor3') {
+            // Split CSV into lines
+            const lines = csvContent.split('\n').filter(line => line.trim() !== '');
+            
+            if (lines.length < 2) {
+                showFileStatus('error', 'CSV file must have at least 2 lines (headers and data).');
+                return;
+            }
+
+            // Parse CSV (simple parser - handles basic CSV format)
+            function parseCSVLine(line) {
+                const result = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        result.push(current.trim());
+                        current = '';
+                    } else if (char === '\t' && !inQuotes) {
+                        result.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                result.push(current.trim());
+                return result;
+            }
+
+            // Skip first line and use second line as headers (as per requirement)
+            const originalHeaders = parseCSVLine(lines[1]);
+            const dataRows = lines.slice(2).map(line => parseCSVLine(line));
+
+            let finalHeaders, finalData;
+
+            if (distributorType === 'distributor1') {
+                // Transform data from wide to long format (Distributor 1)
+                finalData = transformToLongFormat(originalHeaders, dataRows);
+                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+            } else if (distributorType === 'distributor2') {
+                // Transform data from distributor 2 format to distributor 1 format
+                finalData = transformDistributor2ToDistributor1(originalHeaders, dataRows);
+                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+            } else if (distributorType === 'distributor3') {
+                // Transform data from distributor 3 format to distributor 1 format
+                finalData = transformDistributor3ToDistributor1(originalHeaders, dataRows);
+                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+            } else {
+                // Show original format
+                finalHeaders = originalHeaders;
+                finalData = dataRows;
+            }
+
+            // Create table with final data (will accumulate if data already exists)
+            createTable(finalHeaders, finalData);
+            
+            // Show table container
+            document.getElementById('csvTableContainer').style.display = 'block';
+            
+            // Scroll to table
+            document.getElementById('csvTableContainer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function transformToLongFormat(headers, dataRows) {
+            const transformedRows = [];
+            
+            // Find indices of the main columns
+            const productNameIndex = headers.findIndex(h => h.toLowerCase().includes('product name'));
+            const productNumberIndex = headers.findIndex(h => h.toLowerCase().includes('product number'));
+            const clientNameIndex = headers.findIndex(h => h.toLowerCase().includes('client name'));
+            const clientNumberIndex = headers.findIndex(h => h.toLowerCase().includes('client number'));
+            
+            // Find month columns (everything after the main columns)
+            const monthStartIndex = Math.max(productNameIndex, productNumberIndex, clientNameIndex, clientNumberIndex) + 1;
+            const monthHeaders = headers.slice(monthStartIndex);
+            
+            // Process each data row
+            dataRows.forEach(row => {
+                const productName = row[productNameIndex] || '';
+                const productNumber = row[productNumberIndex] || '';
+                const clientName = row[clientNameIndex] || '';
+                const clientNumber = row[clientNumberIndex] || '';
+                
+                // Check each month column
+                monthHeaders.forEach((month, monthIndex) => {
+                    const actualMonthIndex = monthStartIndex + monthIndex;
+                    const amount = row[actualMonthIndex] || '0';
+                    
+                    // Only create a row if the amount is not 0 or empty
+                    if (amount && amount.trim() !== '' && amount.trim() !== '0') {
+                        transformedRows.push([
+                            clientName,
+                            clientNumber,
+                            productName,
+                            productNumber,
+                            amount,
+                            month
+                        ]);
+                    }
+                });
+            });
+            
+            return transformedRows;
+        }
+
+        function transformDistributor2ToDistributor1(headers, dataRows) {
+            const transformedRows = [];
+            
+            // Mapping for Distributor 2 format to Distributor 1 format
+            // Customer -> Client Name, Customer_ID -> Client Number, Item -> Product Name, Item_ID -> Product Number
+            // Full month names -> 3-letter abbreviations
+            const monthMapping = {
+                'january': 'Jan',
+                'february': 'Feb',
+                'march': 'Mar',
+                'april': 'Apr',
+                'may': 'May',
+                'june': 'Jun',
+                'july': 'Jul',
+                'august': 'Aug',
+                'september': 'Sep',
+                'october': 'Oct',
+                'november': 'Nov',
+                'december': 'Dec'
+            };
+            
+            // Find indices of the main columns for Distributor 2 format
+            const customerIndex = headers.findIndex(h => h.toLowerCase().includes('customer') && !h.toLowerCase().includes('_'));
+            const customerIdIndex = headers.findIndex(h => h.toLowerCase().includes('customer_id') || h.toLowerCase().includes('customer id'));
+            const itemIndex = headers.findIndex(h => h.toLowerCase().includes('item') && !h.toLowerCase().includes('_'));
+            const itemIdIndex = headers.findIndex(h => h.toLowerCase().includes('item_id') || h.toLowerCase().includes('item id'));
+            
+            // Skip VAT_Number column - find the first month column after the basic info
+            const monthStartIndex = Math.max(customerIndex, customerIdIndex, itemIndex, itemIdIndex) + 1;
+            // Skip VAT column if it exists
+            let actualMonthStartIndex = monthStartIndex;
+            if (headers[monthStartIndex] && headers[monthStartIndex].toLowerCase().includes('vat')) {
+                actualMonthStartIndex = monthStartIndex + 1;
+            }
+            
+            const monthHeaders = headers.slice(actualMonthStartIndex);
+            
+            // Process each data row
+            dataRows.forEach(row => {
+                const customerName = row[customerIndex] || '';
+                const customerId = row[customerIdIndex] || '';
+                const itemName = row[itemIndex] || '';
+                const itemId = row[itemIdIndex] || '';
+                
+                // Check each month column
+                monthHeaders.forEach((month, monthIndex) => {
+                    const actualMonthIndex = actualMonthStartIndex + monthIndex;
+                    const amount = row[actualMonthIndex] || '0';
+                    
+                    // Only create a row if the amount is not 0 or empty
+                    if (amount && amount.trim() !== '' && amount.trim() !== '0') {
+                        // Convert full month name to 3-letter abbreviation
+                        const monthKey = month.toLowerCase();
+                        const abbreviatedMonth = monthMapping[monthKey] || month;
+                        
+                        transformedRows.push([
+                            customerName,    // Client Name
+                            customerId,      // Client Number
+                            itemName,        // Product Name
+                            itemId,          // Product Number
+                            amount,          // Amount
+                            abbreviatedMonth // Time (converted to 3-letter format)
+                        ]);
+                    }
+                });
+            });
+            
+            return transformedRows;
+        }
+
+        function transformDistributor3ToDistributor1(headers, dataRows) {
+            const transformedRows = [];
+            
+            // Mapping for m1-m8 to 3-letter month abbreviations
+            const monthMapping = {
+                'm1': 'Jan',
+                'm2': 'Feb',
+                'm3': 'Mar',
+                'm4': 'Apr',
+                'm5': 'May',
+                'm6': 'Jun',
+                'm7': 'Jul',
+                'm8': 'Aug'
+            };
+            
+            // Find indices of the main columns for Distributor 3 format
+            const customerNameIndex = headers.findIndex(h => h.toLowerCase().includes('customer name'));
+            const customerIdIndex = headers.findIndex(h => h.toLowerCase().includes('customer id'));
+            const productNameIndex = headers.findIndex(h => h.toLowerCase().includes('product name'));
+            const productCodeIndex = headers.findIndex(h => h.toLowerCase().includes('product code'));
+            
+            // Find month columns (m1-m8)
+            const monthColumns = [];
+            headers.forEach((header, index) => {
+                const headerLower = header.toLowerCase();
+                if (headerLower.match(/^m[1-8]$/)) {
+                    monthColumns.push({ index, month: headerLower });
+                }
+            });
+            
+            // Process each data row
+            dataRows.forEach(row => {
+                const customerName = row[customerNameIndex] || '';
+                const customerId = row[customerIdIndex] || '';
+                const productName = row[productNameIndex] || '';
+                const productCode = row[productCodeIndex] || '';
+                
+                // Check each month column
+                monthColumns.forEach(({ index, month }) => {
+                    const amount = row[index] || '';
+                    
+                    // Only create a row if the amount is not 0, empty, or "-"
+                    if (amount && amount.trim() !== '' && amount.trim() !== '0' && amount.trim() !== '-') {
+                        // Convert m1-m8 to 3-letter abbreviation
+                        const abbreviatedMonth = monthMapping[month] || month;
+                        
+                        transformedRows.push([
+                            customerName,    // Client Name
+                            customerId,      // Client Number
+                            productName,     // Product Name
+                            productCode,     // Product Number
+                            amount,          // Amount
+                            abbreviatedMonth // Time (converted to 3-letter format)
+                        ]);
+                    }
+                });
+            });
+            
+            return transformedRows;
+        }
+
+        function createTable(headers, rows) {
+            const tableHead = document.getElementById('csvTableHead');
+            const tableBody = document.getElementById('csvTableBody');
+            
+            // Check if this is the first file or if we're adding to existing data
+            if (originalTableData.headers.length === 0) {
+                // First file - initialize the table
+                currentTableData = { headers: [...headers], rows: rows.map(row => [...row]) };
+                originalTableData = { headers: [...headers], rows: rows.map(row => [...row]) };
+                
+                // Clear existing content and create fresh table
+                tableHead.innerHTML = '';
+                tableBody.innerHTML = '';
+                
+                // Create header row
+                const headerRow = document.createElement('tr');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                tableHead.appendChild(headerRow);
+            } else {
+                // Subsequent files - add to existing data
+                // Check if headers match (for compatibility)
+                const headersMatch = headers.length === originalTableData.headers.length && 
+                    headers.every((header, index) => header === originalTableData.headers[index]);
+                
+                if (!headersMatch) {
+                    showFileStatus('error', 'File headers do not match existing data. Please clear the table first or ensure file formats are consistent.');
+                    return;
+                }
+                
+                // Add new rows to existing data
+                originalTableData.rows.push(...rows.map(row => [...row]));
+                currentTableData.rows.push(...rows.map(row => [...row]));
+            }
+            
+            // Always recreate the table body with all accumulated data
+            tableBody.innerHTML = '';
+            currentTableData.rows.forEach(rowData => {
+                const row = document.createElement('tr');
+                rowData.forEach((cellData, index) => {
+                    const td = document.createElement('td');
+                    td.textContent = cellData || ''; // Handle empty cells
+                    row.appendChild(td);
+                });
+                // Handle rows with fewer columns than headers
+                while (row.children.length < currentTableData.headers.length) {
+                    const td = document.createElement('td');
+                    td.textContent = '';
+                    row.appendChild(td);
+                }
+                tableBody.appendChild(row);
+            });
+        }
+
+        function searchData(searchTerm) {
+            const headers = currentTableData.headers;
+            
+            // Find column indices
+            const clientNameIndex = headers.findIndex(h => h.toLowerCase().includes('client name'));
+            const clientNumberIndex = headers.findIndex(h => h.toLowerCase().includes('client number'));
+            const productNameIndex = headers.findIndex(h => h.toLowerCase().includes('product name'));
+            const productNumberIndex = headers.findIndex(h => h.toLowerCase().includes('product number'));
+            const timeIndex = headers.findIndex(h => h.toLowerCase().includes('time'));
+            const amountIndex = headers.findIndex(h => h.toLowerCase().includes('amount'));
+            
+            // Filter rows based on search term and selected categories
+            const filteredRows = originalTableData.rows.filter(row => {
+                let matches = false;
+                
+                // Check client data if client checkbox is checked
+                if (searchClient.checked) {
+                    const clientName = row[clientNameIndex] || '';
+                    const clientNumber = row[clientNumberIndex] || '';
+                    if (clientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        clientNumber.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
+                        matches = true;
+                    }
+                }
+                
+                // Check product data if product checkbox is checked
+                if (searchProduct.checked && !matches) {
+                    const productName = row[productNameIndex] || '';
+                    const productNumber = row[productNumberIndex] || '';
+                    if (productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        productNumber.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
+                        matches = true;
+                    }
+                }
+                
+                // Check time data if time checkbox is checked
+                if (searchTime.checked && !matches && timeIndex >= 0) {
+                    const time = row[timeIndex] || '';
+                    if (time.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        matches = true;
+                    }
+                }
+                
+                // Check amount data if amount checkbox is checked
+                if (searchAmount.checked && !matches && amountIndex >= 0) {
+                    const amount = row[amountIndex] || '';
+                    if (amount.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
+                        matches = true;
+                    }
+                }
+                
+                return matches;
+            });
+            
+            // Store filtered data
+            filteredTableData = { headers: [...headers], rows: filteredRows };
+            
+            // Update current data with filtered results
+            currentTableData = { headers: [...headers], rows: filteredRows };
+            
+            // Recreate table with filtered data
+            createTableFromCurrentData();
+            
+            // Update search status
+            updateSearchStatus(filteredRows.length, originalTableData.rows.length);
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            clearSearchBtn.style.display = 'none';
+            filteredTableData = { headers: [], rows: [] };
+            
+            // Restore original data
+            currentTableData = { headers: [...originalTableData.headers], rows: [...originalTableData.rows] };
+            createTableFromCurrentData();
+            
+            // Clear search status
+            updateSearchStatus(0, 0);
+        }
+
+        function createTableFromCurrentData() {
+            const tableBody = document.getElementById('csvTableBody');
+            tableBody.innerHTML = '';
+            
+            currentTableData.rows.forEach(rowData => {
+                const row = document.createElement('tr');
+                rowData.forEach((cellData, index) => {
+                    const td = document.createElement('td');
+                    td.textContent = cellData || '';
+                    row.appendChild(td);
+                });
+                // Handle rows with fewer columns than headers
+                while (row.children.length < currentTableData.headers.length) {
+                    const td = document.createElement('td');
+                    td.textContent = '';
+                    row.appendChild(td);
+                }
+                tableBody.appendChild(row);
+            });
+        }
+
+        function updateSearchStatus(filteredCount, totalCount) {
+            // Find or create search status element
+            let searchStatus = document.getElementById('searchStatus');
+            if (!searchStatus) {
+                searchStatus = document.createElement('div');
+                searchStatus.id = 'searchStatus';
+                searchStatus.className = 'search-status';
+                document.getElementById('sortingControls').appendChild(searchStatus);
+            }
+            
+            if (filteredCount > 0 && filteredCount < totalCount) {
+                searchStatus.textContent = `Showing ${filteredCount} of ${totalCount} results`;
+                searchStatus.style.display = 'block';
+            } else if (filteredCount === 0 && searchInput.value.trim()) {
+                searchStatus.textContent = 'No results found';
+                searchStatus.style.display = 'block';
+            } else {
+                searchStatus.style.display = 'none';
+            }
+        }
+
+        function clearAllData() {
+            // Reset all data storage
+            originalTableData = { headers: [], rows: [] };
+            currentTableData = { headers: [], rows: [] };
+            filteredTableData = { headers: [], rows: [] };
+            
+            // Clear the table
+            const tableHead = document.getElementById('csvTableHead');
+            const tableBody = document.getElementById('csvTableBody');
+            tableHead.innerHTML = '';
+            tableBody.innerHTML = '';
+            
+            // Hide the table container
+            document.getElementById('csvTableContainer').style.display = 'none';
+            
+            // Reset search controls
+            clearSearch();
+            
+            showFileStatus('success', 'All data has been cleared. You can now upload new files.');
+        }
+
+        function showFileStatus(type, message) {
+            fileStatus.className = `file-status ${type}`;
+            fileStatus.textContent = message;
+            fileStatus.style.display = 'block';
+            
+            // Hide status after 5 seconds for success, keep for errors
+            if (type === 'success') {
+                setTimeout(() => {
+                    fileStatus.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
         }
     </script>
 </body>
