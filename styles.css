@@ -4,9 +4,9 @@
 
 @font-face {
     font-family: 'Hey Comic';
-    src: url('Hey Comic.woff2') format('woff2'),
-         url('Hey Comic.otf') format('opentype'),
-         url('Hey Comic.ttf') format('truetype');
+    src: url('Assets/Hey Comic.woff2') format('woff2'),
+         url('Assets/Hey Comic.otf') format('opentype'),
+         url('Assets/Hey Comic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
