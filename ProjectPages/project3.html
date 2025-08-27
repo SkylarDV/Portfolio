@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Stack Web Solution - My Portfolio</title>    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
+    <title>3D Model Food Stall - My Portfolio</title>
+    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <div class="dropdown-content">
                     <a href="project1.html">Web Development</a>
                     <a href="project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="project3.html">Full-Stack Solution</a>
+                    <a href="project3.html">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -34,74 +35,122 @@
 
     <div class="container main-content">
         <section class="hero">
-            <h1>Full-Stack Web Solution</h1>
-            <p>Complete end-to-end web development expertise</p>
+            <h1>3D Model Food Stall</h1>
+            <p>A stylised 3D model created in Blender</p>
         </section>
 
         <section class="project-content">
-            <div class="coming-soon">
-                <h3>🚀 Coming Soon</h3>
-                <p>This comprehensive full-stack project is currently in development. Check back soon for updates!</p>
-            </div>
-
             <h2>Project Overview</h2>
             <p>
-                This comprehensive full-stack web solution demonstrates expertise in both frontend and 
-                backend development. The project combines modern frontend frameworks with robust backend 
-                architecture, featuring RESTful API development, database management, and cloud deployment 
-                strategies.
+                This 3D model was a school assignment for the course 3D Design. 
+                The assignment was to make any kind of food vendor stall in Blender, with free range in terms of what type of food, what stylisation and how detailed we wanted to make the project. 
+                Only a baseline complexity was given as a point of reference, allowing for a lot of creative freedom.
             </p>
-
-            <h3>Frontend Technologies</h3>
-            <ul>
-                <li>React.js / Vue.js with TypeScript</li>
-                <li>State Management (Redux / Vuex)</li>
-                <li>Component Libraries (Material-UI / Vuetify)</li>
-                <li>Progressive Web App (PWA) Features</li>
-                <li>Responsive Design & CSS-in-JS</li>
-                <li>Testing Framework (Jest, Cypress)</li>
-            </ul>
-
-            <h3>Backend Technologies</h3>
-            <ul>
-                <li>Node.js with Express.js / Python Django</li>
-                <li>RESTful API Design & GraphQL</li>
-                <li>Database Management (PostgreSQL / MongoDB)</li>
-                <li>Authentication & Authorization (JWT, OAuth)</li>
-                <li>API Documentation (Swagger / OpenAPI)</li>
-                <li>Microservices Architecture</li>
-            </ul>
-
-            <h3>DevOps & Deployment</h3>
-            <ul>
-                <li>Docker Containerization</li>
-                <li>CI/CD Pipeline (GitHub Actions / Jenkins)</li>
-                <li>Cloud Deployment (AWS / Azure / Google Cloud)</li>
-                <li>Load Balancing & Scaling</li>
-                <li>Monitoring & Logging</li>
-                <li>Security Best Practices</li>
-            </ul>
-
-            <h3>Key Features (Planned)</h3>
-            <ul>
-                <li>User management and role-based access control</li>
-                <li>Real-time data processing and updates</li>
-                <li>Advanced analytics and reporting</li>
-                <li>File upload and management system</li>
-                <li>Email notifications and messaging</li>
-                <li>Multi-tenant architecture</li>
-                <li>API rate limiting and caching</li>
-            </ul>
-
-            <h3>Development Approach</h3>
             <p>
-                The development follows industry best practices including Test-Driven Development (TDD), 
-                continuous integration, and agile methodologies. The architecture emphasizes scalability, 
-                maintainability, and security, with comprehensive documentation and automated testing coverage.
+                Throughout the semester, there were several check-ins and additions to add onto our first iteration to further showcase our mastery of the program, but some of those have been removed from the preview found below. 
+                Personally, I found a few of these additions to be an aesthetic downgrade or out of place, hence why I left them out of this final result so I could showcase a model I am proud of.
+            </p>
+            
+            <h3>The Idea And Inspirations</h3>
+            <p>
+                Choosing a food item to theme my stall around was not a difficult task, as I immediately landed on sushi and onigiri, both traditional Japanese rice dishes. 
+                I chose these because they have rather simple but still distinct shapes that I felt would translate well to a 3D model. 
+                Aside from that, it made choosing a visual theme quite easy as I could lean more into Eastern aesthetics, which I find visually appealing.
+            </p>
+            
+            <div class="image-carousel-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <div class="image-carousel" id="carousel">
+                    <div class="carousel-image active">
+                        <img src="../Assets/InspoCaroussel/1.png" alt="Food Stall Inspiration 1">
+                        <div class="carousel-caption">A Kitsune, portrayed with red, white and gold as they often are in folklore</div>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="../Assets/InspoCaroussel/2.png" alt="Food Stall Inspiration 2">
+                        <div class="carousel-caption">Onigiri, a Japanese rice ball often wrapped in seaweed</div>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="../Assets/InspoCaroussel/3.png" alt="Food Stall Inspiration 3">
+                        <div class="carousel-caption">A Torii gate, a recognisable piece of Japanese architecture</div>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="../Assets/InspoCaroussel/4.png" alt="Food Stall Inspiration 4">
+                        <div class="carousel-caption">Sushi, specifically nigiri and uramaki, another recogniseable food</div>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="../Assets/InspoCaroussel/5.png" alt="Food Stall Inspiration 5">
+                        <div class="carousel-caption">The red, white, and gold color palette I settled on for my model</div>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="../Assets/InspoCaroussel/6.png" alt="Food Stall Inspiration 6">
+                        <div class="carousel-caption">Dango, a snack I retroactively decided to add since the wall felt too plain</div>
+                    </div>
+                </div>
+                
+                <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    let currentImageIndex = 0;
+                    const images = document.querySelectorAll('.carousel-image');
+                    const totalImages = images.length;
+                    
+                    console.log('Total images found:', totalImages); // Debug log
+                    
+                    function showImage(index) {
+                        images.forEach((img, i) => {
+                            img.classList.toggle('active', i === index);
+                        });
+                    }
+                    
+                    function nextImage() {
+                        currentImageIndex = (currentImageIndex + 1) % totalImages;
+                        console.log('Next image index:', currentImageIndex); // Debug log
+                        showImage(currentImageIndex);
+                    }
+                    
+                    function previousImage() {
+                        currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                        console.log('Previous image index:', currentImageIndex); // Debug log
+                        showImage(currentImageIndex);
+                    }
+                    
+                    window.nextImage = nextImage;
+                    window.previousImage = previousImage;
+                });
+            </script>
+            
+            <p>
+                As a mascot of sorts, I chose the Kitsune, a fox spirit from Japanese folklore that leant themselves to the theme of the project as well as the red, white and gold colours often associated with the country. 
+                I also incorporated a torii gate into the menu stand, along with giving the main body of the stand a more traditional roof style to bring it all together.
             </p>
 
-            <a href="#" class="btn">View Documentation</a>
-            <a href="#" class="btn">API Reference</a>
+            <h3>The Final Result</h3>
+            <p>
+                Below is the final result of my 3D food stall model. It includes dynamic lighting as well as wind animations. 
+                Overall, this project allowed me to explore both technical and artistic aspects of 3D modeling and was a proper conclusion to the course. I am proud of the final result and the skills I developed throughout the process.
+            </p>
+            <p>
+            </p>
+            
+            <div style="display: flex; align-items: center; gap: 30px; margin: 20px auto; flex-wrap: nowrap; justify-content: center; max-width: 1000px;">
+                <img src="../Assets/foodstand.gif" alt="3D Food Stall Animation" style="flex: 0 0 auto; width: 60%; max-width: 500px; height: auto; border-radius: 12px; border: 2px solid rgba(120, 119, 198, 0.3); box-shadow: 0 8px 32px rgba(79, 70, 229, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 12px 48px rgba(79, 70, 229, 0.25)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 32px rgba(79, 70, 229, 0.15)'">
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; flex: 0 0 auto; width: 40%; min-width: 250px;">
+                    <p style="margin: 0 0 15px 0; font-size: 0.95rem;">The model is available for download in .blend format if you would like to explore it further in Blender yourself.</p>
+                    <a href="../Assets/Foodstand.blend" download="Foodstand.blend" class="btn btn2" style="margin-right: 0;">Download Blender File</a>
+                    <p style="font-size: 0.8em; color: #888; margin: 10px 0 0 0; line-height: 1.3;">This model is shared for portfolio demonstration purposes only. Please do not use it for commercial projects or otherwise redistribute it.</p>
+                </div>
+            </div>
         </section>
     </div>
 
