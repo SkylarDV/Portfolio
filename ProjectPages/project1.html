@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Application - My Portfolio</title>    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
+    <title>Functional Webshop - My Portfolio</title>    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <div class="dropdown">
                 <span class="nav-link dropdown-toggle active">Projects</span>
                 <div class="dropdown-content">
-                    <a href="project1.html">Web Development</a>
+                    <a href="project1.html">Functional Webshop</a>
                     <a href="project2.html">Data Organizer & Formatter Prototype</a>
                     <a href="project3.html">3D Model Food Stall</a>
                 </div>
@@ -34,48 +34,79 @@
 
     <div class="container main-content">
         <section class="hero">
-            <h1>Modern Web Application</h1>
-            <p>Responsive design meets cutting-edge technology</p>
+            <h1>Functional Webshop</h1>
+            <p>The technologies needed for an online store</p>
         </section>
 
         <section class="project-content">
             <h2>Project Overview</h2>
             <p>
-                This modern web application showcases the latest in web development technologies, 
-                combining responsive design principles with interactive user experiences. Built with 
-                a focus on performance and accessibility, this project demonstrates advanced front-end 
-                development skills and modern best practices.
+                This project was made as the final assignment of the Back-end Development course I followed. 
+                It utilises mainly PHP and MySQL for all the functionalities, as well as some JavaScript (AJAX) for dynamic content loading. 
+                This project also serves as a first experience with server hosting through GitHub and Azure.
             </p>
 
-            <h3>Technologies Used</h3>
-            <ul>
-                <li>HTML5 & Semantic Markup</li>
-                <li>CSS3 with Advanced Features (Grid, Flexbox, Animations)</li>
-                <li>JavaScript ES6+ & Modern APIs</li>
-                <li>Responsive Design & Mobile-First Approach</li>
-                <li>Progressive Web App (PWA) Features</li>
-                <li>Performance Optimization Techniques</li>
-            </ul>
-
-            <h3>Key Features</h3>
-            <ul>
-                <li>Fully responsive design across all devices</li>
-                <li>Interactive user interface with smooth animations</li>
-                <li>Optimized performance and fast loading times</li>
-                <li>Accessibility compliance (WCAG 2.1)</li>
-                <li>Cross-browser compatibility</li>
-                <li>SEO optimized structure</li>
-            </ul>
-
-            <h3>Development Process</h3>
+            <h3>The Assignment</h3>
             <p>
-                The development process followed modern best practices, starting with wireframing and 
-                prototyping, followed by iterative development with continuous testing. The application 
-                was built using a mobile-first approach, ensuring optimal performance across all devices.
+                The requirements for the project were very specifically listed in the assignment description, as well as a step-by-step outline of how the development process should progress. 
+                Because of this, there were rather little issues to run into throughout development and the creation of the website went on without a hitch. 
+                From the beginning it was made clear that the focus should be on functionality rather than aesthetics since that was the focus of the course, but a bare minimum of appeal was still expected.
             </p>
 
-            <a href="#" class="btn">View Live Demo</a>
-            <a href="#" class="btn">View Source Code</a>
+            <h3>The Process</h3>
+            <p>
+                Because of how the assignment was set up, we were forced to abide by the schedule our teacher gave us instead of our own preferences. 
+                This meant that we had to complete each step in the order specified, without deviating from the plan, and showing the progress we had made on a weekly basis. 
+                The steps were divided as follows:
+            </p>
+            <p>
+                <strong>Step 1: Choosing a Niche</strong> <br> 
+                Everyone in our class was supposed to make a store, but we first had to let the teacher know what type of products we wanted to sell. 
+                Two people could not choose the same niche, so we had to come up with unique ideas. This was to prevent both plagiarism and direct competition or comparison between those who would have the exact same product list. 
+                Choosing the niche could go one of two ways: either we named a branded product type we wanted to sell, or we could choose to remake an existing online store and provide the same catalogue they did. <br> <br>
+                What I chose was to borrow the catalogue of <a href="https://www.ichiban-store.be">Ichiban Belgium</a>, which specializes in anime merchandise but had enough existing categories to meet the minimum requirement of 4 categories for the filter functions that would be incorporated later on.
+            </p>
+            <p>
+                <strong>Step 2: Picking Products</strong> <br>
+                As previously mentioned, we had to pick products that fit at least 4 categories. 
+                Each category had to contain at least 10 products, and each product needed a name, price, description, image, and a category assigned to it. 
+                All of this data was taken from the aforementioned Ichiban website and put into an SQL database.
+            </p>
+            <p>
+                <strong>Step 3: Creating a Database</strong> <br>
+                After creating the table with all the products, I still had to map out the rest of the database. 
+                By looking ahead in the assignment, I could already see that I would need additional tables for users, orders and reviews, as well as some connections between them. 
+                While I did make an original plan, as the project evolved further, some minor changes still had to be made along the way to ensure the full desired functionality.
+            </p>
+            <p>
+                <strong>Step 4: Building Functionalities</strong> <br>
+                With the database structure in place, I could start implementing the core functionalities of the website. 
+                This included user registration and login, product browsing, and the shopping cart system, and admin accounts with extra permissions were also created to manage the product listings.
+                I utilized PHP for the backend logic and integrated it with the SQL database to get it all working. <br> <br>
+                Due to the insistence that that "looks did not matter", I did not spend much time considering the visual design of the final result. 
+                Because of this, I could focus entirely on making sure everything worked as intended, without having to worry about CSS in the time given to finish this project. 
+                Unfortunately that also makes the final result look quite underwhelming, and if I were to start over I would spend more time considering it after all, so I can be completely proud of the final result.
+            </p>
+            <p>
+                <strong>Step 5: Deploying the Website</strong> <br>
+                For the deployment of the website, Azure was recommended to us as the hosting platform. 
+                It was free for a limited time and our teacher could provide a tutorial on how to set it up for our project. 
+                Despite these benefits, I would not use it again, as it was incredibly counterintuitive to use and required a lot more steps and information compared to other platforms that provided the same free service. 
+                This portfolio website, for example, is hosted through a .tech domain, which took me roughly 15 minutes to set up compared to the day I spent figuring out Azure (including deployment time, which was quite a lot).
+            </p>
+
+            <h3>The Final Result</h3>
+            <p>
+                The hosted website is no longer accessible because the domain it was hosted on has been taken down after the assignment was graded. 
+                However, a video demonstration of the website's primary functionalities is available below, and here is the <a href="https://github.com/SkylarDV/OnlineShop" target="_blank">link to the GitHub repository</a> containing the source code as well.
+            </p>
+            
+            <div class="video-container">
+                <video controls width="100%" style="max-width: 800px; height: auto; border-radius: 8px;">
+                    <source src="../Assets/OnlineStore.mp4" type="video/mp4">
+                    <p class="video-note">Your browser does not support the video tag. Please <a href="../Assets/OnlineStore.mp4" download>download the video</a> instead.</p>
+                </video>
+            </div>
         </section>
     </div>
 
