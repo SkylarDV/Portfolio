@@ -6,13 +6,21 @@
     <title>3D Model Food Stall - My Portfolio</title>
     <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
     <link rel="stylesheet" href="../styles.css">
+    <!-- Global error handling - must be loaded first -->
+    <script src="../global-error-handler.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../Assets/LogoIcon.png" alt="Logo" class="logo-icon">
+            <img src="../Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
             Skylar V.
-        </div>        <div class="nav-links">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
             <a href="../index.html" class="nav-link">Home</a>
             <a href="../aboutMe.html" class="nav-link">About Me</a>
             <div class="dropdown">
@@ -24,7 +32,31 @@
                 </div>
             </div>
             <div class="dropdown language-dropdown">
-                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown active">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="project1.html">Functional Webshop</a>
+                    <a href="project2.html">Data Organizer & Formatter Prototype</a>
+                    <a href="project3.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
                 <div class="dropdown-content">
                     <a href="#" onclick="switchLanguage('en')">EN</a>
                     <a href="#" onclick="switchLanguage('nl')">NL</a>
@@ -67,27 +99,27 @@
                 
                 <div class="image-carousel" id="carousel">
                     <div class="carousel-image active">
-                        <img src="../Assets/InspoCaroussel/1.png" alt="Food Stall Inspiration 1">
+                        <img src="../Assets/InspoCaroussel/1.png" alt="A Kitsune fox spirit portrayed with traditional red, white and gold colors as depicted in Japanese folklore" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 1 failed to load</div>'">
                         <div class="carousel-caption">A Kitsune, portrayed with red, white and gold as they often are in folklore</div>
                     </div>
                     <div class="carousel-image">
-                        <img src="../Assets/InspoCaroussel/2.png" alt="Food Stall Inspiration 2">
+                        <img src="../Assets/InspoCaroussel/2.png" alt="Onigiri - traditional Japanese rice balls wrapped in seaweed, used as food inspiration for the 3D model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 2 failed to load</div>'">
                         <div class="carousel-caption">Onigiri, a Japanese rice ball often wrapped in seaweed</div>
                     </div>
                     <div class="carousel-image">
-                        <img src="../Assets/InspoCaroussel/3.png" alt="Food Stall Inspiration 3">
+                        <img src="../Assets/InspoCaroussel/3.png" alt="Traditional Torii gate showcasing recognizable Japanese architectural elements used as structural inspiration" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 3 failed to load</div>'">
                         <div class="carousel-caption">A Torii gate, a recognisable piece of Japanese architecture</div>
                     </div>
                     <div class="carousel-image">
-                        <img src="../Assets/InspoCaroussel/4.png" alt="Food Stall Inspiration 4">
+                        <img src="../Assets/InspoCaroussel/4.png" alt="Sushi varieties including nigiri and uramaki rolls, representing authentic Japanese cuisine for the food stall model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 4 failed to load</div>'">
                         <div class="carousel-caption">Sushi, specifically nigiri and uramaki, another recogniseable food</div>
                     </div>
                     <div class="carousel-image">
-                        <img src="../Assets/InspoCaroussel/5.png" alt="Food Stall Inspiration 5">
+                        <img src="../Assets/InspoCaroussel/5.png" alt="Red, white, and gold color palette reference used as the primary color scheme for the 3D food stall model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 5 failed to load</div>'">
                         <div class="carousel-caption">The red, white, and gold color palette I settled on for my model</div>
                     </div>
                     <div class="carousel-image">
-                        <img src="../Assets/InspoCaroussel/6.png" alt="Food Stall Inspiration 6">
+                        <img src="../Assets/InspoCaroussel/6.png" alt="Dango - traditional Japanese sweet dumplings on skewers, added to enhance the food stall's wall decoration" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 6 failed to load</div>'">
                         <div class="carousel-caption">Dango, a snack I retroactively decided to add since the wall felt too plain</div>
                     </div>
                 </div>
@@ -140,24 +172,75 @@
                 Below is the final result of my 3D food stall model. It includes dynamic lighting as well as wind animations. 
                 Overall, this project allowed me to explore both technical and artistic aspects of 3D modeling and was a proper conclusion to the course. I am proud of the final result and the skills I developed throughout the process.
             </p>
-            <p>
-            </p>
             
-            <div style="display: flex; align-items: center; gap: 30px; margin: 20px auto; flex-wrap: nowrap; justify-content: center; max-width: 1000px;">
-                <img src="../Assets/Foodstand.gif" alt="3D Food Stall Animation" style="flex: 0 0 auto; width: 60%; max-width: 500px; height: auto; border-radius: 12px; border: 2px solid rgba(120, 119, 198, 0.3); box-shadow: 0 8px 32px rgba(79, 70, 229, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 12px 48px rgba(79, 70, 229, 0.25)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 32px rgba(79, 70, 229, 0.15)'">
-                <div style="display: flex; flex-direction: column; align-items: center; text-align: center; flex: 0 0 auto; width: 40%; min-width: 250px;">
-                    <p style="margin: 0 0 15px 0; font-size: 0.95rem;">The model is available for download in .blend format if you would like to explore it further in Blender yourself.</p>
-                    <a href="../Assets/Foodstand.blend" download="Foodstand.blend" class="btn btn2" style="margin-right: 0;">Download Blender File</a>
-                    <p style="font-size: 0.8em; color: #888; margin: 10px 0 0 0; line-height: 1.3;">This model is shared for portfolio demonstration purposes only. Please do not use it for commercial projects or otherwise redistribute it.</p>
+            
+            <div class="project3-layout">
+                <img src="../Assets/Foodstand.gif" alt="3D Food Stall Animation" class="project3-gif" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<div class=&quot;image-error&quot;>🖼️ Image failed to load</div>')">
+                <div class="project3-content">
+                    <p class="project3-description">The model is available for download in .blend format if you would like to explore it further in Blender yourself.</p>
+                    <a href="../Assets/Foodstand.blend" download="Foodstand.blend" class="btn btn2 project3-btn" onclick="return validateDownload(this, 'Blender File')">Download Blender File</a>
+                    <p class="project3-disclaimer">This model is shared for portfolio demonstration purposes only. Please do not use it for commercial projects or otherwise redistribute it.</p>
                 </div>
             </div>
+            <p>
+                My favourite parts of model are some of the details I added retroactively because the result I had at the time seemed to be lackluster. 
+                This food stall model went through many iterations before I was fully satisfied with it, and I am glad I kept making these changes.
+            </p>
+            
+            <!-- Detail Images Side by Side -->
+            <div class="detail-images-container">
+                <div class="detail-image-wrapper">
+                    <img src="../Assets/detail1.png" alt="Close-up view of the 3D food stall showing detailed textures of various food types modeled, with dango bags against the back wall" class="detail-image" onerror="this.parentElement.innerHTML='<div class=&quot;image-error detail-error&quot;>🖼️ Detail image 1 failed to load</div>'">
+                    <div class="detail-caption">The different food types I modeled, with the dango bags against the back wall</div>
+                </div>
+                <div class="detail-image-wrapper">
+                    <img src="../Assets/detail2.png" alt="Detailed view of the food stall's dining area featuring 2 chairs, plates and pairs of chopsticks, with the menu displayed against the wall" class="detail-image" onerror="this.parentElement.innerHTML='<div class=&quot;image-error detail-error&quot;>🖼️ Detail image 2 failed to load</div>'">
+                    <div class="detail-caption">The dining area, with 2 chairs, plates and pairs of chopsticks, as well as the menu against the wall</div>
+                </div>
+            </div>
+            <p>
+                The model's presented in low lighting since Kitsune are mischievous spirits, so I wanted to present this food stall in a somewhat haunted way. 
+                The lanterns are also animated to flicker to support this idea. Figuring out the lighting dynamics might have been the hardest part of the whole assignment.
+            </p>
+            <p>
+                Blender is a program I find quite pleasant to use, though I do tend to get a bit lost in the details. The many possibilities and the creative nature of the work is specifically up my alley.
+            </p>
         </section>
+        
+        <!-- Back to Projects Button -->
+        <div class="back-button-container">
+            <a href="../index.html" class="btn back-button">
+                ← Back to Projects
+            </a>
+        </div>
     </div>
 
     <!-- Sparkle Trail Effect -->
     <script src="../sparkle-trail.js"></script>
+    <script src="../hamburger-menu.js"></script>
     
     <script>
+        // Download validation function
+        function validateDownload(linkElement, fileName) {
+            // Create a temporary request to check if file exists
+            const xhr = new XMLHttpRequest();
+            xhr.open('HEAD', linkElement.href, false);
+            try {
+                xhr.send();
+                if (xhr.status === 404) {
+                    alert(`Sorry, the ${fileName} is currently unavailable. Please try again later.`);
+                    return false;
+                } else if (xhr.status !== 200 && xhr.status !== 0) {
+                    alert(`There was an issue accessing the ${fileName}. Please try again later.`);
+                    return false;
+                }
+            } catch (error) {
+                // If there's a CORS error or other issue, allow the download to proceed
+                console.warn('Could not validate download:', error);
+            }
+            return true;
+        }
+        
         function switchLanguage(lang) {
             if (lang === 'nl') {
                 window.location.href = '../../PortfolioNL/ProjectPages/project3NL.html';

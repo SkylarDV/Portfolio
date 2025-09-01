@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functional Webshop - My Portfolio</title>    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
     <link rel="stylesheet" href="../styles.css">
+    <!-- Global error handling - must be loaded first -->
+    <script src="../global-error-handler.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../Assets/LogoIcon.png" alt="Logo" class="logo-icon">
+            <img src="../Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
             Skylar V.
-        </div>        <div class="nav-links">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
             <a href="../index.html" class="nav-link">Home</a>
             <a href="../aboutMe.html" class="nav-link">About Me</a>
             <div class="dropdown">
@@ -23,7 +31,31 @@
                 </div>
             </div>
             <div class="dropdown language-dropdown">
-                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown active">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="project1.html">Functional Webshop</a>
+                    <a href="project2.html">Data Organizer & Formatter Prototype</a>
+                    <a href="project3.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
                 <div class="dropdown-content">
                     <a href="#" onclick="switchLanguage('en')">EN</a>
                     <a href="#" onclick="switchLanguage('nl')">NL</a>
@@ -102,16 +134,24 @@
             </p>
             
             <div class="video-container">
-                <video controls width="100%" style="max-width: 800px; height: auto; border-radius: 8px;">
+                <video controls width="100%" class="video-styled" title="Functional webshop demonstration video showing user registration, product browsing, cart management, and checkout process" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;video-error&quot;>❌ Video failed to load. <a href=&quot;../Assets/OnlineStore.mp4&quot; download>Download video</a> instead.</div>'">
                     <source src="../Assets/OnlineStore.mp4" type="video/mp4">
                     <p class="video-note">Your browser does not support the video tag. Please <a href="../Assets/OnlineStore.mp4" download>download the video</a> instead.</p>
                 </video>
             </div>
         </section>
+        
+        <!-- Back to Projects Button -->
+        <div class="back-button-container">
+            <a href="../index.html" class="btn back-button">
+                ← Back to Projects
+            </a>
+        </div>
     </div>
 
     <!-- Sparkle Trail Effect -->
     <script src="../sparkle-trail.js"></script>
+    <script src="../hamburger-menu.js"></script>
     
     <script>
         // Language selector functionality (placeholder for future multilingual feature)

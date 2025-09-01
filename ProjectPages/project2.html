@@ -6,13 +6,22 @@
     <title>Data Organizer & Formatter Prototype - My Portfolio</title>
     <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Global error handling - must be loaded first -->
+    <script src="../global-error-handler.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../Assets/LogoIcon.png" alt="Logo" class="logo-icon">
+            <img src="../Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
             Skylar V.
-        </div>        <div class="nav-links">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
             <a href="../index.html" class="nav-link">Home</a>
             <a href="../aboutMe.html" class="nav-link">About Me</a>
             <div class="dropdown">
@@ -24,7 +33,31 @@
                 </div>
             </div>
             <div class="dropdown language-dropdown">
-                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown active">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="project1.html">Functional Webshop</a>
+                    <a href="project2.html">Data Organizer & Formatter Prototype</a>
+                    <a href="project3.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
                 <div class="dropdown-content">
                     <a href="#" onclick="switchLanguage('en')">EN</a>
                     <a href="#" onclick="switchLanguage('nl')">NL</a>
@@ -40,11 +73,28 @@
         </section>
 
         <section class="project-content">
-            <h2>Project Overview</h2>
-            <p>This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. 
-                The preview below is a recreation of the original task with a full rundown of the project, or you can <a href="#demonstration">jump straight ahead</a> to the demonstration</p>
-            <p>I was not hired as a developer, but rather as a student assistant to one of the long-term employees. 
-                After disclosing my education, he then asked for me to make the following project during the hours I was listed to assist him.</p>
+            <div class="project-overview-section">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p>This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. 
+                        The preview below is a recreation of the original task with a full rundown of the project, or you can <a href="#demonstration">jump straight ahead</a> to the demonstration</p>
+                    <p>I was not hired as a developer, but rather as a student assistant to one of the long-term employees. 
+                        After disclosing my education, he then asked for me to make the following project during the hours I was listed to assist him.</p>
+                </div>
+                <div class="supervisor-contact-box">
+                    <div class="contact-details">
+                        <h3>Supervisor Contact</h3>
+                        <div class="contact-info-item">
+                            <h3><i class="fas fa-envelope"></i> Email</h3>
+                            <p>bart_bunkens@thegbfoods.com</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h3><i class="fas fa-phone"></i> Phone</h3>
+                            <p>+32 0477 50 10 51</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <h3>The Original Vision</h3>
             <p>
@@ -53,7 +103,7 @@
                 For this reason, my supervisor was looking into a solution and eventually asked me if I knew of a way to streamline this process.
             </p>
             <p>
-                My proposed solution was to create a webpage with PHP and SQL that would take these excel files (exported as csv files) and automatically add them to the grand overarching database. 
+                My proposed solution was to create a webpage with PHP and SQL that would take these Excel files (exported as CSV files) and automatically add them to the grand overarching database. 
                 Once there, the data could be sorted, filtered and searched conveniently.
             </p>
 
@@ -75,8 +125,18 @@
                 He asked me to prioritize the handling of data sourced from the biggest distributor first, a file that consisted of over 22 000 lines. Because of this, the code had to be significantly optimized for wait times to be reasonable. 
                 Unfortunately, once I had gotten to the point where after the uploading the file a searchable table was created, the aforementioned security update happened and I could no longer continue.
             </p>
+            <p>
+                How I ended up writing the code is as follows: Since every dataset would be sent to the company through an Excel file, I looked into how to process those and found they could be exported as a CSV (Comma Seperated Values) file. 
+                These would then be uploaded into the page and processed into the correct format to be added to the database. 
+                Through the reasoning that the same company would format their data the same way every time, I added the requirement to check the data source before upload so it could be processed correctly. 
+                From there on out I could display the processed data in a table that had search and filtering functions, as requested.
+            </p>
 
             <h3 id="demonstration">The Final Result</h3>
+
+            <p>
+                The original project was lost, as I could not send it over to my personal laptop, but since I had recently written the code and still recalled all the logic behind it, the reconstruction took rather little time.
+            </p>
             
             <div class="disclaimer-box">
                 <div class="disclaimer-icon">
@@ -95,7 +155,7 @@
                 The file below is a zip file with 3 different sources of dummy sales data in CSV format that can be used to test the prototype. 
                 If you would prefer not to download this file, there is also a recording of myself using this program.
             </p>
-            <a href="../Assets/DummyData.zip" download="DummyData.zip" class="btn">Download Sample Data For Testing</a>
+            <a href="../Assets/DummyData.zip" download="DummyData.zip" class="btn" onclick="return validateDownload(this, 'Sample Data')">Download Sample Data For Testing</a>
             <a href="javascript:void(0)" class="btn btn2" onclick="showVideoInstead()"> Watch The Video Instead</a>
             
             <p>
@@ -116,10 +176,10 @@
                 <input type="file" id="csvFileInput" accept=".csv" hidden>
             </div>
             
-            <div id="fileStatus" class="file-status" style="display: none;"></div>
+            <div id="fileStatus" class="file-status hidden"></div>
             
             <!-- Distributor Selection and Processing -->
-            <div id="processingSection" class="processing-section" style="display: none;">
+            <div id="processingSection" class="processing-section hidden">
                 <h3>Data Processing Options</h3>
                 <p>Please select the distributor that provided the uploaded file:</p>
                 
@@ -140,7 +200,7 @@
             </div>
             
             <!-- CSV Data Table Display -->
-            <div id="csvTableContainer" class="csv-table-container" style="display: none;">
+            <div id="csvTableContainer" class="csv-table-container hidden">
                 <h3>Distributor Data 2o25</h3>
                 
                 <!-- Search and Data Controls -->
@@ -173,7 +233,7 @@
                             </div>
                         </div>
                         <div class="search-actions">
-                            <button id="clearSearchBtn" class="btn btn-secondary search-btn" style="display: none;">Clear Search</button>
+                            <button id="clearSearchBtn" class="btn btn-secondary search-btn hidden">Clear Search</button>
                             <button id="clearTableBtn" class="btn btn-warning search-btn">Clear All Data</button>
                         </div>
                     </div>
@@ -187,6 +247,13 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Back to Projects Button -->
+        <div class="back-button-container">
+            <a href="../index.html" class="btn back-button">
+                ← Back to Projects
+            </a>
+        </div>
     </div>
 
     <!-- Sparkle Trail Effect -->
@@ -208,6 +275,16 @@
             video.style.maxWidth = '800px';
             video.style.height = 'auto';
             video.style.borderRadius = '8px';
+            video.title = 'Data organizer prototype demonstration showing CSV file upload, distributor selection, data processing, and formatted output generation';
+            
+            // Add error handling for video
+            video.onerror = function() {
+                this.style.display = 'none';
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'video-error';
+                errorDiv.innerHTML = '❌ Video failed to load. <a href="../Assets/DataPreviewVid.mp4" download>Download video</a> instead.';
+                this.parentNode.insertBefore(errorDiv, this.nextSibling);
+            };
             
             // Add video source
             video.innerHTML = `
@@ -346,6 +423,27 @@
         // Initialize upload zone functionality
         initializeUploadZone();
 
+        // Download validation function
+        function validateDownload(linkElement, fileName) {
+            // Create a temporary request to check if file exists
+            const xhr = new XMLHttpRequest();
+            xhr.open('HEAD', linkElement.href, false);
+            try {
+                xhr.send();
+                if (xhr.status === 404) {
+                    alert(`Sorry, the ${fileName} is currently unavailable. Please try again later.`);
+                    return false;
+                } else if (xhr.status !== 200 && xhr.status !== 0) {
+                    alert(`There was an issue accessing the ${fileName}. Please try again later.`);
+                    return false;
+                }
+            } catch (error) {
+                // If there's a CORS error or other issue, allow the download to proceed
+                console.warn('Could not validate download:', error);
+            }
+            return true;
+        }
+
         function handleFile(file) {
             // Check if file is CSV
             if (!file.name.toLowerCase().endsWith('.csv')) {
@@ -364,10 +462,27 @@
             // Read the CSV file and store content
             const reader = new FileReader();
             reader.onload = function(e) {
-                currentCsvContent = e.target.result;
-                showProcessingSection();
+                try {
+                    currentCsvContent = e.target.result;
+                    showProcessingSection();
+                } catch (error) {
+                    showFileStatus('error', 'Error processing file content: ' + error.message);
+                }
             };
-            reader.readAsText(file);
+            
+            reader.onerror = function() {
+                showFileStatus('error', 'Error reading file. Please try again.');
+            };
+            
+            reader.onabort = function() {
+                showFileStatus('error', 'File reading was aborted. Please try again.');
+            };
+            
+            try {
+                reader.readAsText(file);
+            } catch (error) {
+                showFileStatus('error', 'Error starting file read: ' + error.message);
+            }
         }
 
         function showProcessingSection() {
@@ -446,73 +561,124 @@
         });
 
         function parseAndDisplayCSV(csvContent, distributorType = 'distributor3') {
-            // Split CSV into lines
-            const lines = csvContent.split('\n').filter(line => line.trim() !== '');
-            
-            if (lines.length < 2) {
-                showFileStatus('error', 'CSV file must have at least 2 lines (headers and data).');
-                return;
-            }
-
-            // Parse CSV (simple parser - handles basic CSV format)
-            function parseCSVLine(line) {
-                const result = [];
-                let current = '';
-                let inQuotes = false;
+            try {
+                // Validate input
+                if (!csvContent || typeof csvContent !== 'string') {
+                    showFileStatus('error', 'Invalid file content. Please upload a valid CSV file.');
+                    return;
+                }
                 
-                for (let i = 0; i < line.length; i++) {
-                    const char = line[i];
-                    if (char === '"') {
-                        inQuotes = !inQuotes;
-                    } else if (char === ',' && !inQuotes) {
+                // Check for BOM and remove if present
+                if (csvContent.charCodeAt(0) === 0xFEFF) {
+                    csvContent = csvContent.substr(1);
+                }
+                
+                // Split CSV into lines
+                const lines = csvContent.split('\n').filter(line => line.trim() !== '');
+                
+                if (lines.length < 2) {
+                    showFileStatus('error', 'CSV file must have at least 2 lines (headers and data).');
+                    return;
+                }
+                
+                // Check if file appears to be empty or corrupted
+                if (csvContent.trim().length === 0) {
+                    showFileStatus('error', 'The uploaded file appears to be empty.');
+                    return;
+                }
+            
+                // Parse CSV (simple parser - handles basic CSV format)
+                function parseCSVLine(line) {
+                    const result = [];
+                    let current = '';
+                    let inQuotes = false;
+                    
+                    try {
+                        for (let i = 0; i < line.length; i++) {
+                            const char = line[i];
+                            if (char === '"') {
+                                inQuotes = !inQuotes;
+                            } else if (char === ',' && !inQuotes) {
+                                result.push(current.trim());
+                                current = '';
+                            } else if (char === '\t' && !inQuotes) {
+                                result.push(current.trim());
+                                current = '';
+                            } else {
+                                current += char;
+                            }
+                        }
                         result.push(current.trim());
-                        current = '';
-                    } else if (char === '\t' && !inQuotes) {
-                        result.push(current.trim());
-                        current = '';
-                    } else {
-                        current += char;
+                        return result;
+                    } catch (error) {
+                        throw new Error(`Error parsing CSV line: ${error.message}`);
                     }
                 }
-                result.push(current.trim());
-                return result;
-            }
-
-            // Skip first line and use second line as headers (as per requirement)
-            const originalHeaders = parseCSVLine(lines[1]);
-            const dataRows = lines.slice(2).map(line => parseCSVLine(line));
-
-            let finalHeaders, finalData;
-
-            if (distributorType === 'distributor1') {
-                // Transform data from wide to long format (Distributor 1)
-                finalData = transformToLongFormat(originalHeaders, dataRows);
-                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
-            } else if (distributorType === 'distributor2') {
-                // Transform data from distributor 2 format to distributor 1 format
-                finalData = transformDistributor2ToDistributor1(originalHeaders, dataRows);
-                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
-            } else if (distributorType === 'distributor3') {
-                // Transform data from distributor 3 format to distributor 1 format
-                finalData = transformDistributor3ToDistributor1(originalHeaders, dataRows);
-                finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
-            } else {
-                // Show original format
-                finalHeaders = originalHeaders;
-                finalData = dataRows;
-            }
-
-            // Create table with final data (will accumulate if data already exists)
-            createTable(finalHeaders, finalData);
             
-            // Show table container
-            document.getElementById('csvTableContainer').style.display = 'block';
-            
-            // Scroll to table
-            document.getElementById('csvTableContainer').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
-            });
+                // Skip first line and use second line as headers (as per requirement)
+                let originalHeaders, dataRows;
+                
+                try {
+                    originalHeaders = parseCSVLine(lines[1]);
+                    dataRows = lines.slice(2).map(line => parseCSVLine(line));
+                } catch (error) {
+                    showFileStatus('error', `Error parsing CSV structure: ${error.message}`);
+                    return;
+                }
+                
+                // Validate that we have some data
+                if (originalHeaders.length === 0) {
+                    showFileStatus('error', 'No headers found in CSV file.');
+                    return;
+                }
+                
+                if (dataRows.length === 0) {
+                    showFileStatus('error', 'No data rows found in CSV file.');
+                    return;
+                }
+
+                let finalHeaders, finalData;
+
+                try {
+                    if (distributorType === 'distributor1') {
+                        // Transform data from wide to long format (Distributor 1)
+                        finalData = transformToLongFormat(originalHeaders, dataRows);
+                        finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+                    } else if (distributorType === 'distributor2') {
+                        // Transform data from distributor 2 format to distributor 1 format
+                        finalData = transformDistributor2ToDistributor1(originalHeaders, dataRows);
+                        finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+                    } else if (distributorType === 'distributor3') {
+                        // Transform data from distributor 3 format to distributor 1 format
+                        finalData = transformDistributor3ToDistributor1(originalHeaders, dataRows);
+                        finalHeaders = ['Client Name', 'Client Number', 'Product Name', 'Product Number', 'Amount', 'Time'];
+                    } else {
+                        // Show original format
+                        finalHeaders = originalHeaders;
+                        finalData = dataRows;
+                    }
+
+                    // Create table with final data (will accumulate if data already exists)
+                    createTable(finalHeaders, finalData);
+                    
+                    // Show table container
+                    document.getElementById('csvTableContainer').style.display = 'block';
+                    
+                    // Scroll to table
+                    document.getElementById('csvTableContainer').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                    
+                } catch (error) {
+                    showFileStatus('error', `Error processing data: ${error.message}`);
+                    return;
+                }
+                
+            } catch (error) {
+                showFileStatus('error', `Unexpected error: ${error.message}`);
+                console.error('CSV parsing error:', error);
+            }
         }
 
         function transformToLongFormat(headers, dataRows) {
@@ -909,5 +1075,7 @@
             return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
         }
     </script>
+
+    <script src="../hamburger-menu.js"></script>
 </body>
 </html>

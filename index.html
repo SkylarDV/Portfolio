@@ -6,13 +6,21 @@
     <title>My Portfolio</title>
     <link rel="icon" type="image/png" href="Assets/LogoIcon.png">
     <link rel="stylesheet" href="styles.css">
+    <!-- Global error handling - must be loaded first -->
+    <script src="global-error-handler.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="Assets/LogoIcon.png" alt="Logo" class="logo-icon">
+            <img src="Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
             Skylar V.
-        </div>        <div class="nav-links">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="aboutMe.html" class="nav-link">About Me</a>
             <div class="dropdown">
@@ -24,7 +32,31 @@
                 </div>
             </div>
             <div class="dropdown language-dropdown">
-                <span class="nav-link dropdown-toggle" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); border: 1px solid rgba(120, 119, 198, 0.3); border-radius: 12px; padding: 0.4rem 0.8rem; color: #ffffff; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); min-width: 50px; text-align: center;">EN</span>
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1.html">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
                 <div class="dropdown-content">
                     <a href="#" onclick="switchLanguage('en')">EN</a>
                     <a href="#" onclick="switchLanguage('nl')">NL</a>
@@ -35,6 +67,7 @@
         <section class="hero" id="home">
             <h1>Hello, I'm Skylar</h1>
             <p>A passionate developer creating amazing digital experiences</p>
+            <a href="aboutMe.html" class="btn">Learn More About Me ➔</a>
         </section><section class="projects" id="projects">
             <h2>Featured Projects</h2>
             <div class="project-grid">                <div class="project-card" id="project1">
@@ -53,7 +86,7 @@
 
                 <div class="project-card" id="project3">
                     <h3>3D Model Food Stall</h3>
-                    <p>A comprehensive full-stack application combining modern frontend frameworks with robust backend architecture. Features include RESTful API development, database management, and cloud deployment.</p>
+                    <p>A model created in Blender showcasing a food stall inspired by Japanese culture and cuisine originally created for a school project that showcases detailed modeling and dynamic lighting.</p>
                     <div class="project-status">3D Modeling Project</div>
                     <a href="ProjectPages/project3.html" class="btn">View Project</a>
                 </div>
@@ -63,6 +96,7 @@
     <!-- Sparkle Trail Effect -->
     <script src="sparkle-trail.js"></script>
     
+    <script src="hamburger-menu.js"></script>
     <script>
         // Language selector functionality (placeholder for future multilingual feature)
         function switchLanguage(lang) {
