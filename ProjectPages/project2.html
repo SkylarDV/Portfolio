@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Global error handling - must be loaded first -->
     <script src="../global-error-handler.js"></script>
+    <!-- Language management -->
+    <script src="../language-manager.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -22,14 +24,14 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <a href="../index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="../aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle active">Projects</span>
+                <span class="nav-link dropdown-toggle active" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="project1.html">Functional Webshop</a>
-                    <a href="project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="project3.html">3D Model Food Stall</a>
+                    <a href="project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -68,73 +70,71 @@
 
     <div class="container main-content">
         <section class="hero">
-            <h1>Data Organizer & Formatter Prototype</h1>
-            <p>For convenience, speed and clarity</p>
+            <h1 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h1>
+            <p data-translate="hero.subtitle.project2">For convenience, speed and clarity</p>
         </section>
 
         <section class="project-content">
             <div class="project-overview-section">
                 <div class="overview-content">
-                    <h2>Project Overview</h2>
-                    <p>This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. 
-                        The preview below is a recreation of the original task with a full rundown of the project, or you can <a href="#demonstration">jump straight ahead</a> to the demonstration</p>
-                    <p>I was not hired as a developer, but rather as a student assistant to one of the long-term employees. 
-                        After disclosing my education, he then asked for me to make the following project during the hours I was listed to assist him.</p>
+                    <h2 data-translate="project.overview">Project Overview</h2>
+                    <p><span data-translate="project2.intro1">This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. The preview below is a recreation of the original task with a full rundown of the project, or you can</span> <a href="#demonstration" data-translate="project2.intro2">jump straight ahead</a> <span data-translate="project2.intro3">to the demonstration</span></p>
+                    <p data-translate="project2.intro4">I was not hired as a developer, but rather as a student assistant to one of the long-term employees. After disclosing my education, he then asked for me to make the following project during the hours I was listed to assist him.</p>
                 </div>
                 <div class="supervisor-contact-box">
                     <div class="contact-details">
-                        <h3>Supervisor Contact</h3>
+                        <h3 data-translate="supervisor.contact">Supervisor Contact</h3>
                         <div class="contact-info-item">
-                            <h3><i class="fas fa-envelope"></i> Email</h3>
+                            <h3><i class="fas fa-envelope"></i> <span data-translate="contact.email">Email</span></h3>
                             <p>bart_bunkens@thegbfoods.com</p>
                         </div>
                         <div class="contact-info-item">
-                            <h3><i class="fas fa-phone"></i> Phone</h3>
+                            <h3><i class="fas fa-phone"></i> <span data-translate="contact.phone">Phone</span></h3>
                             <p>+32 0477 50 10 51</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <h3>The Original Vision</h3>
-            <p>
+            <h3 data-translate="project2.vision">The Original Vision</h3>
+            <p data-translate="project2.vision1">
                 The export department of the company receives quarterly to yearly reports of the sales of their distributors.
                 Each of these has their own style of noting down the information in a spreadsheet and thus getting a complete overview of the total sales made was inconvenient. 
                 For this reason, my supervisor was looking into a solution and eventually asked me if I knew of a way to streamline this process.
             </p>
-            <p>
+            <p data-translate="project2.vision2">
                 My proposed solution was to create a webpage with PHP and SQL that would take these Excel files (exported as CSV files) and automatically add them to the grand overarching database. 
                 Once there, the data could be sorted, filtered and searched conveniently.
             </p>
 
-            <h3>What went wrong?</h3>
-            <p>
+            <h3 data-translate="project2.went-wrong">What went wrong?</h3>
+            <p data-translate="project2.went-wrong-text">
                 Due to an unforeseen and unannounced strengthening of security measures pushed by the Spanish branch of the company (being the head of all departments globally), several issues arose: 
                 The key functionality of uploading files into this website was blocked on all work devices due to privacy and sensitive data concerns, along with the firewall blocking the server I was running for my development process. 
                 Because of these factors, it was agreed that the development would no longer continue, but my supervisor had no objections to me including this recreation in my portfolio website with reference to him.
             </p>
 
-            <h3>The Development Process</h3>
-            <p>
+            <h3 data-translate="project2.development">The Development Process</h3>
+            <p data-translate="project2.development-text1">
                 From the initial briefing, functionality had been indicated as the core concern regarding the project, with little to no cares regarding the aesthetics. 
                 This meant that I did not draft any page design before I jumped into the programming phase, deciding to stick to the company colours and a very minimal styling. 
                 Because of the way my employment was handled, I had limited time to work on the project, so I decided to distribute all my hours carefully, thus deciding not to have a design phase.
             </p>
-            <p>
+            <p data-translate="project2.development-text2">
                 My client had already outlined certain steps for me to take since he did know how tight of a time window I was working with, and so offered me the core functionalities he would like to see in the order of importance. 
                 He asked me to prioritize the handling of data sourced from the biggest distributor first, a file that consisted of over 22 000 lines. Because of this, the code had to be significantly optimized for wait times to be reasonable. 
                 Unfortunately, once I had gotten to the point where after the uploading the file a searchable table was created, the aforementioned security update happened and I could no longer continue.
             </p>
-            <p>
+            <p data-translate="project2.development-text3">
                 How I ended up writing the code is as follows: Since every dataset would be sent to the company through an Excel file, I looked into how to process those and found they could be exported as a CSV (Comma Seperated Values) file. 
                 These would then be uploaded into the page and processed into the correct format to be added to the database. 
                 Through the reasoning that the same company would format their data the same way every time, I added the requirement to check the data source before upload so it could be processed correctly. 
                 From there on out I could display the processed data in a table that had search and filtering functions, as requested.
             </p>
 
-            <h3 id="demonstration">The Final Result</h3>
+            <h3 id="demonstration" data-translate="project2.final-result">The Final Result</h3>
 
-            <p>
+            <p data-translate="project2.final-result-text">
                 The original project was lost, as I could not send it over to my personal laptop, but since I had recently written the code and still recalled all the logic behind it, the reconstruction took rather little time.
             </p>
             
@@ -147,16 +147,16 @@
                     </svg>
                 </div>
                 <div class="disclaimer-content">
-                    <strong>Note:</strong> The code below is not a 1 to 1 reconstruction of the original project, the most prominent difference being that within this portfolio I do not work with a database. All entries are stored locally and will be forgotten upon page reload.
+                    <strong>Note:</strong> <span data-translate="project2.disclaimer">The code below is not a 1 to 1 reconstruction of the original project, the most prominent difference being that within this portfolio I do not work with a database. All entries are stored locally and will be forgotten upon page reload.</span>
                 </div>
             </div>
             
-            <p>
+            <p data-translate="project2.test-data-text">
                 The file below is a zip file with 3 different sources of dummy sales data in CSV format that can be used to test the prototype. 
                 If you would prefer not to download this file, there is also a recording of myself using this program.
             </p>
-            <a href="../Assets/DummyData.zip" download="DummyData.zip" class="btn" onclick="return validateDownload(this, 'Sample Data')">Download Sample Data For Testing</a>
-            <a href="javascript:void(0)" class="btn btn2" onclick="showVideoInstead()"> Watch The Video Instead</a>
+            <a href="../Assets/DummyData.zip" download="DummyData.zip" class="btn" onclick="return validateDownload(this, 'Sample Data')" data-translate="project2.download-data">Download Sample Data For Testing</a>
+            <a href="javascript:void(0)" class="btn btn2" onclick="showVideoInstead()" data-translate="project2.watch-video"> Watch The Video Instead</a>
             
             <p>
             </p>
@@ -251,7 +251,7 @@
         <!-- Back to Projects Button -->
         <div class="back-button-container">
             <a href="../index.html" class="btn back-button">
-                ← Back to Projects
+                <span data-translate="nav.back-to-projects">← Back to Projects</span>
             </a>
         </div>
     </div>

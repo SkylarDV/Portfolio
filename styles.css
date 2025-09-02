@@ -281,7 +281,11 @@ body::after {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(120, 119, 198, 0.2);
     z-index: 1000;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem; /* Reduced gap from 0.5rem to 0.2rem */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
 }
 
 /* Language selector dropdown - narrower */
@@ -320,8 +324,24 @@ body::after {
     outline-offset: 2px;
 }
 
-.dropdown:hover .dropdown-content {
+/* Improved hover behavior with better timing */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* Add a small invisible bridge between toggle and dropdown */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0.2rem;
+    z-index: 999;
 }
 
 .dropdown-content a {
@@ -999,6 +1019,14 @@ body::after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .main-content {
+        margin-top: 50px; /* Increased from 80px for more space between nav and page title */
+    }
+
+    .hero {
+        padding: 7rem 0 4rem 0; /* Increased top padding from 6rem to 7rem */
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -1032,6 +1060,10 @@ body::after {
 
 /* Additional mobile optimization for very small screens */
 @media (max-width: 480px) {
+    .main-content {
+        padding-top: 90px; /* Slightly less than 768px breakpoint but still more than default */
+    }
+
     .hero h1 {
         font-size: 2rem;
         line-height: 1.2;
@@ -1042,7 +1074,7 @@ body::after {
     }
     
     .hero {
-        padding: 4rem 0 3rem 0;
+        padding: 5rem 0 3rem 0; /* Increased from 4rem to 5rem for better spacing */
     }
     
     .container {
@@ -2597,6 +2629,8 @@ body::after {
     .supervisor-contact-box {
         min-width: auto;
         padding: 1.2rem 0.8rem;
+        margin: 25px auto 0 auto; /* Center the contact box horizontally */
+        max-width: 350px; /* Limit width for better mobile display */
     }
     
     .contact-details h3 {

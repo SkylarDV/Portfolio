@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Global error handling - must be loaded first -->
     <script src="global-error-handler.js"></script>
+    <!-- Language management -->
+    <script src="language-manager.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -21,14 +23,14 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="aboutMe.html" class="nav-link">About Me</a>
+            <a href="index.html" class="nav-link active" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle">Projects</span>
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="ProjectPages/project1.html">Functional Webshop</a>
-                    <a href="ProjectPages/project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="ProjectPages/project3.html">3D Model Food Stall</a>
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -45,14 +47,14 @@
     <div class="mobile-overlay"></div>
     <nav class="mobile-nav">
         <div class="mobile-nav-content">
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="aboutMe.html" class="nav-link">About Me</a>
+            <a href="index.html" class="nav-link active" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle">Projects</span>
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="ProjectPages/project1.html">Functional Webshop</a>
-                    <a href="ProjectPages/project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="ProjectPages/project3.html">3D Model Food Stall</a>
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -65,30 +67,30 @@
         </div>
     </nav>    <div class="container main-content">
         <section class="hero" id="home">
-            <h1>Hello, I'm Skylar</h1>
-            <p>A passionate developer creating amazing digital experiences</p>
-            <a href="aboutMe.html" class="btn">Learn More About Me ➔</a>
+            <h1 data-translate="hero.title.home">Hello, I'm Skylar</h1>
+            <p data-translate="hero.subtitle.home">Full-Stack Developer & Creative Problem Solver</p>
+            <a href="aboutMe.html" class="btn" data-translate="btn.learn-more">Learn More About Me ➔</a>
         </section><section class="projects" id="projects">
-            <h2>Featured Projects</h2>
+            <h2 data-translate="section.featured-projects">Featured Projects</h2>
             <div class="project-grid">                <div class="project-card" id="project1">
-                    <h3>Functional Webshop</h3>
-                    <p>A school project showcasing features required for an online store platform, such as account functionality as well as product creation, filtering and management.</p>
-                    <div class="project-status">School Project</div>
-                    <a href="ProjectPages/project1.html" class="btn">View Project</a>
+                    <h3 data-translate="project.webshop">Functional Webshop</h3>
+                    <p data-translate="project.webshop.description">A school project showcasing features required for an online store platform, such as account functionality as well as product creation, filtering and management.</p>
+                    <div class="project-status" data-translate="status.school">School Project</div>
+                    <a href="ProjectPages/project1.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
 
                 <div class="project-card" id="project2">
-                    <h3>Data Organizer & Formatter Prototype</h3>
-                    <p>A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.</p>
-                    <div class="project-status">Workplace Project</div>
-                    <a href="ProjectPages/project2.html" class="btn">View Project</a>
+                    <h3 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h3>
+                    <p data-translate="project.dataorganizer.description">A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.</p>
+                    <div class="project-status" data-translate="status.workplace">Workplace Project</div>
+                    <a href="ProjectPages/project2.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
 
                 <div class="project-card" id="project3">
-                    <h3>3D Model Food Stall</h3>
-                    <p>A model created in Blender showcasing a food stall inspired by Japanese culture and cuisine originally created for a school project that showcases detailed modeling and dynamic lighting.</p>
-                    <div class="project-status">3D Modeling Project</div>
-                    <a href="ProjectPages/project3.html" class="btn">View Project</a>
+                    <h3 data-translate="project.foodstall">3D Model Food Stall</h3>
+                    <p data-translate="project.foodstall.description">A model created in Blender showcasing a food stall inspired by Japanese culture and cuisine originally created for a school project that showcases detailed modeling and dynamic lighting.</p>
+                    <div class="project-status" data-translate="status.3d">3D Modeling Project</div>
+                    <a href="ProjectPages/project3.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
             </div>        </section>
     </div>
@@ -97,12 +99,5 @@
     <script src="sparkle-trail.js"></script>
     
     <script src="hamburger-menu.js"></script>
-    <script>
-        // Language selector functionality (placeholder for future multilingual feature)
-        function switchLanguage(lang) {
-            console.log('Language changed to:', lang);
-            // This will be implemented when adding multilingual support
-        }
-    </script>
 </body>
 </html>

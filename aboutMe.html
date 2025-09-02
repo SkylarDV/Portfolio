@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Global error handling - must be loaded first -->
     <script src="global-error-handler.js"></script>
+    <!-- Language management -->
+    <script src="language-manager.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -22,14 +24,14 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="aboutMe.html" class="nav-link active">About Me</a>
+            <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link active" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle">Projects</span>
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="ProjectPages/project1.html">Functional Webshop</a>
-                    <a href="ProjectPages/project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="ProjectPages/project3.html">3D Model Food Stall</a>
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -46,14 +48,14 @@
     <div class="mobile-overlay"></div>
     <nav class="mobile-nav">
         <div class="mobile-nav-content">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="aboutMe.html" class="nav-link active">About Me</a>
+            <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link active" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle">Projects</span>
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="ProjectPages/project1.html">Functional Webshop</a>
-                    <a href="ProjectPages/project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="ProjectPages/project3.html">3D Model Food Stall</a>
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -68,42 +70,42 @@
 
     <div class="container main-content">
         <section class="hero" id="about">
-            <h1>About Me</h1>
-            <p>Developer • Student • Designer</p>
+            <h1 data-translate="about.title">About Me</h1>
+            <p data-translate="about.subtitle">Developer • Student • Designer</p>
         </section>
 
         <section class="about-content">
-            <h2>Who Am I?</h2>
-            <p> I'm a passionate web designer and developer with a love for creating beautiful and functional websites, programs or other online platforms. I find joy in putting together efficient code that improves user experience.</p>
-            <p> While my preference lies with coding, my experience with design allows for additional insight in the creation process for an overall smoother conversation and cooperation experience.</p>
+            <h2 data-translate="about.who-am-i">Who Am I?</h2>
+            <p data-translate="about.description1"> I'm a passionate web designer and developer with a love for creating beautiful and functional websites, programs or other online platforms. I find joy in putting together efficient code that improves user experience.</p>
+            <p data-translate="about.description2"> While my preference lies with coding, my experience with design allows for additional insight in the creation process for an overall smoother conversation and cooperation experience.</p>
         </section>
 
         <div class="about-sections-grid">
             <section class="education">
-                <h2>Education</h2>
+                <h2 data-translate="about.education">Education</h2>
                 <div class="education-item">
-                    <h3>Thomas More University of Applied Sciences</h3>
-                    <p class="degree">Bachelor in Digital Experience Design</p>
-                    <p class="year">2023 - Present</p>
-                    <p class="description">
+                    <h3 data-translate="about.university">Thomas More University of Applied Sciences</h3>
+                    <p class="degree" data-translate="about.degree">Bachelor in Digital Experience Design</p>
+                    <p class="year" data-translate="about.year">2023 - Present</p>
+                    <p class="description" data-translate="about.degree-description">
                         A three-year, hands-on program focused on designing and building real digital products and immersive experiences. Students develop practical skills through project-based learning, presenting their work to professional juries for feedback. Graduates gain experience in UX/UI design, web development, and digital strategy, creating solutions that are both socially relevant and commercially viable.
                     </p>
                 </div>
             </section>
 
             <section class="contact-info">
-                <h2>Get In Touch</h2>
+                <h2 data-translate="about.get-in-touch">Get In Touch</h2>
                 <div class="contact-grid">
                     <div class="contact-item">
-                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <h3><i class="fas fa-envelope"></i> <span data-translate="contact.email">Email</span></h3>
                         <p>dorienvermeulen26@gmail.com</p>
                     </div>
                     <div class="contact-item">
-                        <h3><i class="fas fa-phone"></i> Phone</h3>
+                        <h3><i class="fas fa-phone"></i> <span data-translate="contact.phone">Phone</span></h3>
                         <p>+32 0468 30 04 99</p>
                     </div>
                     <div class="contact-item">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <h3><i class="fas fa-map-marker-alt"></i> <span data-translate="about.location">Location</span></h3>
                         <p>Kapelle-op-den-Bos, Belgium</p>
                     </div>
                 </div>
@@ -111,10 +113,10 @@
         </div>
 
         <section class="skills">
-            <h2>Technical Skills</h2>
+            <h2 data-translate="about.technical-skills">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Front-end Development</h3>
+                    <h3 data-translate="about.frontend">Front-end Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">HTML</span>
@@ -123,7 +125,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Back-end Development</h3>
+                    <h3 data-translate="about.backend">Back-end Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">PHP</span>
@@ -131,7 +133,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
+                    <h3 data-translate="about.tools">Tools & Technologies</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Unity</span>
                         <span class="skill-tag">Figma</span>
@@ -142,34 +144,34 @@
                 </div>
             </div>
             <br>
-            <p class="text-center">For some examples of my work, check out <a href="index.html">some of my past projects</a>.</p>
+            <p class="text-center"><span data-translate="about.work-examples">For some examples of my work, check out</span> <a href="index.html" data-translate="about.past-projects">some of my past projects</a>.</p>
         </section>
 
         <section class="languages">
-            <h2>Languages</h2>
+            <h2 data-translate="about.languages">Languages</h2>
             <div class="language-grid">
                 <div class="language-item">
-                    <h3>Dutch</h3>
+                    <h3 data-translate="about.dutch">Dutch</h3>
                     <div class="proficiency">
-                        <span class="level">Native</span>
+                        <span class="level" data-translate="about.level.native">Native</span>
                         <div class="progress-bar">
                             <div class="progress-fill progress-fill-100"></div>
                         </div>
                     </div>
                 </div>
                 <div class="language-item">
-                    <h3>English</h3>
+                    <h3 data-translate="about.english">English</h3>
                     <div class="proficiency">
-                        <span class="level">Fluent</span>
+                        <span class="level" data-translate="about.level.fluent">Fluent</span>
                         <div class="progress-bar">
                             <div class="progress-fill progress-fill-100"></div>
                         </div>
                     </div>
                 </div>
                 <div class="language-item">
-                    <h3>French</h3>
+                    <h3 data-translate="about.french">French</h3>
                     <div class="proficiency">
-                        <span class="level">Intermediate</span>
+                        <span class="level" data-translate="about.level.intermediate">Intermediate</span>
                         <div class="progress-bar">
                             <div class="progress-fill progress-fill-55"></div>
                         </div>
@@ -179,20 +181,20 @@
         </section>
 
         <section class="employer-testimonials">
-            <h2>Previous Employers Described Me As</h2>
+            <h2 data-translate="about.employers">Previous Employers Described Me As</h2>
             <div class="testimonial-tags">
-                <span class="skill-tag">Efficient</span>
-                <span class="skill-tag">Clever</span>
-                <span class="skill-tag">Insightful</span>
-                <span class="skill-tag">Professional</span>
-                <span class="skill-tag">Reliable</span>
-                <span class="skill-tag">Creative</span>
-                <span class="skill-tag">Detail-oriented</span>
-                <span class="skill-tag">Helpful</span>
-                <span class="skill-tag">Adaptable</span>
-                <span class="skill-tag">Problem-solver</span>
-                <span class="skill-tag">Dedicated</span>
-                <span class="skill-tag">Quick learner</span>
+                <span class="skill-tag" data-translate="skill.efficient">Efficient</span>
+                <span class="skill-tag" data-translate="skill.clever">Clever</span>
+                <span class="skill-tag" data-translate="skill.insightful">Insightful</span>
+                <span class="skill-tag" data-translate="skill.professional">Professional</span>
+                <span class="skill-tag" data-translate="skill.reliable">Reliable</span>
+                <span class="skill-tag" data-translate="skill.creative">Creative</span>
+                <span class="skill-tag" data-translate="skill.detail-oriented">Detail-oriented</span>
+                <span class="skill-tag" data-translate="skill.helpful">Helpful</span>
+                <span class="skill-tag" data-translate="skill.adaptable">Adaptable</span>
+                <span class="skill-tag" data-translate="skill.problem-solver">Problem-solver</span>
+                <span class="skill-tag" data-translate="skill.dedicated">Dedicated</span>
+                <span class="skill-tag" data-translate="skill.quick-learner">Quick learner</span>
             </div>
         </section>
     </div>
@@ -200,12 +202,19 @@
     <!-- Sparkle Trail Effect -->
     <script src="sparkle-trail.js"></script>
     <script src="hamburger-menu.js"></script>
+    <script src="language-manager.js"></script>
     
     <script>
-        // Language selector functionality (placeholder for future multilingual feature)
+        // Initialize language manager
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager = new LanguageManager();
+        });
+        
+        // Language selector functionality
         function switchLanguage(lang) {
-            console.log('Language changed to:', lang);
-            // This will be implemented when adding multilingual support
+            if (window.languageManager) {
+                window.languageManager.switchLanguage(lang);
+            }
         }
     </script>
 </body>

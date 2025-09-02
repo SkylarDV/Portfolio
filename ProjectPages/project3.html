@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../styles.css">
     <!-- Global error handling - must be loaded first -->
     <script src="../global-error-handler.js"></script>
+    <!-- Language management -->
+    <script src="../language-manager.js"></script>
+    <!-- Language management -->
+    <script src="../language-manager.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -21,14 +25,14 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <a href="../index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="../aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
             <div class="dropdown">
-                <span class="nav-link dropdown-toggle active">Projects</span>
+                <span class="nav-link dropdown-toggle active" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
-                    <a href="project1.html">Functional Webshop</a>
-                    <a href="project2.html">Data Organizer & Formatter Prototype</a>
-                    <a href="project3.html">3D Model Food Stall</a>
+                    <a href="project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
             <div class="dropdown language-dropdown">
@@ -67,24 +71,24 @@
 
     <div class="container main-content">
         <section class="hero">
-            <h1>3D Model Food Stall</h1>
-            <p>A stylised 3D model created in Blender</p>
+            <h1 data-translate="project.foodstall">3D Model Food Stall</h1>
+            <p data-translate="hero.subtitle.project3">A detailed 3D modeling project showcasing technical skills</p>
         </section>
 
         <section class="project-content">
-            <h2>Project Overview</h2>
-            <p>
+            <h2 data-translate="project3.overview">Project Overview</h2>
+            <p data-translate="project3.overview-text1">
                 This 3D model was a school assignment for the course 3D Design. 
                 The assignment was to make any kind of food vendor stall in Blender, with free range in terms of what type of food, what stylisation and how detailed we wanted to make the project. 
                 Only a baseline complexity was given as a point of reference, allowing for a lot of creative freedom.
             </p>
-            <p>
+            <p data-translate="project3.overview-text2">
                 Throughout the semester, there were several check-ins and additions to add onto our first iteration to further showcase our mastery of the program, but some of those have been removed from the preview found below. 
                 Personally, I found a few of these additions to be an aesthetic downgrade or out of place, hence why I left them out of this final result so I could showcase a model I am proud of.
             </p>
             
-            <h3>The Idea And Inspirations</h3>
-            <p>
+            <h3 data-translate="project3.idea">The Idea And Inspirations</h3>
+            <p data-translate="project3.idea-text">
                 Choosing a food item to theme my stall around was not a difficult task, as I immediately landed on sushi and onigiri, both traditional Japanese rice dishes. 
                 I chose these because they have rather simple but still distinct shapes that I felt would translate well to a 3D model. 
                 Aside from that, it made choosing a visual theme quite easy as I could lean more into Eastern aesthetics, which I find visually appealing.
@@ -100,27 +104,27 @@
                 <div class="image-carousel" id="carousel">
                     <div class="carousel-image active">
                         <img src="../Assets/InspoCaroussel/1.png" alt="A Kitsune fox spirit portrayed with traditional red, white and gold colors as depicted in Japanese folklore" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 1 failed to load</div>'">
-                        <div class="carousel-caption">A Kitsune, portrayed with red, white and gold as they often are in folklore</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.kitsune">A Kitsune, portrayed with red, white and gold as they often are in folklore</div>
                     </div>
                     <div class="carousel-image">
                         <img src="../Assets/InspoCaroussel/2.png" alt="Onigiri - traditional Japanese rice balls wrapped in seaweed, used as food inspiration for the 3D model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 2 failed to load</div>'">
-                        <div class="carousel-caption">Onigiri, a Japanese rice ball often wrapped in seaweed</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.onigiri">Onigiri, a Japanese rice ball often wrapped in seaweed</div>
                     </div>
                     <div class="carousel-image">
                         <img src="../Assets/InspoCaroussel/3.png" alt="Traditional Torii gate showcasing recognizable Japanese architectural elements used as structural inspiration" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 3 failed to load</div>'">
-                        <div class="carousel-caption">A Torii gate, a recognisable piece of Japanese architecture</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.torii">A Torii gate, a recognisable piece of Japanese architecture</div>
                     </div>
                     <div class="carousel-image">
                         <img src="../Assets/InspoCaroussel/4.png" alt="Sushi varieties including nigiri and uramaki rolls, representing authentic Japanese cuisine for the food stall model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 4 failed to load</div>'">
-                        <div class="carousel-caption">Sushi, specifically nigiri and uramaki, another recogniseable food</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.sushi">Sushi, specifically nigiri and uramaki, another recogniseable food</div>
                     </div>
                     <div class="carousel-image">
                         <img src="../Assets/InspoCaroussel/5.png" alt="Red, white, and gold color palette reference used as the primary color scheme for the 3D food stall model" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 5 failed to load</div>'">
-                        <div class="carousel-caption">The red, white, and gold color palette I settled on for my model</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.palette">The red, white, and gold color palette I settled on for my model</div>
                     </div>
                     <div class="carousel-image">
                         <img src="../Assets/InspoCaroussel/6.png" alt="Dango - traditional Japanese sweet dumplings on skewers, added to enhance the food stall's wall decoration" onerror="this.parentElement.innerHTML='<div class=&quot;carousel-error&quot;>🖼️ Image 6 failed to load</div>'">
-                        <div class="carousel-caption">Dango, a snack I retroactively decided to add since the wall felt too plain</div>
+                        <div class="carousel-caption" data-translate="project3.carousel.dango">Dango, a snack I retroactively decided to add since the wall felt too plain</div>
                     </div>
                 </div>
                 
@@ -162,13 +166,13 @@
                 });
             </script>
             
-            <p>
+            <p data-translate="project3.mascot-text">
                 As a mascot of sorts, I chose the Kitsune, a fox spirit from Japanese folklore that leant themselves to the theme of the project as well as the red, white and gold colours often associated with the country. 
                 I also incorporated a torii gate into the menu stand, along with giving the main body of the stand a more traditional roof style to bring it all together.
             </p>
 
-            <h3>The Final Result</h3>
-            <p>
+            <h3 data-translate="project3.final-result">The Final Result</h3>
+            <p data-translate="project3.final-result-text">
                 Below is the final result of my 3D food stall model. It includes dynamic lighting as well as wind animations. 
                 Overall, this project allowed me to explore both technical and artistic aspects of 3D modeling and was a proper conclusion to the course. I am proud of the final result and the skills I developed throughout the process.
             </p>
@@ -177,12 +181,12 @@
             <div class="project3-layout">
                 <img src="../Assets/Foodstand.gif" alt="3D Food Stall Animation" class="project3-gif" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<div class=&quot;image-error&quot;>🖼️ Image failed to load</div>')">
                 <div class="project3-content">
-                    <p class="project3-description">The model is available for download in .blend format if you would like to explore it further in Blender yourself.</p>
-                    <a href="../Assets/Foodstand.blend" download="Foodstand.blend" class="btn btn2 project3-btn" onclick="return validateDownload(this, 'Blender File')">Download Blender File</a>
-                    <p class="project3-disclaimer">This model is shared for portfolio demonstration purposes only. Please do not use it for commercial projects or otherwise redistribute it.</p>
+                    <p class="project3-description" data-translate="project3.download-text">The model is available for download in .blend format if you would like to explore it further in Blender yourself.</p>
+                    <a href="../Assets/Foodstand.blend" download="Foodstand.blend" class="btn btn2 project3-btn" onclick="return validateDownload(this, 'Blender File')" data-translate="project3.download-btn">Download Blender File</a>
+                    <p class="project3-disclaimer" data-translate="project3.disclaimer">This model is shared for portfolio demonstration purposes only. Please do not use it for commercial projects or otherwise redistribute it.</p>
                 </div>
             </div>
-            <p>
+            <p data-translate="project3.favorite-text">
                 My favourite parts of model are some of the details I added retroactively because the result I had at the time seemed to be lackluster. 
                 This food stall model went through many iterations before I was fully satisfied with it, and I am glad I kept making these changes.
             </p>
@@ -191,18 +195,18 @@
             <div class="detail-images-container">
                 <div class="detail-image-wrapper">
                     <img src="../Assets/detail1.png" alt="Close-up view of the 3D food stall showing detailed textures of various food types modeled, with dango bags against the back wall" class="detail-image" onerror="this.parentElement.innerHTML='<div class=&quot;image-error detail-error&quot;>🖼️ Detail image 1 failed to load</div>'">
-                    <div class="detail-caption">The different food types I modeled, with the dango bags against the back wall</div>
+                    <div class="detail-caption" data-translate="project3.detail1-caption">The different food types I modeled, with the dango bags against the back wall</div>
                 </div>
                 <div class="detail-image-wrapper">
                     <img src="../Assets/detail2.png" alt="Detailed view of the food stall's dining area featuring 2 chairs, plates and pairs of chopsticks, with the menu displayed against the wall" class="detail-image" onerror="this.parentElement.innerHTML='<div class=&quot;image-error detail-error&quot;>🖼️ Detail image 2 failed to load</div>'">
-                    <div class="detail-caption">The dining area, with 2 chairs, plates and pairs of chopsticks, as well as the menu against the wall</div>
+                    <div class="detail-caption" data-translate="project3.detail2-caption">The dining area, with 2 chairs, plates and pairs of chopsticks, as well as the menu against the wall</div>
                 </div>
             </div>
-            <p>
+            <p data-translate="project3.lighting-text">
                 The model's presented in low lighting since Kitsune are mischievous spirits, so I wanted to present this food stall in a somewhat haunted way. 
                 The lanterns are also animated to flicker to support this idea. Figuring out the lighting dynamics might have been the hardest part of the whole assignment.
             </p>
-            <p>
+            <p data-translate="project3.blender-text">
                 Blender is a program I find quite pleasant to use, though I do tend to get a bit lost in the details. The many possibilities and the creative nature of the work is specifically up my alley.
             </p>
         </section>
@@ -210,7 +214,7 @@
         <!-- Back to Projects Button -->
         <div class="back-button-container">
             <a href="../index.html" class="btn back-button">
-                ← Back to Projects
+                <span data-translate="nav.back-to-projects">← Back to Projects</span>
             </a>
         </div>
     </div>
@@ -218,8 +222,14 @@
     <!-- Sparkle Trail Effect -->
     <script src="../sparkle-trail.js"></script>
     <script src="../hamburger-menu.js"></script>
+    <script src="../language-manager.js"></script>
     
     <script>
+        // Initialize language manager
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager = new LanguageManager();
+        });
+        
         // Download validation function
         function validateDownload(linkElement, fileName) {
             // Create a temporary request to check if file exists
@@ -242,10 +252,9 @@
         }
         
         function switchLanguage(lang) {
-            if (lang === 'nl') {
-                window.location.href = '../../PortfolioNL/ProjectPages/project3NL.html';
+            if (window.languageManager) {
+                window.languageManager.switchLanguage(lang);
             }
-            // For 'en', we're already on the English page
         }
     </script>
 </body>
