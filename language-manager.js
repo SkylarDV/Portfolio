@@ -63,7 +63,7 @@ class LanguageManager {
                 
                 // Hero sections
                 'hero.title.home': 'Hello, I\'m Skylar',
-                'hero.subtitle.home': 'Full-Stack Developer & Creative Problem Solver',
+                'hero.subtitle.home': 'Junior Developer & Creative Problem Solver',
                 'hero.subtitle.about': 'Passionate about creating innovative digital solutions',
                 'hero.subtitle.project1': 'A comprehensive e-commerce platform with modern design',
                 'hero.subtitle.project2': 'For convenience, speed and clarity',
@@ -224,6 +224,13 @@ class LanguageManager {
                 'project3.carousel.sushi': 'Sushi, specifically nigiri and uramaki, another recogniseable food',
                 'project3.carousel.palette': 'The red, white, and gold color palette I settled on for my model',
                 'project3.carousel.dango': 'Dango, a snack I retroactively decided to add since the wall felt too plain',
+                
+                // 404 Error page
+                'error.title': 'Page Not Found',
+                'error.description': 'Oops! The page you\'re looking for doesn\'t exist. It might have been moved, deleted, or you entered the wrong URL.',
+                'error.home': 'Go Home',
+                'error.about': 'About Me',
+                'error.back': 'Go Back',
             },
             nl: {
                 // Navigation
@@ -238,7 +245,7 @@ class LanguageManager {
                 
                 // Hero sections
                 'hero.title.home': 'Hallo, Skylar hier',
-                'hero.subtitle.home': 'Full-Stack Developer & Creatieve Probleemoplosser',
+                'hero.subtitle.home': 'Junior Developer & Creatieve Probleemoplosser',
                 'hero.subtitle.about': 'Gepassioneerd over het creëren van innovatieve digitale oplossingen',
                 'hero.subtitle.project1': 'Een uitgebreid e-commerce platform met modern design',
                 'hero.subtitle.project2': 'Voor gemak, snelheid en duidelijkheid',
@@ -399,6 +406,13 @@ class LanguageManager {
                 'project3.carousel.sushi': 'Sushi, specifiek nigiri en uramaki, nog een herkenbaar voedsel',
                 'project3.carousel.palette': 'Het rood, wit en gouden kleurenpalet dat ik voor mijn model koos',
                 'project3.carousel.dango': 'Dango, een snack die ik achteraf besloot toe te voegen omdat de muur te kaal aanvoelde',
+                
+                // 404 Error page
+                'error.title': 'Pagina Niet Gevonden',
+                'error.description': 'Oeps! De pagina die je zoekt bestaat niet. Deze is mogelijk verplaatst, verwijderd, of je hebt een verkeerde URL ingevoerd.',
+                'error.home': 'Naar Home',
+                'error.about': 'Over Mij',
+                'error.back': 'Ga Terug',
             }
         };
     }

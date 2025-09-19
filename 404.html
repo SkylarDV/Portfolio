@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Skylar's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="language-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
+            Skylar V.
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle" data-translate="nav.projects">Projects</span>
+                <div class="dropdown-content">
+                    <a href="ProjectPages/project1.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="ProjectPages/project2.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="ProjectPages/project3.html" data-translate="project.foodstall">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="error-container">
+            <!-- Sparkle animations -->
+            <div class="sparkle-animation" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="sparkle-animation" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
+            <div class="sparkle-animation" style="bottom: 40%; left: 20%; animation-delay: 1s;"></div>
+            <div class="sparkle-animation" style="bottom: 25%; right: 25%; animation-delay: 1.5s;"></div>
+            
+            <h1 class="error-code">404</h1>
+            <h2 class="error-message" data-translate="error.title">Page Not Found</h2>
+            <p class="error-description" data-translate="error.description">
+                Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="error-btn">
+                    <span data-translate="error.home">Go Home</span>
+                </a>
+                <button onclick="history.back()" class="error-btn secondary">
+                    <span data-translate="error.back">Go Back</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="sparkle-trail.js"></script>
+    <script src="hamburger-menu.js"></script>
+    
+    <script>
+        // Initialize language manager
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager = new LanguageManager();
+        });
+        
+        // Language selector functionality
+        function switchLanguage(lang) {
+            if (window.languageManager) {
+                window.languageManager.switchLanguage(lang);
+            }
+        }
+        
+        // Add some random sparkles
+        function createSparkles() {
+            const container = document.querySelector('.error-container');
+            const sparkleCount = 8;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-animation';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                sparkle.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                container.appendChild(sparkle);
+            }
+        }
+        
+        // Create sparkles on load
+        document.addEventListener('DOMContentLoaded', createSparkles);
+    </script>
+</body>
+</html>

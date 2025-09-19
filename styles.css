@@ -2926,3 +2926,112 @@ textarea:focus,
     outline: 2px solid #4f46e5;
     outline-offset: 2px;
 }
+
+/* ===== 404 ERROR PAGE STYLES ===== */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #a5b4fc;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(165, 180, 252, 0.3);
+}
+
+.error-message {
+    font-size: 2rem;
+    color: #e2e8f0;
+    margin: 1rem 0 2rem 0;
+    font-weight: 300;
+}
+
+.error-description {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.error-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.error-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.error-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.sparkle-animation {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #a5b4fc;
+    border-radius: 50%;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* 404 Page Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 6rem;
+    }
+    
+    .error-message {
+        font-size: 1.5rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .error-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}

@@ -1077,5 +1077,19 @@
     </script>
 
     <script src="../hamburger-menu.js"></script>
+    
+    <script>
+        // Initialize language manager
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager = new LanguageManager();
+        });
+        
+        // Language selector functionality
+        function switchLanguage(lang) {
+            if (window.languageManager) {
+                window.languageManager.switchLanguage(lang);
+            }
+        }
+    </script>
 </body>
 </html>
