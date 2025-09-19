@@ -4,12 +4,155 @@
 
 @font-face {
     font-family: 'Hey Comic';
-    src: url('Assets/Hey Comic.woff2') format('woff2'),
+    src:
          url('Assets/Hey Comic.otf') format('opentype'),
          url('Assets/Hey Comic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+/* Loading Animation Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20, 20, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+.loading-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 17% 23%, #ffffff 1px, transparent 1px),
+        radial-gradient(circle at 82% 67%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 43% 8%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 9% 89%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 91% 34%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 65% 45%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 28% 72%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 71% 16%, #ffffff 0.9px, transparent 0.9px),
+        radial-gradient(circle at 36% 58%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 88% 81%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 52% 92%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 14% 47%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 73% 29%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 95% 63%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 21% 5%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 67% 84%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 39% 51%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 84% 12%, #ffffff 0.9px, transparent 0.9px),
+        radial-gradient(circle at 6% 76%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 58% 37%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 77% 53%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 23% 19%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 46% 86%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 93% 41%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 12% 68%, #ffffff 0.7px, transparent 0.7px);
+    background-size: 
+        494px 638px, 566px 454px, 662px 574px, 454px 662px, 406px 494px,
+        638px 538px, 538px 614px, 466px 638px, 614px 478px, 694px 566px,
+        626px 518px, 518px 686px, 434px 574px, 674px 502px, 502px 694px,
+        562px 458px, 474px 626px, 646px 526px, 458px 674px, 706px 486px,
+        582px 442px, 498px 658px, 554px 478px, 682px 514px, 422px 598px;
+    background-position: 
+        -23px -37px, 67px -19px, -41px 53px, 89px -13px, -61px 31px,
+        29px -47px, -71px 23px, 79px -29px, -31px 59px, 97px -41px,
+        -43px 37px, 73px -23px, -19px 61px, 83px -31px, -53px 29px,
+        39px -59px, -67px 41px, 91px -17px, -37px 47px, 101px -43px,
+        -51px 13px, 63px -35px, -77px 47px, 85px -25px, -29px 69px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+    animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+.loading-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.1s;
+    animation: fillProgress 2s ease-out forwards;
+    stroke: #5356CA; /* Softer, less neon version */
+    opacity: 1; /* Reduce intensity */
+}
+
+.loading-image {
+    width: 188px;
+    height: 188px;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+}
+
+.loading-slash {
+    width: 188px;
+    height: 188px;
+    object-fit: contain;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: inset(0 0 100% 0);
+    animation: wipeSlash 0.5s ease-out 2s forwards;
+}
+
+@keyframes fillProgress {
+    0% {
+        stroke-dashoffset: 490;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeOutCircle {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes wipeSlash {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 /* General Link Styling */
@@ -78,13 +221,43 @@ body::after {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
-        radial-gradient(circle at 75% 75%, #ffffff 0.5px, transparent 0.5px),
-        radial-gradient(circle at 50% 10%, #ffffff 0.8px, transparent 0.8px),
-        radial-gradient(circle at 10% 90%, #ffffff 0.6px, transparent 0.6px),
-        radial-gradient(circle at 90% 30%, #ffffff 0.4px, transparent 0.4px);
-    background-size: 150px 150px, 200px 200px, 300px 300px, 250px 250px, 180px 180px;
-    background-position: 0 0, 50px 50px, 100px 100px, 150px 150px, 75px 75px;
+        radial-gradient(circle at 17% 23%, #ffffff 1px, transparent 1px),
+        radial-gradient(circle at 82% 67%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 43% 8%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 9% 89%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 91% 34%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 65% 45%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 28% 72%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 71% 16%, #ffffff 0.9px, transparent 0.9px),
+        radial-gradient(circle at 36% 58%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 88% 81%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 52% 92%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 14% 47%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 73% 29%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 95% 63%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 21% 5%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 67% 84%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 39% 51%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 84% 12%, #ffffff 0.9px, transparent 0.9px),
+        radial-gradient(circle at 6% 76%, #ffffff 0.4px, transparent 0.4px),
+        radial-gradient(circle at 58% 37%, #ffffff 0.7px, transparent 0.7px),
+        radial-gradient(circle at 77% 53%, #ffffff 0.6px, transparent 0.6px),
+        radial-gradient(circle at 23% 19%, #ffffff 0.5px, transparent 0.5px),
+        radial-gradient(circle at 46% 86%, #ffffff 0.8px, transparent 0.8px),
+        radial-gradient(circle at 93% 41%, #ffffff 0.3px, transparent 0.3px),
+        radial-gradient(circle at 12% 68%, #ffffff 0.7px, transparent 0.7px);
+    background-size: 
+        494px 638px, 566px 454px, 662px 574px, 454px 662px, 406px 494px,
+        638px 538px, 538px 614px, 466px 638px, 614px 478px, 694px 566px,
+        626px 518px, 518px 686px, 434px 574px, 674px 502px, 502px 694px,
+        562px 458px, 474px 626px, 646px 526px, 458px 674px, 706px 486px,
+        582px 442px, 498px 658px, 554px 478px, 682px 514px, 422px 598px;
+    background-position: 
+        -23px -37px, 67px -19px, -41px 53px, 89px -13px, -61px 31px,
+        29px -47px, -71px 23px, 79px -29px, -31px 59px, 97px -41px,
+        -43px 37px, 73px -23px, -19px 61px, 83px -31px, -53px 29px,
+        39px -59px, -67px 41px, 91px -17px, -37px 47px, 101px -43px,
+        -51px 13px, 63px -35px, -77px 47px, 85px -25px, -29px 69px;
     opacity: 0.6;
     pointer-events: none;
     z-index: 1;

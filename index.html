@@ -8,10 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Global error handling - must be loaded first -->
     <script src="global-error-handler.js"></script>
+    <!-- Loading animation controller -->
+    <script src="loading-animation.js"></script>
     <!-- Language management -->
     <script src="language-manager.js"></script>
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-circle">
+            <svg class="progress-ring" width="180" height="180">
+                <circle class="progress-ring-circle" 
+                        cx="90" 
+                        cy="90" 
+                        r="78" 
+                        stroke="#a5b4fc" 
+                        stroke-width="18" 
+                        fill="transparent"
+                        stroke-dasharray="490"
+                        stroke-dashoffset="490"/>
+            </svg>
+            <img src="Assets/LoadingBrackets.png" alt="Loading" class="loading-image">
+            <img src="Assets/LoadingSlash.png" alt="Loading Complete" class="loading-slash">
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="logo">
             <img src="Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
