@@ -14,13 +14,23 @@
     <meta name="description" content="Developer portfolio of Skylar V., showcasing projects in web development, and 3D modeling. Skills such as HTML, CSS, JavaScript, PHP, and Blender are showcased.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skylar's Portfolio</title>
-    <link rel="icon" type="image/png" href="Assets/LogoIcon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="icon" type="image/webp" href="Assets/LogoIcon.webp">
+    <!-- Critical CSS inline or preload -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="Assets/Hey%20Comic.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="global-error-handler.js"></script>
-    <script src="loading-animation.js"></script>
-    <script src="language-manager.js"></script>
+    <!-- Add cache control for static assets -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000" data-file-type="css,js,png,jpg,gif,svg,woff,woff2">
+    <style>
+        @font-face {
+            font-family: 'HeyComic';
+            src: url('Assets/Hey%20Comic.otf');
+            font-display: swap; /* Shows fallback font while loading */
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Animation -->
@@ -37,14 +47,14 @@
                         stroke-dasharray="490"
                         stroke-dashoffset="490"/>
             </svg>
-            <img src="Assets/LoadingBrackets.png" alt="Loading" class="loading-image">
-            <img src="Assets/LoadingSlash.png" alt="Loading Complete" class="loading-slash">
+            <img src="Assets/LoadingBrackets.webp" alt="Loading" class="loading-image">
+            <img src="Assets/LoadingSlash.webp" alt="Loading Complete" class="loading-slash">
         </div>
     </div>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
+            <img src="Assets/LogoIcon.webp" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
             Skylar V.
         </div>
         <div class="hamburger">
@@ -105,7 +115,7 @@
         <section class="projects" id="projects">
             <h2 data-translate="section.featured-projects">Featured Projects</h2>
             <div class="project-grid">                <div class="project-card" id="project1">
-                    <img src="Assets/P1.png" alt="Webshop Project Icon" class="project-icon">
+                    <img src="Assets/P1.webp" alt="Webshop Project Icon" class="project-icon">
                     <h3 data-translate="project.webshop">Functional Webshop</h3>
                     <!--<p data-translate="project.webshop.description">A school project showcasing features required for an online store platform, such as account functionality as well as product creation, filtering and management.</p>-->
                     <div class="project-status" data-translate="status.school">School Project</div>
@@ -113,7 +123,7 @@
                 </div>
 
                 <div class="project-card" id="project2">
-                    <img src="Assets/P2.png" alt="Data Organizer Project Icon" class="project-icon">
+                    <img src="Assets/P2.webp" alt="Data Organizer Project Icon" class="project-icon">
                     <h3 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h3>
                     <!--<p data-translate="project.dataorganizer.description">A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.</p>-->
                     <div class="project-status" data-translate="status.workplace">Workplace Project</div>
@@ -121,7 +131,7 @@
                 </div>
 
                 <div class="project-card" id="project3">
-                    <img src="Assets/P3.png" alt="3D Food Stall Project Icon" class="project-icon">
+                    <img src="Assets/P3.webp" alt="3D Food Stall Project Icon" class="project-icon">
                     <h3 data-translate="project.foodstall">3D Model Food Stall</h3>
                     <!--<p data-translate="project.foodstall.description">A model created in Blender showcasing a food stall inspired by Japanese culture and cuisine originally created for a school project that showcases detailed modeling and dynamic lighting.</p>-->
                     <div class="project-status" data-translate="status.3d">3D Modeling Project</div>
@@ -172,9 +182,11 @@
         </div>
     </footer>
 
-    <!-- Sparkle Trail Effect -->
+    <!-- Move these scripts to bottom -->
+    <script src="global-error-handler.js"></script>
+    <script src="loading-animation.js"></script>
+    <script src="language-manager.js"></script>
     <script src="sparkle-trail.js"></script>
-    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>

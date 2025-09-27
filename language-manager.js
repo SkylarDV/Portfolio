@@ -1,39 +1,27 @@
-/**
- * Language Manager - Handles multilingual functionality
- * Supports URL-based language switching with persistent state
- */
-
 class LanguageManager {
     constructor() {
-        this.currentLanguage = 'en'; // Default language
+        this.currentLanguage = 'en';
         this.translations = {};
-        
-        // Wait for DOM to be ready before initializing
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init());
         } else {
             this.init();
         }
     }
-
     init() {
-        // Load language from URL parameter or localStorage
         this.loadLanguageFromURL();
         this.loadTranslations();
         this.updateLanguageDisplay();
         this.updateAllLinks();
         this.applyTranslations();
     }
-
     loadLanguageFromURL() {
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
-        
         if (langParam && ['en', 'nl'].includes(langParam)) {
             this.currentLanguage = langParam;
             localStorage.setItem('preferredLanguage', langParam);
         } else {
-            // Fallback to localStorage or default
             const savedLang = localStorage.getItem('preferredLanguage');
             if (savedLang && ['en', 'nl'].includes(savedLang)) {
                 this.currentLanguage = savedLang;
@@ -41,65 +29,44 @@ class LanguageManager {
             }
         }
     }
-
     updateURL() {
         const url = new URL(window.location);
         url.searchParams.set('lang', this.currentLanguage);
         window.history.replaceState({}, '', url);
     }
-
     loadTranslations() {
         this.translations = {
             en: {
-                // Navigation
                 'nav.home': 'Home',
                 'nav.about': 'About Me',
                 'nav.projects': 'Projects',
-                
-                // Project titles
                 'project.webshop': 'Functional Webshop',
                 'project.dataorganizer': 'Data Organizer & Formatter Prototype',
                 'project.foodstall': '3D Model Food Stall',
-                
-                // Hero sections
                 'hero.title.home': 'Hello, I\'m Skylar',
                 'hero.subtitle.home': 'Junior Developer & Creative Problem Solver',
                 'hero.subtitle.about': 'Passionate about creating innovative digital solutions',
                 'hero.subtitle.project1': 'A comprehensive e-commerce platform with modern design',
                 'hero.subtitle.project2': 'For convenience, speed and clarity',
                 'hero.subtitle.project3': 'A detailed 3D modeling project showcasing technical skills',
-                
-                // About page
                 'about.title': 'About Me',
                 'about.subtitle': 'Developer • Student • Designer',
                 'about.who-am-i': 'Who Am I?',
                 'about.description1': 'I\'m a passionate web designer and developer with a love for creating beautiful and functional websites, programs or other online platforms. I find joy in putting together efficient code that improves user experience.',
                 'about.description2': 'While my preference lies with coding, my experience with design allows for additional insight in the creation process for an overall smoother conversation and cooperation experience.',
-                
-                // Project content
                 'project.overview': 'Project Overview',
                 'supervisor.contact': 'Supervisor Contact',
                 'contact.email': 'Email',
                 'contact.phone': 'Phone',
-                
-                // Project descriptions
                 'project.webshop.description': 'A school project showcasing features required for an online store platform, such as account functionality as well as product creation, filtering and management.',
                 'project.dataorganizer.description': 'A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.',
                 'project.foodstall.description': 'A model created in Blender showcasing a food stall inspired by Japanese culture and cuisine originally created for a school project that showcases detailed modeling and dynamic lighting.',
-                
-                // Project statuses
                 'status.school': 'School Project',
                 'status.workplace': 'Workplace Project',
                 'status.3d': '3D Modeling Project',
-                
-                // Buttons
                 'btn.learn-more': 'Learn More About Me ➔',
                 'btn.view-project': 'View Project',
-                
-                // Section titles
                 'section.featured-projects': 'Featured Projects',
-                
-                // Project 2 specific content
                 'project2.intro1': 'This project was originally a task I received from the company GB Foods Puurs that due to unforeseen circumstances was never able to launch. The preview below is a recreation of the original task with a full rundown of the project, or you can',
                 'project2.intro2': 'jump straight ahead',
                 'project2.intro3': 'to the demonstration',
@@ -107,8 +74,6 @@ class LanguageManager {
                 'project2.vision': 'The Original Vision',
                 'project2.vision1': 'The export department of the company receives quarterly to yearly reports of the sales of their distributors. Each of these has their own style of noting down the information in a spreadsheet and thus getting a complete overview of the total sales made was inconvenient. For this reason, my supervisor was looking into a solution and eventually asked me if I knew of a way to streamline this process.',
                 'project2.vision2': 'My proposed solution was to create a webpage with PHP and SQL that would take these Excel files (exported as CSV files) and automatically add them to the grand overarching database. Once there, the data could be sorted, filtered and searched conveniently.',
-                
-                // About page additional content
                 'about.education': 'Education',
                 'about.university': 'Thomas More University of Applied Sciences',
                 'about.degree': 'Bachelor in Digital Experience Design',
@@ -130,8 +95,6 @@ class LanguageManager {
                 'about.level.fluent': 'Fluent',
                 'about.level.intermediate': 'Intermediate',
                 'about.employers': 'Previous Employers Described Me As',
-                
-                // Skill tags for employers section
                 'skill.efficient': 'Efficient',
                 'skill.clever': 'Clever',
                 'skill.insightful': 'Insightful',
@@ -144,10 +107,7 @@ class LanguageManager {
                 'skill.problem-solver': 'Problem-solver',
                 'skill.dedicated': 'Dedicated',
                 'skill.quick-learner': 'Quick learner',
-                
                 'nav.back-to-projects': '← Back to Projects',
-                
-                // Project 2 specific content
                 'project2.went-wrong': 'What went wrong?',
                 'project2.went-wrong-text': 'Due to an unforeseen and unannounced strengthening of security measures pushed by the Spanish branch of the company (being the head of all departments globally), several issues arose: The key functionality of uploading files into this website was blocked on all work devices due to privacy and sensitive data concerns, along with the firewall blocking the server I was running for my development process. Because of these factors, it was agreed that the development would no longer continue, but my supervisor had no objections to me including this recreation in my portfolio website with reference to him.',
                 'project2.development': 'The Development Process',
@@ -160,8 +120,6 @@ class LanguageManager {
                 'project2.test-data-text': 'The file below is a zip file with 3 different sources of dummy sales data in CSV format that can be used to test the prototype. If you would prefer not to download this file, there is also a recording of myself using this program.',
                 'project2.download-data': 'Download Sample Data For Testing',
                 'project2.watch-video': 'Watch The Video Instead',
-                
-                // Project 1 specific content
                 'project1.overview': 'Project Overview',
                 'project1.overview-text': 'This project was made as the final assignment of the Back-end Development course I followed. It utilises mainly PHP and MySQL for all the functionalities, as well as some JavaScript (AJAX) for dynamic content loading. This project also serves as a first experience with server hosting through GitHub and Azure.',
                 'project1.assignment': 'The Assignment',
@@ -198,8 +156,6 @@ class LanguageManager {
                 'project1.final-result-text-prefix': 'The hosted website is no longer accessible because the domain it was hosted on has been taken down after the assignment was graded. However, a video demonstration of the website\'s primary functionalities is available below, and here is the',
                 'project1.github-link': 'link to the GitHub repository',
                 'project1.final-result-text-suffix': 'containing the source code as well.',
-                
-                // Project 3 specific content
                 'project3.overview': 'Project Overview',
                 'project3.overview-text1': 'This 3D model was a school assignment for the course 3D Design. The assignment was to make any kind of food vendor stall in Blender, with free range in terms of what type of food, what stylisation and how detailed we wanted to make the project. Only a baseline complexity was given as a point of reference, allowing for a lot of creative freedom.',
                 'project3.overview-text2': 'Throughout the semester, there were several check-ins and additions to add onto our first iteration to further showcase our mastery of the program, but some of those have been removed from the preview found below. Personally, I found a few of these additions to be an aesthetic downgrade or out of place, hence why I left them out of this final result so I could showcase a model I am proud of.',
@@ -216,16 +172,12 @@ class LanguageManager {
                 'project3.detail2-caption': 'The dining area, with 2 chairs, plates and pairs of chopsticks, as well as the menu against the wall',
                 'project3.lighting-text': 'The model\'s presented in low lighting since Kitsune are mischievous spirits, so I wanted to present this food stall in a somewhat haunted way. The lanterns are also animated to flicker to support this idea. Figuring out the lighting dynamics might have been the hardest part of the whole assignment.',
                 'project3.blender-text': 'Blender is a program I find quite pleasant to use, though I do tend to get a bit lost in the details. The many possibilities and the creative nature of the work is specifically up my alley.',
-                
-                // Project 3 carousel captions
                 'project3.carousel.kitsune': 'A Kitsune, portrayed with red, white and gold as they often are in folklore',
                 'project3.carousel.onigiri': 'Onigiri, a Japanese rice ball often wrapped in seaweed',
                 'project3.carousel.torii': 'A Torii gate, a recognisable piece of Japanese architecture',
                 'project3.carousel.sushi': 'Sushi, specifically nigiri and uramaki, another recogniseable food',
                 'project3.carousel.palette': 'The red, white, and gold color palette I settled on for my model',
                 'project3.carousel.dango': 'Dango, a snack I retroactively decided to add since the wall felt too plain',
-                
-                // 404 Error page
                 'error.title': 'Page Not Found',
                 'error.description': 'Oops! The page you\'re looking for doesn\'t exist. It might have been moved, deleted, or you entered the wrong URL.',
                 'error.home': 'Go Home',
@@ -233,55 +185,36 @@ class LanguageManager {
                 'error.back': 'Go Back',
             },
             nl: {
-                // Navigation
                 'nav.home': 'Home',
                 'nav.about': 'Over Mij',
                 'nav.projects': 'Projecten',
-                
-                // Project titles
                 'project.webshop': 'Functionele Webshop',
                 'project.dataorganizer': 'Data Organisator & Formatter Prototype',
                 'project.foodstall': '3D Model Voedselkraam',
-                
-                // Hero sections
                 'hero.title.home': 'Hallo, Skylar hier',
                 'hero.subtitle.home': 'Junior Developer & Creatieve Probleemoplosser',
                 'hero.subtitle.about': 'Gepassioneerd over het creëren van innovatieve digitale oplossingen',
                 'hero.subtitle.project1': 'Een uitgebreid e-commerce platform met modern design',
                 'hero.subtitle.project2': 'Voor gemak, snelheid en duidelijkheid',
                 'hero.subtitle.project3': 'Een gedetailleerd 3D-modelleringsproject dat technische vaardigheden toont',
-                
-                // About page
                 'about.title': 'Over Mij',
                 'about.subtitle': 'Developer • Student • Designer',
                 'about.who-am-i': 'Wie Ben Ik?',
                 'about.description1': 'Ik ben een gepassioneerde webdesigner en developer met een liefde voor het creëren van mooie en functionele websites, programma\'s of andere online platforms. Ik vind vreugde in het samenstellen van efficiënte code die de gebruikerservaring verbetert.',
                 'about.description2': 'Hoewel mijn voorkeur ligt bij coderen, zorgt mijn ervaring met design voor extra inzicht in het creatieproces voor een over het algemeen soepelere conversatie en samenwerkingservaring.',
-                
-                // Project content
                 'project.overview': 'Project Overzicht',
                 'supervisor.contact': 'Supervisor Contact',
                 'contact.email': 'E-mail',
                 'contact.phone': 'Telefoon',
-                
-                // Project descriptions
                 'project.webshop.description': 'Een schoolproject dat de benodigde functies voor een online winkelplatform toont, zoals accountfunctionaliteit evenals productcreatie, filtering en beheer.',
                 'project.dataorganizer.description': 'Een prototype ontworpen om de verwerking van verkoopgegevens van meerdere distributeurs te stroomlijnen, waarbij verschillende spreadsheets worden omgezet in georganiseerde, filterbare tabellen.',
                 'project.foodstall.description': 'Een model oorspronkelijk gemaakt voor een schoolproject in Blender dat een voedselkraam toont geïnspireerd door de Japanse cultuur en keuken, dat gedetailleerde modellering en dynamische verlichting toont.',
-                
-                // Project statuses
                 'status.school': 'Schoolproject',
                 'status.workplace': 'Werkproject',
                 'status.3d': '3D Modelleringsproject',
-                
-                // Buttons
                 'btn.learn-more': 'Meer Over Mij ➔',
                 'btn.view-project': 'Bekijk Project',
-                
-                // Section titles
                 'section.featured-projects': 'Featured Projecten',
-                
-                // Project 2 specific content
                 'project2.intro1': 'Dit project was oorspronkelijk een taak die ik kreeg van het bedrijf GB Foods Puurs die door onvoorziene omstandigheden nooit heeft kunnen lanceren. De preview hieronder is een recreatie van de oorspronkelijke taak met een volledige uitleg van het project, of je kan ook ',
                 'project2.intro2': 'direct vooruit springen',
                 'project2.intro3': 'naar de demonstratie',
@@ -289,8 +222,6 @@ class LanguageManager {
                 'project2.vision': 'De Oorspronkelijke Visie',
                 'project2.vision1': 'De exportafdeling van het bedrijf ontvangt driemaandelijkse tot jaarlijkse rapporten van de verkopen van hun distributeurs. Elk van deze heeft hun eigen stijl om de informatie in een spreadsheet te noteren en dus was het krijgen van een volledig overzicht van de totale gemaakte verkopen onhandig. Om deze reden zocht mijn supervisor naar een oplossing en vroeg uiteindelijk aan mij of ik een manier wist om dit proces te stroomlijnen.',
                 'project2.vision2': 'Mijn voorgestelde oplossing was om een webpagina te maken met PHP en SQL die deze Excel-bestanden (geëxporteerd als CSV-bestanden) zou nemen en automatisch toevoegen aan de grote overkoepelende database. Eenmaal daar, konden de gegevens handig worden gesorteerd, gefilterd en doorzocht.',
-                
-                // About page additional content
                 'about.education': 'Onderwijs',
                 'about.university': 'Thomas More Hogeschool',
                 'about.degree': 'Bachelor in Digital Experience Design',
@@ -312,8 +243,6 @@ class LanguageManager {
                 'about.level.fluent': 'Vloeiend',
                 'about.level.intermediate': 'Gemiddeld',
                 'about.employers': 'Vorige Werkgevers Beschreven Mij Als',
-                
-                // Skill tags for employers section
                 'skill.efficient': 'Efficiënt',
                 'skill.clever': 'Slim',
                 'skill.insightful': 'Inzichtelijk',
@@ -326,10 +255,7 @@ class LanguageManager {
                 'skill.problem-solver': 'Probleemoplosser',
                 'skill.dedicated': 'Toegewijd',
                 'skill.quick-learner': 'Snelle leerling',
-                
                 'nav.back-to-projects': '← Terug naar Projecten',
-                
-                // Project 2 specific content
                 'project2.went-wrong': 'Wat ging er mis?',
                 'project2.went-wrong-text': 'Door een onvoorziene en onaangekondigde versterking van beveiligingsmaatregelen door de Spaanse branch van het bedrijf (zijnde het hoofd van alle afdelingen wereldwijd), ontstonden verschillende problemen: De kernfunctionaliteit van het uploaden van bestanden naar deze website werd geblokkeerd op alle werkapparaten vanwege privacy- en gevoelige gegevensproblemen, samen met de firewall die de server blokkeerde die ik gebruikte voor mijn developmentproces. Vanwege deze factoren werd overeengekomen dat de development niet langer zou doorgaan, maar mijn supervisor had geen bezwaar tegen het opnemen van deze recreatie in mijn portfoliowebsite met verwijzing naar hem.',
                 'project2.development': 'Het Developmentproces',
@@ -342,8 +268,6 @@ class LanguageManager {
                 'project2.test-data-text': 'Het bestand hieronder is een zip-bestand met 3 verschillende bronnen van dummy verkoopgegevens in CSV-formaat die gebruikt kunnen worden om het prototype te testen. Als je liever dit bestand niet downloadt, is er ook een opname van mezelf die dit programma gebruikt.',
                 'project2.download-data': 'Download Voorbeeldgegevens Voor Testen',
                 'project2.watch-video': 'Bekijk De Video In Plaats Daarvan',
-                
-                // Project 1 specific content
                 'project1.overview': 'Project Overzicht',
                 'project1.overview-text': 'Dit project werd gemaakt als eindopdracht voor de Back-end Development cursus die ik volgde. Het gebruikt voornamelijk PHP en MySQL voor alle functionaliteiten, evenals wat JavaScript (AJAX) voor dynamische content loading. Dit project dient ook als eerste ervaring met server hosting via GitHub en Azure.',
                 'project1.assignment': 'De Opdracht',
@@ -380,8 +304,6 @@ class LanguageManager {
                 'project1.final-result-text-prefix': 'De gehoste website is niet langer toegankelijk omdat het domein waarop het werd gehost is afgesloten nadat de opdracht werd beoordeeld. Er is echter een videodemonstratie van de primaire functionaliteiten van de website beschikbaar hieronder, en hier is de',
                 'project1.github-link': 'link naar de GitHub repository',
                 'project1.final-result-text-suffix': 'die de broncode bevat.',
-                
-                // Project 3 specific content
                 'project3.overview': 'Project Overzicht',
                 'project3.overview-text1': 'Dit 3D-model was een schoolopdracht voor de cursus 3D Design. De opdracht was om een willekeurig soort voedselverkoper stalletje te maken in Blender, met vrije keuze wat betreft het type voedsel, welke stilering en hoe gedetailleerd we het project wilden maken. Alleen een basiscomplexiteit werd gegeven als referentiepunt, wat veel creatieve vrijheid toestond.',
                 'project3.overview-text2': 'Gedurende het semester waren er verschillende check-ins en toevoegingen om aan onze eerste iteratie toe te voegen om onze beheersing van het programma verder te laten zien, maar sommige daarvan zijn weggelaten uit de preview hieronder. Persoonlijk vond ik enkele van deze toevoegingen een esthetische achteruitgang of misplaatst, daarom heb ik ze weggelaten uit dit eindresultaat zodat ik een model kon tonen waar ik trots op ben.',
@@ -398,16 +320,12 @@ class LanguageManager {
                 'project3.detail2-caption': 'Het eetgedeelte, met 2 stoelen, borden en paren eetstokjes, evenals het menu tegen de muur',
                 'project3.lighting-text': 'Het model wordt gepresenteerd in weinig licht omdat Kitsune ondeugende geesten zijn, dus wilde ik dit voedsel stalletje op een enigszins spookachtige manier presenteren. De lantaarns zijn ook geanimeerd om te flikkeren om dit idee te ondersteunen. Het uitzoeken van de verlichtingsdynamiek was misschien wel het moeilijkste deel van de hele opdracht.',
                 'project3.blender-text': 'Blender is een programma dat ik heel prettig vind om te gebruiken, hoewel ik wel de neiging heb om een beetje verdwaald te raken in de details. De vele mogelijkheden en de creatieve aard van het werk liggen mijn specifiek goed.',
-                
-                // Project 3 carousel captions
                 'project3.carousel.kitsune': 'Een Kitsune, afgebeeld met rood, wit en goud zoals ze vaak zijn in folklore',
                 'project3.carousel.onigiri': 'Onigiri, een Japanse rijstbal vaak gewikkeld in zeewier',
                 'project3.carousel.torii': 'Een Torii-poort, een herkenbaar stuk Japanse architectuur',
                 'project3.carousel.sushi': 'Sushi, specifiek nigiri en uramaki, nog een herkenbaar voedsel',
                 'project3.carousel.palette': 'Het rood, wit en gouden kleurenpalet dat ik voor mijn model koos',
                 'project3.carousel.dango': 'Dango, een snack die ik achteraf besloot toe te voegen omdat de muur te kaal aanvoelde',
-                
-                // 404 Error page
                 'error.title': 'Pagina Niet Gevonden',
                 'error.description': 'Oeps! De pagina die je zoekt bestaat niet. Deze is mogelijk verplaatst, verwijderd, of je hebt een verkeerde URL ingevoerd.',
                 'error.home': 'Naar Home',
@@ -416,27 +334,19 @@ class LanguageManager {
             }
         };
     }
-
     switchLanguage(newLang) {
         if (!['en', 'nl'].includes(newLang)) return;
-        
         this.currentLanguage = newLang;
         localStorage.setItem('preferredLanguage', newLang);
-        
-        // Update URL and reload to apply changes
         const url = new URL(window.location);
         url.searchParams.set('lang', newLang);
         window.location.href = url.toString();
     }
-
     updateLanguageDisplay() {
-        // Update the dropdown toggle text
         const dropdownToggles = document.querySelectorAll('.language-dropdown .dropdown-toggle');
         dropdownToggles.forEach(toggle => {
             toggle.textContent = this.currentLanguage.toUpperCase();
         });
-
-        // Update active state in dropdown
         const languageLinks = document.querySelectorAll('.language-dropdown .dropdown-content a');
         languageLinks.forEach(link => {
             const lang = link.getAttribute('onclick')?.match(/'(\w+)'/)?.[1];
@@ -449,18 +359,12 @@ class LanguageManager {
             }
         });
     }
-
     updateAllLinks() {
-        // Update all navigation links to preserve language parameter
         const links = document.querySelectorAll('a[href]:not([href^="#"]):not([href^="javascript:"]):not([onclick*="switchLanguage"])');
-        
         links.forEach(link => {
             const href = link.getAttribute('href');
             if (href && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http')) {
-                // Parse the current href
                 let newHref = href;
-                
-                // Remove existing lang parameter if present
                 if (newHref.includes('?')) {
                     const [path, queryString] = newHref.split('?');
                     const params = new URLSearchParams(queryString);
@@ -470,20 +374,15 @@ class LanguageManager {
                 } else {
                     newHref = href + '?lang=' + this.currentLanguage;
                 }
-                
                 link.setAttribute('href', newHref);
             }
         });
     }
-
     applyTranslations() {
-        // Apply translations to elements with data-translate attributes
         const translatableElements = document.querySelectorAll('[data-translate]');
-        
         translatableElements.forEach(element => {
             const key = element.getAttribute('data-translate');
             const translation = this.getTranslation(key);
-            
             if (translation) {
                 if (element.tagName === 'INPUT' && element.type === 'submit') {
                     element.value = translation;
@@ -492,30 +391,19 @@ class LanguageManager {
                 }
             }
         });
-
-        // Update document language attribute
         document.documentElement.lang = this.currentLanguage;
     }
-
     getTranslation(key) {
         return this.translations[this.currentLanguage]?.[key] || key;
     }
-
-    // Helper method to get current language
     getCurrentLanguage() {
         return this.currentLanguage;
     }
 }
-
-// Global language manager instance
 window.languageManager = new LanguageManager();
-
-// Global function for onclick handlers (backward compatibility)
 function switchLanguage(lang) {
     window.languageManager.switchLanguage(lang);
 }
-
-// Export for module usage if needed
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = LanguageManager;
 }
