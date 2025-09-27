@@ -44,4 +44,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200);
         }
     }
+
+    // Batch DOM reads and writes
+    function updateLoadingProgress() {
+        // Batch all DOM reads first
+        const overlay = document.getElementById('loading-overlay');
+        const progressCircle = document.querySelector('.progress-ring-circle');
+        
+        // Use requestAnimationFrame to avoid forced reflow
+        requestAnimationFrame(() => {
+            // Batch all DOM writes together
+            if (progressCircle) {
+                const circumference = 2 * Math.PI * 78;
+                const offset = circumference - (progress / 100 * circumference);
+                progressCircle.style.strokeDashoffset = offset;
+            }
+            
+            if (progress >= 100 && overlay) {
+                // Use CSS transitions instead of reading layout properties
+                overlay.style.opacity = '0';
+                overlay.style.transform = 'scale(0.8)';
+                
+                // Clean removal after transition
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
+            }
+        });
+    }
 });

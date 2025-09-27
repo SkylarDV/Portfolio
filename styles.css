@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Hey Comic';
+    font-family: 'HeyComic';
     src:
-         url('Assets/Hey Comic.otf') format('opentype'),
-         url('Assets/Hey Comic.ttf') format('truetype');
+         url('Assets/HeyComic.otf') format('opentype'),
+         url('Assets/HeyComic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -70,7 +70,8 @@ body ::-webkit-scrollbar-corner,
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 1s ease-out, visibility 1s ease-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    will-change: opacity, transform; /* Hint browser for optimization */
 }
 
 .loading-overlay::after {
@@ -341,7 +342,7 @@ body::after {
 }
 
 .navbar .logo {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #e2e8f0;
@@ -611,7 +612,7 @@ body::after {
 }
 
 .hero h1 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -673,7 +674,7 @@ body::after {
 }
 
 .glass-container h2 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -684,7 +685,7 @@ body::after {
 }
 
 .glass-container h3 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     margin: 2rem 0 1rem 0;
@@ -735,7 +736,7 @@ body::after {
 }
 
 .projects h2 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
@@ -758,7 +759,8 @@ body::after {
     border-radius: 12px;
     padding: 2rem;
     color: #e2e8f0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
     cursor: pointer;
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.2),
@@ -778,7 +780,8 @@ body::after {
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px) scale(1.02);
+    /* Instead of changing width/height which causes reflow */
     box-shadow: 
         0 20px 50px rgba(0, 0, 0, 0.3),
         0 0 30px rgba(120, 119, 198, 0.15);
@@ -810,7 +813,7 @@ body::after {
 }
 
 .project-card h3 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -940,7 +943,7 @@ body::after {
 }
 
 .about-content h2 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
@@ -985,7 +988,7 @@ body::after {
 }
 
 .project-content h2 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -995,7 +998,7 @@ body::after {
 }
 
 .project-content h3 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     margin: 2rem 0 1rem 0;
@@ -1094,7 +1097,8 @@ body::after {
     backdrop-filter: blur(20px);
     border-left: 1px solid rgba(120, 119, 198, 0.2);
     z-index: 1000;
-    transition: right 0.3s ease;
+    transition: transform 0.3s ease;
+    will-change: transform;
     overflow-y: auto;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -1454,7 +1458,7 @@ body::after {
 }
 
 .contact-info h2, .education h2, .skills h2, .languages h2, .employer-testimonials h2 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
@@ -1491,7 +1495,7 @@ body::after {
 }
 
 .contact-item h3 {
-    font-family: 'Hey Comic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1525,7 +1529,7 @@ body::after {
 }
 
 .education-item h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1580,7 +1584,7 @@ body::after {
 }
 
 .skill-category h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1641,7 +1645,7 @@ body::after {
 }
 
 .language-item h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1700,7 +1704,7 @@ body::after {
 }
 
 .experience-item h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
     color: #ffffff;
@@ -1751,7 +1755,7 @@ body::after {
 }
 
 .interest-item h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: #ffffff;
@@ -1999,7 +2003,7 @@ body::after {
 }
 
 .upload-content h4 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff;
@@ -2963,7 +2967,7 @@ body::after {
 }
 
 .contact-details h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -2977,7 +2981,7 @@ body::after {
 }
 
 .contact-info-item h3 {
-    font-family: 'Hey Comic', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'HeyComic', 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -3078,7 +3082,7 @@ body::after {
     height: auto;
     border-radius: 12px;
     border: 2px solid rgba(120, 119, 198, 0.3);
-    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -3219,7 +3223,7 @@ body::after {
     font-weight: 700;
     color: #a5b4fc;
     margin: 0;
-    font-family: 'Hey Comic', cursive;
+    font-family: 'HeyComic', cursive;
 }
 
 .footer-description {
@@ -3369,7 +3373,7 @@ body::after {
     font-weight: 700;
     color: #a5b4fc;
     margin: 0;
-    font-family: 'Hey Comic', cursive;
+    font-family: 'HeyComic', cursive;
 }
 
 .footer-description {

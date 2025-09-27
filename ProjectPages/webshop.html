@@ -12,7 +12,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="../Assets/Hey%20Comic.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="../Assets/HeyComic.otf" as="font" type="font/otf" crossorigin>
     
     <!-- Keep only critical CSS in head -->
     <link rel="stylesheet" href="../styles.css">
@@ -146,7 +146,6 @@
                          alt="Database schema diagram showing tables for products, users, orders, and reviews" 
                          class="database-image"
                          id="databaseImage"
-                         onload="setDatabaseHeight()"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding: 20px; background: #f8f9fa; border: 2px solid #ddd; border-radius: 8px; text-align: center;&quot;>❌ Database diagram failed to load.</div>'">
                 </div>
             </div>
@@ -305,6 +304,11 @@
                 wrapper.style.height = '300px';
             }
         }
+
+        // Initialize database height when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            setDatabaseHeight();
+        });
     </script>
 
     <!-- Google Analytics - Deferred Loading -->

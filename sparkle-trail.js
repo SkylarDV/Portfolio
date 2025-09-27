@@ -111,6 +111,36 @@
             sparkleCount = 0;
         }
     }
+    // Cache mouse position and use it without reading layout
+    let mouseX = 0, mouseY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        // Store position without reading layout
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function createSparkle() {
+        requestAnimationFrame(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            
+            // Use cached position instead of reading getBoundingClientRect()
+            sparkle.style.left = mouseX + 'px';
+            sparkle.style.top = mouseY + 'px';
+            sparkle.style.transform = 'translate(-50%, -50%)';
+            
+            document.body.appendChild(sparkle);
+            
+            // Remove after animation using timeout instead of reading animation state
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.remove();
+                }
+            }, 1000);
+        });
+    }
+
     function createSparkleTrail(e) {
         try {
             const currentTime = Date.now();

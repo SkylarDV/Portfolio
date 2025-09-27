@@ -99,6 +99,14 @@
                 id: element.id,
                 className: element.className
             };
+            
+            // Handle resource errors more gracefully - don't treat network failures as critical errors
+            if (element.tagName.toLowerCase() === 'img') {
+                console.warn(`Image failed to load: ${element.src || element.href}`, details);
+                handleResourceError(element);
+                return;
+            }
+            
             const error = new Error(`Failed to load ${element.tagName}: ${element.src || element.href}`);
             reportError(error, context, details);
             handleResourceError(element);
@@ -108,17 +116,46 @@
         try {
             switch (element.tagName.toLowerCase()) {
                 case 'img':
-                    element.style.cssText = `
-                        display: inline-block;
-                        width: ${element.width || 200}px;
-                        height: ${element.height || 150}px;
-                        background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-                        border: 2px dashed #ccc;
-                        border-radius: 8px;
+                    const isGif = element.src && element.src.toLowerCase().includes('.gif');
+                    const fallbackWidth = element.width || element.offsetWidth || 400;
+                    const fallbackHeight = element.height || element.offsetHeight || 300;
+                    
+                    // Create a more informative placeholder
+                    const placeholder = document.createElement('div');
+                    placeholder.style.cssText = `
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: ${fallbackWidth}px;
+                        height: ${fallbackHeight}px;
+                        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                        border: 2px dashed #adb5bd;
+                        border-radius: 12px;
+                        color: #6c757d;
+                        font-family: system-ui, -apple-system, sans-serif;
+                        font-size: 14px;
+                        text-align: center;
+                        flex-direction: column;
+                        gap: 8px;
                         position: relative;
                     `;
-                    element.alt = element.alt || 'Image not available';
-                    element.title = 'Image failed to load: ' + (element.src || 'Unknown source');
+                    
+                    const icon = isGif ? '🎬' : '🖼️';
+                    const message = isGif ? 'Animation temporarily\nunavailable' : 'Image temporarily\nunavailable';
+                    
+                    placeholder.innerHTML = `
+                        <div style="font-size: 24px;">${icon}</div>
+                        <div style="line-height: 1.4; white-space: pre-line;">${message}</div>
+                    `;
+                    
+                    // Replace the broken image with the placeholder
+                    if (element.parentNode) {
+                        element.parentNode.insertBefore(placeholder, element);
+                        element.style.display = 'none';
+                    }
+                    
+                    element.alt = element.alt || 'Content not available';
+                    element.title = 'Resource failed to load: ' + (element.src || 'Unknown source');
                     break;
                 case 'video':
                     const videoError = document.createElement('div');
@@ -201,4 +238,64 @@
         report: reportError,
         showNotification: showUserNotification
     };
+    // Add this function to filter out non-critical errors
+    function shouldReportError(error, source) {
+        // Don't report Google Analytics errors (user might have ad blockers)
+        if (source && source.includes('googletagmanager')) {
+            return false;
+        }
+        
+        // Don't report external CDN errors
+        if (source && (source.includes('cdnjs.cloudflare.com') || 
+                       source.includes('googleapis.com') ||
+                       source.includes('gstatic.com'))) {
+            return false;
+        }
+        
+        // Don't report network errors from browser extensions
+        if (error.message && error.message.includes('Extension context invalidated')) {
+            return false;
+        }
+        
+        return true;
+    }
+    // Update your error handler to use this filter
+    window.addEventListener('error', function(event) {
+        if (!shouldReportError(event.error, event.filename)) {
+            return; // Silently ignore
+        }
+        
+        const error = event.error || new Error(event.message);
+        const context = 'Global Error';
+        const details = {
+            filename: event.filename,
+            lineno: event.lineno,
+            colno: event.colno,
+            source: event.target && event.target.tagName ? event.target.tagName : 'Unknown'
+        };
+        reportError(error, context, details);
+        event.preventDefault();
+        return true;
+    });
+    window.addEventListener('error', function(event) {
+        if (event.target && event.target.tagName === 'SCRIPT') {
+            if (!shouldReportError(event.error, event.target.src)) {
+                console.info(`External script blocked: ${event.target.src}`);
+                return;
+            }
+        }
+        if (event.target && event.target !== window) {
+            const element = event.target;
+            const context = 'Resource Loading Error';
+            const details = {
+                tagName: element.tagName,
+                src: element.src || element.href,
+                id: element.id,
+                className: element.className
+            };
+            const error = new Error(`Failed to load ${element.tagName}: ${element.src || element.href}`);
+            reportError(error, context, details);
+            handleResourceError(element);
+        }
+    }, true);
 })();

@@ -16,22 +16,34 @@
             console.warn('Hamburger menu fallback failed:', fallbackError);
         }
     }
-    document.addEventListener('DOMContentLoaded', function() {
+
+    function initializeHamburgerMenu() {
+        console.log('Initializing hamburger menu...');
         try {
     const hamburger = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileOverlay = document.querySelector('.mobile-overlay');
     const mobileDropdowns = document.querySelectorAll('.mobile-nav .dropdown');
+
+    console.log('Found elements:', {
+        hamburger: !!hamburger,
+        mobileNav: !!mobileNav,
+        mobileOverlay: !!mobileOverlay,
+        dropdownCount: mobileDropdowns.length
+    });
+
     if (!hamburger || !mobileNav) {
         console.warn('Hamburger menu: Required elements not found');
         return;
     }
     function toggleMobileMenu() {
         try {
+            console.log('Toggling mobile menu...');
             hamburger.classList.toggle('active');
             mobileNav.classList.toggle('active');
             if (mobileOverlay) mobileOverlay.classList.toggle('active');
             document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            console.log('Mobile menu toggled, active:', mobileNav.classList.contains('active'));
         } catch (error) {
             handleError(error, 'toggleMobileMenu');
         }
@@ -64,11 +76,15 @@
     if (hamburger) {
         hamburger.addEventListener('click', function(e) {
             try {
+                console.log('Hamburger clicked!');
                 toggleMobileMenu();
             } catch (error) {
                 handleError(error, 'hamburger click');
             }
         });
+        console.log('Hamburger click listener attached');
+    } else {
+        console.warn('Hamburger element not found - listener not attached');
     }
     if (mobileOverlay) {
         mobileOverlay.addEventListener('click', function(e) {
@@ -131,9 +147,17 @@
         }, { passive: true });
     }
         } catch (error) {
-            handleError(error, 'DOMContentLoaded');
+            handleError(error, 'initializeHamburgerMenu');
         }
-    });
+    }
+
+    // Initialize immediately if DOM is already loaded, otherwise wait for it
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeHamburgerMenu);
+    } else {
+        initializeHamburgerMenu();
+    }
+
     if (typeof switchLanguage === 'undefined') {
         function switchLanguage(lang) {
             try {

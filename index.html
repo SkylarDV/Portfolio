@@ -11,14 +11,14 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="Assets/Hey%20Comic.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="Assets/HeyComic.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <!-- Add cache control for static assets -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000" data-file-type="css,js,png,jpg,gif,svg,woff,woff2">
     <style>
         @font-face {
             font-family: 'HeyComic';
-            src: url('Assets/Hey%20Comic.otf');
+            src: url('Assets/HeyComic.otf');
             font-display: swap; /* Shows fallback font while loading */
         }
     </style>
@@ -181,41 +181,100 @@
     <script>
         // Load interactive scripts after page is ready
         window.addEventListener('load', function() {
-            // Load sparkle trail
-            var sparkleScript = document.createElement('script');
+            // Load sparkle trail with async loading
+            const sparkleScript = document.createElement('script');
             sparkleScript.src = 'sparkle-trail.js';
+            sparkleScript.async = true;
             document.head.appendChild(sparkleScript);
             
             // Load hamburger menu
-            var hamburgerScript = document.createElement('script');
+            const hamburgerScript = document.createElement('script');
             hamburgerScript.src = 'hamburger-menu.js';
+            hamburgerScript.async = true;
             document.head.appendChild(hamburgerScript);
             
-            // Load error handler
-            var errorScript = document.createElement('script');
+            // Load error handler - this should be loaded first if it's critical
+            const errorScript = document.createElement('script');
             errorScript.src = 'global-error-handler.js';
+            errorScript.async = true;
+            // Load error handler first since it might be needed by other scripts
             document.head.appendChild(errorScript);
         });
     </script>
 
-    <!-- Google Analytics - Deferred Loading -->
+    <!-- Google Analytics - Deferred Loading with Error Handling -->
     <script>
-        // Load Google Analytics after page loads
+        // Load Google Analytics after page loads with proper error handling
         window.addEventListener('load', function() {
-            // Create script element
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
-            document.head.appendChild(script);
-            
-            // Initialize when script loads
-            script.onload = function() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-1HEVPHQ6Q2');
-            };
+            setTimeout(function() {
+                // Check if user has blocked analytics or if we're in development
+                if (window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' || 
+                    window.location.hostname === '' ||
+                    navigator.doNotTrack === '1') {
+                    console.log('Analytics disabled in development/DNT mode');
+                    return;
+                }
+                
+                // Create script element with error handling
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
+                
+                // Handle successful load
+                script.onload = function() {
+                    try {
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-1HEVPHQ6Q2', {
+                            // Disable automatic pageview to reduce reflow
+                            send_page_view: false
+                        });
+                        
+                        // Send pageview after a delay to avoid blocking
+                        setTimeout(() => {
+                            gtag('event', 'page_view', {
+                                page_title: document.title,
+                                page_location: window.location.href
+                            });
+                        }, 500);
+                    } catch (e) {
+                        console.warn('Analytics initialization failed:', e);
+                    }
+                };
+                
+                // Handle load errors silently
+                script.onerror = function() {
+                    console.info('Google Analytics blocked or unavailable');
+                    // Don't throw errors for this
+                };
+                
+                // Add to head
+                document.head.appendChild(script);
+            }, 2000); // Increased delay to reduce impact on page load
         });
+    </script>
+    <script>
+        // Fallback analytics function if GA fails to load
+        window.gtag = window.gtag || function() {
+            console.log('Analytics call (fallback):', arguments);
+        };
+        
+        // Simple privacy-friendly analytics fallback
+        function trackPageView() {
+            // Only track if user hasn't opted out
+            if (localStorage.getItem('analytics-disabled') !== 'true') {
+                fetch('/api/pageview', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        page: location.pathname,
+                        timestamp: Date.now()
+                    })
+                }).catch(() => {}); // Fail silently
+            }
+        }
     </script>
 </body>
 </html>
