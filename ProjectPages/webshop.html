@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functional Webshop - Skylar's Portfolio</title>    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
+    <!-- Normalize CSS for consistent cross-browser styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Global error handling - must be loaded first -->
     <script src="../global-error-handler.js"></script>
     <!-- Language management -->
@@ -28,7 +31,7 @@
                 <span class="nav-link dropdown-toggle active" data-translate="nav.projects">Projects</span>
                 <div class="dropdown-content">
                     <a href="webshop.html" data-translate="project.webshop">Functional Webshop</a>
-                    <a href="dataorganiser.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="dataorganizer.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
                     <a href="foodstall.html" data-translate="project.foodstall">3D Model Food Stall</a>
                 </div>
             </div>
@@ -52,7 +55,7 @@
                 <span class="nav-link dropdown-toggle">Projects</span>
                 <div class="dropdown-content">
                     <a href="webshop.html">Functional Webshop</a>
-                    <a href="dataorganiser.html">Data Organizer & Formatter Prototype</a>
+                    <a href="dataorganizer.html">Data Organizer & Formatter Prototype</a>
                     <a href="foodstall.html">3D Model Food Stall</a>
                 </div>
             </div>
@@ -182,6 +185,47 @@
             </a>
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Skylar V.</h3>
+                <p class="footer-description">Junior Developer & Creative Problem Solver</p>
+                <div class="footer-contact">
+                    <a href="mailto:dorienvermeulen26@gmail.com" class="footer-icon-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/skylar-vermeulen-42b730386" target="_blank" rel="noopener noreferrer" class="footer-icon-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/SkylarDV" target="_blank" rel="noopener noreferrer" class="footer-icon-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Navigation</h4>
+                <nav class="footer-nav">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="../aboutMe.html" class="footer-nav-link">About Me</a>
+                    <span class="footer-nav-label">Projects</span>
+                    <a href="webshop.html" class="footer-nav-link footer-project-link">Functional Webshop</a>
+                    <a href="dataorganizer.html" class="footer-nav-link footer-project-link">Data Organizer</a>
+                    <a href="foodstall.html" class="footer-nav-link footer-project-link">3D Model Food Stall</a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                <span>&copy; 2025 Skylar V. All rights reserved.</span>
+            </p>
+            <p class="footer-made-with">
+                <span>Made with</span> 💜 <span>and code</span>
+            </p>
+        </div>
+    </footer>
 
     <!-- Sparkle Trail Effect -->
     <script src="../sparkle-trail.js"></script>
