@@ -162,7 +162,7 @@
         }
     }
     if (document.addEventListener) {
-        document.addEventListener('mousemove', createSparkleTrail);
+        document.addEventListener('mousemove', createSparkleTrail, { passive: true });
     }
     let frameCount = 0;
     let lastFpsCheck = Date.now();

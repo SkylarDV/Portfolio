@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1HEVPHQ6Q2');
-    </script>
     <meta charset="UTF-8">
     <meta name="description" content="Developer portfolio of Skylar V., showcasing projects in web development, and 3D modeling. Skills such as HTML, CSS, JavaScript, PHP, and Blender are showcased.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -188,5 +179,25 @@
     <script src="language-manager.js"></script>
     <script src="sparkle-trail.js"></script>
     <script src="hamburger-menu.js"></script>
+
+    <!-- Google Analytics - Deferred Loading -->
+    <script>
+        // Load Google Analytics after page loads
+        window.addEventListener('load', function() {
+            // Create script element
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
+            document.head.appendChild(script);
+            
+            // Initialize when script loads
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-1HEVPHQ6Q2');
+            };
+        });
+    </script>
 </body>
 </html>

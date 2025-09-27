@@ -128,7 +128,7 @@
             } catch (error) {
                 handleError(error, 'touchmove');
             }
-        });
+        }, { passive: true });
     }
         } catch (error) {
             handleError(error, 'DOMContentLoaded');

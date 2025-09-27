@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics (already optimized) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1HEVPHQ6Q2');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="description" content="Discover the Data Organizer & Formatter Prototype project by Skylar V., showcasing skills in web development and data management.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1127,12 +1117,32 @@
             const k = 1024;
             const sizes = ['Bytes', 'KB', 'MB', 'GB'];
             const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
     </script>
 
     <script src="../global-error-handler.js"></script>
     <script src="../language-manager.js"></script>
     <script src="../hamburger-menu.js"></script>
+
+    <!-- Google Analytics - Deferred Loading -->
+    <script>
+        // Load Google Analytics after page loads
+        window.addEventListener('load', function() {
+            // Create script element
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
+            document.head.appendChild(script);
+            
+            // Initialize when script loads
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-1HEVPHQ6Q2');
+            };
+        });
+    </script>
 </body>
 </html>
