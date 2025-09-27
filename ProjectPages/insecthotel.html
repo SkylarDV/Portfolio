@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insect Hotel - Skylar's Portfolio</title>
+    <link rel="icon" type="image/png" href="../Assets/LogoIcon.png">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../global-error-handler.js"></script>
+    <script src="../language-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../Assets/LogoIcon.png" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
+            Skylar V.
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="../aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle active" data-translate="nav.projects">Projects</span>
+                <div class="dropdown-content">
+                    <a href="webshop.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="dataorganiser.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="foodstall.html" data-translate="project.foodstall">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown active">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="webshop.html">Functional Webshop</a>
+                    <a href="dataorganiser.html">Data Organizer & Formatter Prototype</a>
+                    <a href="foodstall.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero">
+            <h1>Insect Hotel Infographic</h1>
+            <p>A 3D infographic project showcasing the importance of insect hotels for biodiversity</p>
+        </section>
+
+        <section class="project-content">
+            <div class="disclaimer-box">
+                <div class="disclaimer-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="disclaimer-content">
+                    <strong>Note:</strong> <span>The following page and project is still under construction. If you found this page through adjusting the URL, note that this page was not yet intended for the public eye and can therefore be incomplete, lack functionalities or contain mistakes.</span>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
