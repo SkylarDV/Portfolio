@@ -174,11 +174,29 @@
     </footer>
 
     <!-- Move these scripts to bottom -->
-    <script src="global-error-handler.js"></script>
     <script src="loading-animation.js"></script>
     <script src="language-manager.js"></script>
-    <script src="sparkle-trail.js"></script>
-    <script src="hamburger-menu.js"></script>
+    
+    <!-- Defer interactive scripts -->
+    <script>
+        // Load interactive scripts after page is ready
+        window.addEventListener('load', function() {
+            // Load sparkle trail
+            var sparkleScript = document.createElement('script');
+            sparkleScript.src = 'sparkle-trail.js';
+            document.head.appendChild(sparkleScript);
+            
+            // Load hamburger menu
+            var hamburgerScript = document.createElement('script');
+            hamburgerScript.src = 'hamburger-menu.js';
+            document.head.appendChild(hamburgerScript);
+            
+            // Load error handler
+            var errorScript = document.createElement('script');
+            errorScript.src = 'global-error-handler.js';
+            document.head.appendChild(errorScript);
+        });
+    </script>
 
     <!-- Google Analytics - Deferred Loading -->
     <script>

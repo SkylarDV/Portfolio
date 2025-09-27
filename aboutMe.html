@@ -12,6 +12,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="Assets/Hey%20Comic.otf" as="font" type="font/otf" crossorigin>
     
     <!-- Keep only critical CSS in head -->
     <link rel="stylesheet" href="styles.css">
@@ -80,7 +81,7 @@
 
         <div class="about-sections-grid">
             <section class="profile-image">
-                <img src="Assets/Pfp.webp" alt="" class="profile-photo">
+                <img src="Assets/Pfp.webp" alt="" class="profile-photo" fetchpriority="high">
             </section>
             
             <section class="about-content">
@@ -227,6 +228,26 @@
                 window.languageManager.switchLanguage(lang);
             }
         }
+    </script>
+
+    <!-- Google Analytics - Deferred Loading -->
+    <script>
+        // Load Google Analytics after page loads
+        window.addEventListener('load', function() {
+            // Create script element
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
+            document.head.appendChild(script);
+            
+            // Initialize when script loads
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-1HEVPHQ6Q2');
+            };
+        });
     </script>
 </body>
 </html>

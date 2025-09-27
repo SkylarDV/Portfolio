@@ -12,6 +12,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../Assets/Hey%20Comic.otf" as="font" type="font/otf" crossorigin>
     
     <!-- Keep only critical CSS in head -->
     <link rel="stylesheet" href="../styles.css">
@@ -98,8 +99,8 @@
             </p>
             
             <div class="image-carousel-container">
-                <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()" aria-label="Previous image">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
@@ -131,8 +132,8 @@
                     </div>
                 </div>
                 
-                <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()" aria-label="Next image">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
@@ -147,8 +148,11 @@
                     console.log('Total images found:', totalImages); // Debug log
                     
                     function showImage(index) {
-                        images.forEach((img, i) => {
-                            img.classList.toggle('active', i === index);
+                        // Use requestAnimationFrame to batch DOM changes and avoid forced reflow
+                        requestAnimationFrame(() => {
+                            images.forEach((img, i) => {
+                                img.classList.toggle('active', i === index);
+                            });
                         });
                     }
                     
@@ -164,8 +168,24 @@
                         showImage(currentImageIndex);
                     }
                     
-                    window.nextImage = nextImage;
-                    window.previousImage = previousImage;
+                    // Debounce the functions to prevent rapid successive calls
+                    let isTransitioning = false;
+                    
+                    window.nextImage = function() {
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            nextImage();
+                            setTimeout(() => { isTransitioning = false; }, 300);
+                        }
+                    };
+                    
+                    window.previousImage = function() {
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            previousImage();
+                            setTimeout(() => { isTransitioning = false; }, 300);
+                        }
+                    };
                 });
             </script>
             
