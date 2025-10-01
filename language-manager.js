@@ -57,33 +57,35 @@ class LanguageManager {
                 'nav.home': 'Home',
                 'nav.about': 'Over Mij',
                 'nav.projects': 'Projecten',
-                
+
                 // Projects in navigation and cards
                 'project.webshop': 'Functionele Webshop',
                 'project.dataorganizer': 'Data Organisator & Formatter Prototype',
                 'project.foodstall': '3D Model Voedselkraam',
-                
-                // Hero sections
-                'hero.title.home': 'Hallo, ik ben Skylar',
-                'hero.subtitle.home': 'Junior Developer & Creatieve Probleemoplosser',
-                'hero.subtitle.project1': 'Een uitgebreide e-commerce platform met modern design',
+
+                // Hero sections (updated for new homepage text)
+                'hero.title.home': 'Op zoek naar een Developer?',
+                'hero.subtitle.home': 'Code, debug, deploy, repeat — Ik ben Skylar, een junior developer, en ik ben op mijn best als ik dingen laat werken!',
+                'hero.subtitle2.home': 'Ik streef ernaar anderen te helpen hun dromen waar te maken en hun software werkelijkheid te laten worden.',
+                // The line "I aspire to help others..." is not translatable as it has no data-translate
+                'hero.subtitle.project1': 'Een uitgebreid e-commerce platform gebouwd met PHP, SQL en JS',
                 'hero.subtitle.project2': 'Voor gemak, snelheid en duidelijkheid',
-                'hero.subtitle.project3': 'Een gedetailleerd 3D modelleerproject dat technische vaardigheden toont',
-                
+                'hero.subtitle.project3': 'Een gedetailleerd 3D-modelleerproject dat technische vaardigheden toont',
+
                 // Buttons
                 'btn.learn-more': 'Meer Over Mij ➔',
                 'btn.view-project': 'Bekijk Project',
                 'nav.back-to-projects': '← Terug naar Projecten',
-                
+
                 // Sections
-                'section.featured-projects': 'Uitgelichte Projecten',
-                
+                'section.featured-projects': 'Featured Projecten',
+
                 // Status labels
                 'status.school': 'Schoolproject',
                 'status.workplace': 'Werkproject',
                 'status.3d': '3D Modelleerproject',
-                
-                // Footer content - ALL MISSING FOOTER TRANSLATIONS
+
+                // Footer content (updated for new English text)
                 'footer.title': 'Skylar V.',
                 'footer.description': 'Junior Developer & Creatieve Probleemoplosser',
                 'footer.heading': 'Navigatie',
@@ -91,13 +93,13 @@ class LanguageManager {
                 'footer.copyright': '© 2025 Skylar V. Alle rechten voorbehouden.',
                 'footer.made-with': 'Gemaakt met 💜 en code',
                 
-                // About page - ALL MISSING ABOUT TRANSLATIONS
+                // About page (unchanged)
                 'about.title': 'Over Mij',
                 'about.subtitle': 'Developer • Student • Designer',
-                'about.who-am-i': 'Wie Ben Ik?',
-                'about.description1': 'Ik ben een gepassioneerde webdesigner en developer met een liefde voor het creëren van mooie en functionele websites, programma\'s of andere online platforms. Ik vind vreugde in het samenstellen van efficiënte code die de gebruikerservaring verbetert.',
-                'about.description2': 'Hoewel mijn voorkeur ligt bij programmeren, stelt mijn ervaring met design mij in staat om extra inzicht te bieden in het creatieproces voor een over het algemeen vlottere conversatie- en samenwerkingservaring.',
-                'about.education': 'Onderwijs',
+                'about.who-am-i': 'Wie ben ik?',
+                'about.description1': 'Ik ben een gepassioneerde Developer met praktische ervaring in HTML, CSS, PHP en JS. Ik hou van het creëren van mooie en functionele websites, programma’s en online platforms. Mijn doel is om efficiënte code te schrijven die de gebruikerservaring verbetert.',
+                'about.description2': 'Hoewel mijn voorkeur uitgaat naar programmeren, geeft mijn ervaring met design extra inzicht in het creatieproces, wat zorgt voor een vlottere samenwerking en communicatie. Ik gebruik mijn programmeerkennis regelmatig om dynamische en interactieve webapplicaties te bouwen.',
+                'about.education': 'Opleiding',
                 'about.university': 'Thomas More Hogeschool',
                 'about.degree': 'Bachelor in Digital Experience Design',
                 'about.year': '2023 - Heden',
@@ -107,17 +109,17 @@ class LanguageManager {
                 'contact.phone': 'Telefoon',
                 'about.location': 'Locatie',
                 'about.technical-skills': 'Technische Vaardigheden',
-                'about.frontend': 'Front-end Ontwikkeling',
-                'about.backend': 'Back-end Ontwikkeling',
+                'about.frontend': 'Front-end Development',
+                'about.backend': 'Back-end Development',
                 'about.tools': 'Tools & Technologieën',
-                'about.work-examples': 'Voor enkele voorbeelden van mijn werk, bekijk',
+                'about.work-examples': 'Voor enkele voorbeelden van mijn werk als Developer en Designer, bekijk',
                 'about.past-projects': 'enkele van mijn eerdere projecten',
                 'about.employers': 'Vorige Werkgevers Beschreven Mij Als',
                 'skill.efficient': 'Efficiënt',
                 'skill.professional': 'Professioneel',
                 'skill.reliable': 'Betrouwbaar',
                 'skill.helpful': 'Behulpzaam',
-                'skill.quick-learner': 'Snelle leerling',
+                'skill.quick-learner': 'Snelle Leerling',
                 
                 // 404 Error page
                 'error.title': 'Pagina Niet Gevonden',
@@ -151,51 +153,51 @@ class LanguageManager {
                 'project1.final-result-text-suffix': 'die ook de broncode bevat.',
                 
                 // Project 2 (Data Organizer) - ALL MISSING TRANSLATIONS
-                'project.overview': 'Project Overzicht',
-                'project2.intro1': 'Dit project was oorspronkelijk een taak die ik kreeg van het bedrijf GB Foods Puurs die door onvoorziene omstandigheden nooit kon worden gelanceerd. De preview hieronder is een recreatie van de oorspronkelijke taak met een volledig overzicht van het project, of je kunt',
-                'project2.intro2': 'direct vooruitspringen',
-                'project2.intro3': 'naar de demonstratie',
-                'project2.intro4': 'Ik werd niet ingehuurd als developer, maar eerder als studentenassistent voor een van de langetermijnmedewerkers. Na het bekendmaken van mijn opleiding, vroeg hij me toen om het volgende project te maken tijdens de uren dat ik was ingepland om hem te assisteren.',
-                'supervisor.contact': 'Supervisor Contact',
-                'project2.vision': 'De Oorspronkelijke Visie',
-                'project2.vision1': 'De exportafdeling van het bedrijf ontvangt kwartaal- tot jaarlijkse rapporten van de verkopen van hun distributeurs. Elk van deze heeft zijn eigen stijl om de informatie in een spreadsheet te noteren en dus was het krijgen van een volledig overzicht van de totale gemaakte verkopen onhandig. Om deze reden was mijn supervisor op zoek naar een oplossing en vroeg uiteindelijk of ik een manier wist om dit proces te stroomlijnen.',
-                'project2.vision2': 'Mijn voorgestelde oplossing was om een webpagina te maken met PHP en SQL die deze Excel-bestanden (geëxporteerd als CSV-bestanden) zou nemen en automatisch zou toevoegen aan de grote overkoepelende database. Eenmaal daar, konden de gegevens handig worden gesorteerd, gefilterd en doorzocht.',
+                'project.overview': 'Projectoverzicht',
+                'project2.intro1': 'Dit project was oorspronkelijk een opdracht die ik kreeg van het bedrijf GB Foods Puurs, maar door onvoorziene omstandigheden kon het nooit worden gelanceerd. De preview hieronder is een hercreatie van de oorspronkelijke opdracht met een volledig overzicht van het project, of je kunt',
+                'project2.intro2': 'direct naar beneden scrollen',
+                'project2.intro3': 'voor de demonstratie',
+                'project2.intro4': 'Ik werd niet aangenomen als developer, maar als studentenassistent voor een van de vaste medewerkers. Nadat ik mijn opleiding had vermeld, vroeg hij me om het volgende project te maken tijdens de uren dat ik hem assisteerde.',
+                'supervisor.contact': 'Contactpersoon',
+                'project2.vision': 'De oorspronkelijke visie',
+                'project2.vision1': 'De exportafdeling van het bedrijf ontvangt kwartaal- tot jaarlijkse rapporten van de verkopen van hun distributeurs. Elk van deze heeft zijn eigen manier om de informatie in een spreadsheet te noteren, waardoor het verkrijgen van een volledig overzicht van de totale verkopen onhandig was. Daarom zocht mijn supervisor naar een oplossing en vroeg uiteindelijk of ik een manier wist om dit proces te stroomlijnen.',
+                'project2.vision2': 'Mijn voorgestelde oplossing was om een webpagina te maken met HTML, CSS< en JavaScript (JS) die deze Excel-bestanden (geëxporteerd als CSV-bestanden) zou nemen en automatisch zou toevoegen aan de grote overkoepelende database. Eenmaal daar konden de gegevens handig worden gesorteerd, gefilterd en doorzocht met dynamische JS en gestyled met CSS.',
                 'project2.went-wrong': 'Wat ging er mis?',
-                'project2.went-wrong-text': 'Door een onvoorziene en onaangekondigde versterking van beveiligingsmaatregelen gepusht door de Spaanse tak van het bedrijf (zijnde het hoofd van alle afdelingen wereldwijd), ontstonden er verschillende problemen: De kernfunctionaliteit van het uploaden van bestanden naar deze website werd geblokkeerd op alle werkapparaten vanwege privacy- en gevoelige gegevensconcerns, samen met de firewall die de server blokkeerde die ik gebruikte voor mijn ontwikkelingsproces. Vanwege deze factoren werd overeengekomen dat de ontwikkeling niet langer zou doorgaan, maar mijn supervisor had geen bezwaar tegen het opnemen van deze recreatie in mijn portfoliowebsite met verwijzing naar hem.',
-                'project2.development': 'Het Ontwikkelingsproces',
-                'project2.development-text1': 'Vanaf de initiële briefing was functionaliteit aangegeven als de kernzorg betreffende het project, met weinig tot geen zorgen betreffende de esthetiek. Dit betekende dat ik geen pagina-ontwerp schetste voordat ik in de programmeerfase sprong, besluitend om vast te houden aan de bedrijfskleuren en een zeer minimale styling. Vanwege de manier waarop mijn werkgelegenheid werd afgehandeld, had ik beperkte tijd om aan het project te werken, dus besloot ik al mijn uren zorgvuldig te verdelen, dus besloot ik geen ontwerpfase te hebben.',
-                'project2.development-text2': 'Mijn klant had al bepaalde stappen voor mij geschetst omdat hij wist hoe krap het tijdvenster was waarin ik werkte, en bood mij dus de kernfunctionaliteiten aan die hij graag zou zien in volgorde van belang. Hij vroeg me om prioriteit te geven aan de verwerking van gegevens afkomstig van de grootste distributeur eerst, een bestand dat bestond uit meer dan 22.000 regels. Hierdoor moest de code aanzienlijk worden geoptimaliseerd om wachttijden redelijk te houden. Helaas, toen ik het punt had bereikt waar na het uploaden van het bestand een doorzoekbare tabel werd gemaakt, gebeurde de eerder genoemde beveiligingsupdate en kon ik niet langer doorgaan.',
-                'project2.development-text3': 'Hoe ik uiteindelijk de code schreef is als volgt: Omdat elke dataset naar het bedrijf zou worden gestuurd via een Excel-bestand, keek ik naar hoe deze te verwerken en vond dat ze konden worden geëxporteerd als een CSV (Comma Separated Values) bestand. Deze zouden dan worden geüpload naar de pagina en verwerkt in het juiste formaat om aan de database te worden toegevoegd. Door de redenering dat hetzelfde bedrijf hun gegevens elke keer op dezelfde manier zou formatteren, voegde ik de vereiste toe om de gegevensbron te controleren voor upload zodat het correct kon worden verwerkt. Vanaf daar kon ik de verwerkte gegevens weergeven in een tabel die zoek- en filterfuncties had, zoals gevraagd.',
-                'project2.final-result': 'Het Eindresultaat',
-                'project2.final-result-text': 'Het oorspronkelijke project was verloren, omdat ik het niet naar mijn persoonlijke laptop kon sturen, maar omdat ik recent de code had geschreven en nog steeds alle logica erachter herinnerde, kostte de reconstructie vrij weinig tijd.',
-                'project2.disclaimer': 'De code hieronder is geen 1 op 1 reconstructie van het oorspronkelijke project, het meest prominente verschil is dat ik binnen dit portfolio niet werk met een database. Alle invoeren worden lokaal opgeslagen en worden vergeten bij het herladen van de pagina.',
-                'project2.test-data-text': 'Het bestand hieronder is een zip-bestand met 3 verschillende bronnen van dummy verkoopgegevens in CSV-formaat die kunnen worden gebruikt om het prototype te testen. Als je dit bestand liever niet downloadt, is er ook een opname van mezelf die dit programma gebruikt.',
-                'project2.download-data': 'Download Voorbeeldgegevens Voor Testen',
-                'project2.watch-video': 'Bekijk De Video In Plaats Daarvan',
+                'project2.went-wrong-text': 'Door een onverwachte en onaangekondigde aanscherping van beveiligingsmaatregelen door het Spaanse hoofdkantoor ontstonden er verschillende problemen: De kernfunctionaliteit van het uploaden van bestanden naar deze website werd geblokkeerd op alle werkapparaten vanwege privacy- en gegevensbeveiliging, samen met de firewall die de server blokkeerde die ik gebruikte voor mijn ontwikkelproces. Hierdoor werd overeengekomen dat de ontwikkeling niet verder zou gaan, maar mijn supervisor had geen bezwaar tegen het opnemen van deze hercreatie in mijn portfolio met verwijzing naar hem.',
+                'project2.development': 'Het ontwikkelproces',
+                'project2.development-text1': 'Vanaf de eerste briefing was functionaliteit het belangrijkste aandachtspunt, met weinig tot geen aandacht voor esthetiek. Dit betekende dat ik geen pagina-ontwerp maakte voordat ik begon te programmeren, en ik koos ervoor om vast te houden aan de bedrijfskleuren en een zeer minimale styling met CSS. Door de manier waarop mijn dienstverband was geregeld, had ik beperkte tijd om aan het project te werken, dus besloot ik mijn uren zorgvuldig te verdelen en geen ontwerpfase te houden.',
+                'project2.development-text2': 'Mijn opdrachtgever had de belangrijkste stappen al voor mij uitgestippeld omdat hij wist hoe krap het tijdsbestek was waarin ik werkte, en bood mij dus de kernfunctionaliteiten aan die hij graag in volgorde van belangrijkheid wilde zien. Hij vroeg me om prioriteit te geven aan de verwerking van gegevens van de grootste distributeur, een bestand met meer dan 22.000 regels. Hierdoor moest de code aanzienlijk worden geoptimaliseerd om de wachttijden redelijk te houden. Helaas, toen ik het punt had bereikt waarop na het uploaden van het bestand een doorzoekbare tabel werd gemaakt met HTML en JavaScript, vond de eerder genoemde beveiligingsupdate plaats en kon ik niet verder.',
+                'project2.development-text3': 'Hoe ik uiteindelijk de code schreef: omdat elke dataset naar het bedrijf zou worden gestuurd via een Excel-bestand, onderzocht ik hoe ik deze kon verwerken en ontdekte dat ze konden worden geëxporteerd als een CSV-bestand. Deze zouden dan worden geüpload naar de pagina en verwerkt in het juiste formaat om aan de database te worden toegevoegd. Omdat hetzelfde bedrijf hun gegevens elke keer op dezelfde manier zou formatteren, voegde ik de eis toe om de gegevensbron te controleren voor upload zodat het correct verwerkt kon worden. Vanaf daar kon ik de verwerkte gegevens weergeven in een tabel met zoek- en filterfuncties, zoals gevraagd.',
+                'project2.final-result': 'Het eindresultaat',
+                'project2.final-result-text': 'Het oorspronkelijke project is verloren gegaan, omdat ik het niet naar mijn persoonlijke laptop kon sturen, maar omdat ik de code recent had geschreven en alle logica nog wist, kostte de heropbouw weinig tijd.',
+                'project2.disclaimer': 'De code hieronder is geen 1-op-1 reconstructie van het oorspronkelijke project; het grootste verschil is dat ik binnen dit portfolio niet met een database werk. Alle invoeren worden lokaal opgeslagen en worden vergeten bij het herladen van de pagina.',
+                'project2.test-data-text': 'Het bestand hieronder is een zip-bestand met drie verschillende bronnen van dummy verkoopgegevens in CSV-formaat die kunnen worden gebruikt om het prototype te testen. Als je dit bestand liever niet downloadt, is er ook een opname van mezelf die dit programma gebruikt.',
+                'project2.download-data': 'Download voorbeeldgegevens voor testen',
+                'project2.watch-video': 'Bekijk de video in plaats daarvan',
                 
                 // Project 3 (Food Stall) - ALL MISSING TRANSLATIONS
-                'project3.overview': 'Project Overzicht',
-                'project3.overview-text1': 'Dit 3D-model was een schoolopdracht voor de cursus 3D Design. De opdracht was om een voedselverkoopkraam te maken in Blender, met vrije keuze wat betreft het type voedsel, welke stylisatie en hoe gedetailleerd we het project wilden maken. Alleen een basiscomplexiteit werd gegeven als referentiepunt, wat veel creatieve vrijheid toeliet.',
-                'project3.overview-text2': 'Gedurende het semester waren er verschillende check-ins en toevoegingen om toe te voegen aan onze eerste iteratie om onze beheersing van het programma verder te tonen, maar sommige daarvan zijn weggelaten uit de preview hieronder. Persoonlijk vond ik een paar van deze toevoegingen een esthetische downgrade of misplaatst, daarom liet ik ze weg uit dit eindresultaat zodat ik een model kon tonen waar ik trots op ben.',
-                'project3.idea': 'Het Idee En Inspiraties',
-                'project3.idea-text': 'Het kiezen van een voedselitem om mijn kraam rond te thematiseren was geen moeilijke taak, omdat ik onmiddellijk uitkwam op sushi en onigiri, beide traditionele Japanse rijstgerechten. Ik koos deze omdat ze vrij eenvoudige maar toch onderscheidende vormen hebben waarvan ik vond dat ze goed zouden vertalen naar een 3D-model. Daarnaast maakte het het kiezen van een visueel thema vrij gemakkelijk omdat ik meer kon leunen naar Oosterse esthetiek, die ik visueel aantrekkelijk vind.',
-                'project3.carousel.kitsune': 'Een Kitsune, afgebeeld met rood, wit en goud zoals ze vaak zijn in folklore',
+                'project3.overview': 'Projectoverzicht',
+                'project3.overview-text1': 'Dit 3D-model was een schoolopdracht voor het vak 3D Design. De opdracht was om een voedselkraam te maken in Blender, met volledige vrijheid in het soort voedsel, de stylisatie en het detailniveau. Alleen een minimale complexiteit werd als referentiepunt gegeven, wat veel creatieve vrijheid en verkenning van 3D-modellering mogelijk maakte.',
+                'project3.overview-text2': 'Gedurende het semester waren er verschillende check-ins en toevoegingen om onze eerste versie verder uit te breiden en onze beheersing van Blender en 3D-modellering te tonen, maar sommige daarvan zijn uit de preview hieronder weggelaten. Persoonlijk vond ik een paar van deze toevoegingen een esthetische achteruitgang of misplaatst, dus liet ik ze weg uit het eindresultaat zodat ik een model kon tonen waar ik trots op ben.',
+                'project3.idea': 'Het idee en inspiratie',
+                'project3.idea-text': 'Het kiezen van een voedselitem om mijn kraam rond te thematiseren was niet moeilijk; ik kwam direct uit op sushi en onigiri, beide traditionele Japanse rijstgerechten. Ik koos deze omdat ze eenvoudige maar toch onderscheidende vormen hebben die goed vertalen naar een 3D-model. Daarnaast maakte het kiezen van een visueel thema het makkelijk, omdat ik meer kon leunen op Oosterse esthetiek, die ik visueel aantrekkelijk vind.',
+                'project3.carousel.kitsune': 'Een Kitsune, afgebeeld met rood, wit en goud zoals vaak in folklore',
                 'project3.carousel.onigiri': 'Onigiri, een Japanse rijstbal vaak gewikkeld in zeewier',
                 'project3.carousel.torii': 'Een Torii-poort, een herkenbaar stuk Japanse architectuur',
-                'project3.carousel.sushi': 'Sushi, specifiek nigiri en uramaki, nog een herkenbaar voedsel',
-                'project3.carousel.palette': 'Het rood, wit en gouden kleurenpallet waarop ik besloot voor mijn model',
-                'project3.carousel.dango': 'Dango, een snack die ik achteraf besloot toe te voegen omdat de muur te kaal voelde',
-                'project3.mascot-text': 'Als een soort mascotte koos ik de Kitsune, een vossengeest uit de Japanse folklore die zich leende voor het thema van het project evenals de rode, witte en gouden kleuren die vaak geassocieerd worden met het land. Ik incorporeerde ook een torii-poort in de menustandaard, samen met het geven van het hoofdlichaam van de standaard een meer traditionele dakstijl om het allemaal samen te brengen.',
-                'project3.final-result': 'Het Eindresultaat',
-                'project3.final-result-text': 'Hieronder is het eindresultaat van mijn 3D voedselkraammodel. Het bevat dynamische belichting evenals windanimaties. Over het algemeen stelde dit project me in staat om zowel technische als artistieke aspecten van 3D-modellering te verkennen en was het een goede afsluiting van de cursus. Ik ben trots op het eindresultaat en de vaardigheden die ik tijdens het proces heb ontwikkeld.',
-                'project3.download-text': 'Het model is beschikbaar voor download in .blend formaat als je het verder wilt verkennen in Blender zelf.',
-                'project3.download-btn': 'Download Blender Bestand',
-                'project3.disclaimer': 'Dit model wordt gedeeld alleen voor portfolio demonstratie doeleinden. Gebruik het alsjeblieft niet voor commerciële projecten of distribueer het anderszins.',
-                'project3.favorite-text': 'Mijn favoriete delen van het model zijn enkele van de details die ik achteraf toevoegde omdat het resultaat dat ik op dat moment had ondermaats leek te zijn. Dit voedselkraammodel doorliep vele iteraties voordat ik er volledig tevreden mee was, en ik ben blij dat ik deze veranderingen bleef maken.',
-                'project3.detail1-caption': 'De verschillende voedseltypen die ik modelleerde, met de dango-zakken tegen de achtermuur',
-                'project3.detail2-caption': 'Het eetgedeelte, met 2 stoelen, borden en paren eetstokjes, evenals het menu tegen de muur',
-                'project3.lighting-text': 'Het model wordt gepresenteerd in weinig licht omdat Kitsune ondeugende geesten zijn, dus ik wilde deze voedselkraam op een enigszins spookachtige manier presenteren. De lantaarns zijn ook geanimeerd om te flikkeren om dit idee te ondersteunen. Het uitzoeken van de verlichtingsdynamiek was misschien wel het moeilijkste deel van de hele opdracht.',
-                'project3.blender-text': 'Blender is een programma dat ik vrij prettig vind om te gebruiken, hoewel ik wel de neiging heb om een beetje verloren te raken in de details. De vele mogelijkheden en de creatieve aard van het werk ligt specifiek in mijn straatje.'
+                'project3.carousel.sushi': 'Sushi, specifiek nigiri en uramaki, nog een herkenbaar gerecht',
+                'project3.carousel.palette': 'Het rood, wit en gouden kleurenpalet dat ik koos voor mijn model',
+                'project3.carousel.dango': 'Dango, een snack die ik achteraf toevoegde omdat de muur te kaal was',
+                'project3.mascot-text': 'Als mascotte koos ik de Kitsune, een vossengeest uit de Japanse folklore die goed paste bij het thema van het project en de rood-wit-gouden kleuren die vaak met het land worden geassocieerd. Ik verwerkte ook een torii-poort in de menustandaard en gaf het hoofdgedeelte van de kraam een traditioneel dak om het geheel samen te brengen in het 3D-model.',
+                'project3.final-result': 'Het eindresultaat',
+                'project3.final-result-text': 'Hieronder vind je het eindresultaat van mijn 3D-voedselkraammodel gemaakt in Blender. Het bevat dynamische belichting en windanimaties. Dit project gaf me de kans om zowel technische als artistieke aspecten van 3D-modellering te verkennen en was een mooie afsluiting van het vak. Ik ben trots op het resultaat en de vaardigheden die ik tijdens het proces met Blender heb ontwikkeld.',
+                'project3.download-text': 'Het model is beschikbaar voor download in .blend-formaat als je het zelf wilt verkennen in Blender.',
+                'project3.download-btn': 'Download Blender-bestand',
+                'project3.disclaimer': 'Dit model wordt alleen gedeeld voor demonstratiedoeleinden in mijn portfolio. Gebruik het niet voor commerciële projecten of verspreid het niet verder.',
+                'project3.favorite-text': 'Mijn favoriete delen van het model zijn enkele details die ik achteraf toevoegde omdat het resultaat op dat moment wat tegenviel. Dit voedselkraammodel doorliep vele iteraties voordat ik er volledig tevreden mee was, en ik ben blij dat ik deze veranderingen heb doorgevoerd.',
+                'project3.detail1-caption': 'De verschillende voedselsoorten die ik modelleerde, met de dango-zakken tegen de achterwand',
+                'project3.detail2-caption': 'Het eetgedeelte, met 2 stoelen, borden en paren eetstokjes, en het menu tegen de muur',
+                'project3.lighting-text': 'Het model is gepresenteerd in weinig licht omdat Kitsune ondeugende geesten zijn; ik wilde deze voedselkraam op een wat spookachtige manier tonen. De lantaarns zijn geanimeerd om te flikkeren om dit idee te ondersteunen. Het uitzoeken van de belichtingsdynamiek in Blender was misschien wel het moeilijkste deel van de opdracht.',
+                'project3.blender-text': 'Blender is een programma dat ik prettig vind om te gebruiken, al verlies ik me soms in de details. De vele mogelijkheden en het creatieve karakter van 3D-modellering passen helemaal bij mij.'
             }
         };
     }
