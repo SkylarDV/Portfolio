@@ -2729,7 +2729,7 @@ body::after {
     padding: 20px 20px 15px 20px;
     font-size: 0.9rem;
     text-align: center;
-    opacity: 0.9; 
+    opacity: 0; 
     transition: opacity 0.3s ease;
     pointer-events: none;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 

@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if this is the first page load in this session
+    const hasSeenLoading = sessionStorage.getItem('hasSeenLoadingAnimation');
+    
     const loadingOverlay = document.getElementById('loading-overlay');
+    
+    // If user has already seen the loading animation this session, hide it immediately
+    if (hasSeenLoading === 'true') {
+        if (loadingOverlay) {
+            loadingOverlay.style.display = 'none';
+            loadingOverlay.remove();
+        }
+        return; // Exit early, don't run the loading animation
+    }
+    
+    // Mark that the user has seen the loading animation this session
+    sessionStorage.setItem('hasSeenLoadingAnimation', 'true');
+    
     const startTime = Date.now();
     const minimumLoadTime = 2500;
     let pageLoaded = false;
