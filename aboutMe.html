@@ -275,25 +275,5 @@
             }
         }
     </script>
-
-    <!-- Google Analytics - Deferred Loading -->
-    <script>
-        // Load Google Analytics after page loads
-        window.addEventListener('load', function() {
-            // Create script element
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1HEVPHQ6Q2';
-            document.head.appendChild(script);
-            
-            // Initialize when script loads
-            script.onload = function() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-1HEVPHQ6Q2');
-            };
-        });
-    </script>
 </body>
 </html>
