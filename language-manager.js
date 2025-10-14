@@ -103,6 +103,7 @@ class LanguageManager {
                 'about.university': 'Thomas More Hogeschool',
                 'about.degree': 'Bachelor in Digital Experience Design',
                 'about.year': '2023 - Heden',
+                'about.CV': 'Bekijk mijn CV', 
                 'about.degree-description': 'Een driejarig, praktijkgericht programma gericht op het ontwerpen en bouwen van echte digitale producten en meeslepende ervaringen. Studenten ontwikkelen praktische vaardigheden door projectgestuurd leren en presenteren hun werk aan professionele jury\'s voor feedback. Afgestudeerden krijgen ervaring in UX/UI-design, webontwikkeling en digitale strategie, waarbij ze oplossingen creëren die zowel maatschappelijk relevant als commercieel levensvatbaar zijn.',
                 'about.get-in-touch': 'Neem Contact Op',
                 'contact.email': 'E-mail',

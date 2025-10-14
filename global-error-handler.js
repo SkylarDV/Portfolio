@@ -28,9 +28,6 @@
         }
         console.info('Stack:', error.stack);
         console.groupEnd();
-        if (error.name === 'TypeError' || error.name === 'ReferenceError') {
-            showUserNotification('Some interactive features may not be working properly.');
-        }
     }
     function showUserNotification(message) {
         if (document.querySelector('.error-notification')) {

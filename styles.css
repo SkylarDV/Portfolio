@@ -1401,6 +1401,12 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column; /* make image and button stack vertically */
+    gap: 1rem; /* space between image and button */
+}
+
+.profile-image .btn {
+    animation: float 3s -1.5s ease-in-out infinite;
 }
 
 .contact-info, .education, .languages, .profile-image, .about-content {
