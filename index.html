@@ -135,7 +135,9 @@
                 </div>
             </div>
         </div>
-    </nav>    <div class="container main-content">
+    </nav>    
+    
+    <div class="container main-content">
         <section class="hero" id="home">
             <h1 data-translate="hero.title.home">Looking for a Developer?</h1>
             <p data-translate="hero.subtitle.home">Code, debug, deploy, repeat — I'm Skylar, a junior developer, and I'm at my best when making things work!</p>            
@@ -179,7 +181,52 @@
                     </div>
                     <a href="ProjectPages/foodstall.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
-            </div>        
+            </div>    
+            <div class="project-carousel hidden">
+                <button class="project-carousel-arrow project-carousel-arrow-left" aria-label="Previous project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="project-grid project-grid2" role="list">
+                    <div class="project-card" id="project1" role="listitem">
+                        <img src="Assets/P1.webp" alt="Webshop Project Icon" class="project-icon">
+                        <h3 data-translate="project.webshop">Functional Webshop</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                        <a href="ProjectPages/webshop.html" class="btn" data-translate="btn.view-project">View Project</a>
+                    </div>
+
+                    <div class="project-card" id="project2" role="listitem">
+                        <img src="Assets/P2.webp" alt="Data Organizer Project Icon" class="project-icon">
+                        <h3 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <a href="ProjectPages/dataorganizer.html" class="btn" data-translate="btn.view-project">View Project</a>
+                    </div>
+
+                    <div class="project-card" id="project3" role="listitem">
+                        <img src="Assets/P3.webp" alt="3D Food Stall Project Icon" class="project-icon">
+                        <h3 data-translate="project.foodstall">3D Model Food Stall</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Blender</span>
+                        </div>
+                        <a href="ProjectPages/foodstall.html" class="btn" data-translate="btn.view-project">View Project</a>
+                    </div>
+                </div>
+                <button class="project-carousel-arrow project-carousel-arrow-right" aria-label="Next project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </section>
     </div>
 
@@ -227,28 +274,24 @@
     <!-- Move these scripts to bottom -->
     <script src="loading-animation.js"></script>
     <script src="language-manager.js"></script>
+    <script src="project-carousel.js" defer></script>
     
     <!-- Defer interactive scripts -->
     <script>
-        // Load interactive scripts after page is ready
         window.addEventListener('load', function() {
-            // Load sparkle trail with async loading
             const sparkleScript = document.createElement('script');
             sparkleScript.src = 'sparkle-trail.js';
             sparkleScript.async = true;
             document.head.appendChild(sparkleScript);
             
-            // Load hamburger menu
             const hamburgerScript = document.createElement('script');
             hamburgerScript.src = 'hamburger-menu.js';
             hamburgerScript.async = true;
             document.head.appendChild(hamburgerScript);
             
-            // Load error handler - this should be loaded first if it's critical
             const errorScript = document.createElement('script');
             errorScript.src = 'global-error-handler.js';
             errorScript.async = true;
-            // Load error handler first since it might be needed by other scripts
             document.head.appendChild(errorScript);
         });
     </script>
