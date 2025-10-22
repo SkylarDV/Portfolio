@@ -341,7 +341,7 @@ body::after {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.navbar .logo {
+.navbar .logo a {
     font-family: 'HeyComic', 'Comic Sans MS', cursive, 'Inter', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
