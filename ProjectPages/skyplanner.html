@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover the Insect Hotel project by Skylar V., showcasing skills in web development and environmental design.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insect Hotel - Skylar's Portfolio</title>
+    <link rel="icon" type="image/webp" href="../Assets/LogoIcon.webp">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5F68VH6N');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skylarv.tech/" />
+    <meta property="og:title" content="Skylar's Portfolio" />
+    <meta property="og:description" content="Discover the Insect Hotel project by Skylar V., showcasing skills in web development and environmental design." />
+    <meta property="og:image" content="https://skylarv.tech/Assets/CardImg.webp" />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skylarv.tech/" />
+    <meta property="twitter:title" content="Skylar's Portfolio" />
+    <meta property="twitter:description" content="Discover the Insect Hotel project by Skylar V., showcasing skills in web development and environmental design." />
+    <meta property="twitter:image" content="https://skylarv.tech/Assets/CardImg.webp" />
+
+    <!-- Preload external CSS to reduce blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../Assets/HeyComic.otf" as="font" type="font/otf" crossorigin>
+    
+    <!-- Keep only critical CSS in head -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F68VH6N"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html" style="text-decoration: none; color: white;">
+                <img src="../Assets/LogoIcon.webp" alt="Skylar V. Portfolio Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling?.remove(); this.parentElement.insertAdjacentHTML('afterbegin', '<span class=&quot;logo-fallback&quot;>SV</span>')">
+                Skylar V.
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link" data-translate="nav.home">Home</a>
+            <a href="../aboutMe.html" class="nav-link" data-translate="nav.about">About Me</a>
+            <div class="dropdown">
+                <span class="nav-link dropdown-toggle active" data-translate="nav.projects">Projects</span>
+                <div class="dropdown-content">
+                    <a href="webshop.html" data-translate="project.webshop">Functional Webshop</a>
+                    <a href="dataorganizer.html" data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</a>
+                    <a href="foodstall.html" data-translate="project.foodstall">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../aboutMe.html" class="nav-link">About Me</a>
+            <div class="dropdown active">
+                <span class="nav-link dropdown-toggle">Projects</span>
+                <div class="dropdown-content">
+                    <a href="webshop.html">Functional Webshop</a>
+                    <a href="dataorganizer.html">Data Organizer & Formatter Prototype</a>
+                    <a href="foodstall.html">3D Model Food Stall</a>
+                </div>
+            </div>
+            <div class="dropdown language-dropdown">
+                <span class="nav-link dropdown-toggle">EN</span>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchLanguage('en')">EN</a>
+                    <a href="#" onclick="switchLanguage('nl')">NL</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section class="hero">
+            <h1>Sky Planner</h1>
+            <p>A To Do planner program created for personal use.</p>
+        </section>
+
+        <section class="project-content">
+            <div class="disclaimer-box">
+                <div class="disclaimer-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="disclaimer-content">
+                    <strong>Note:</strong> <span>The following page and project is still under construction. If you found this page through adjusting the URL, note that this page was not yet intended for the public eye and can therefore be incomplete, lack functionalities or contain mistakes.</span>
+                </div>
+            </div>
+        </section>
+        </div>
+        <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3 class="footer-title" data-translate="footer.title">Skylar V.</h3>
+            <p class="footer-description" data-translate="footer.description">Junior Developer & Creative Problem Solver</p>
+            <div class="footer-contact">
+                <a href="mailto:skylardvermeulen@gmail.com" class="footer-icon-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/SkylarDV" target="_blank" rel="noopener noreferrer" class="footer-icon-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/skylardvermeulen" target="_blank" rel="noopener noreferrer" class="footer-icon-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4 class="footer-heading" data-translate="footer.heading">Navigation</h4>
+            <nav class="footer-nav">
+                <a href="../index.html" class="footer-nav-link" data-translate="nav.home">Home</a>
+                <a href="../aboutMe.html" class="footer-nav-link" data-translate="nav.about">About Me</a>
+                <span class="footer-nav-label" data-translate="footer.nav-label">Projects</span>
+                <a href="webshop.html" class="footer-nav-link footer-project-link" data-translate="project.webshop">Functional Webshop</a>
+                <a href="dataorganizer.html" class="footer-nav-link footer-project-link" data-translate="project.dataorganizer">Data Organizer</a>
+                <a href="foodstall.html" class="footer-nav-link footer-project-link" data-translate="project.foodstall">3D Model Food Stall</a>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p class="footer-copyright">
+            <span data-translate="footer.copyright">&copy; 2025 Skylar V. All rights reserved.</span>
+        </p>
+        <p class="footer-made-with">
+            <span data-translate="footer.made-with">Made with 💜 and code</span>
+        </p>
+    </div>
+</footer>
+    <!-- Move all scripts to bottom -->
+    <script src="../global-error-handler.js"></script>
+    <script src="../language-manager.js"></script>
+    <script src="../sparkle-trail.js"></script>
+    <script src="../hamburger-menu.js"></script>
+    
+    <!-- Add missing functionality -->
+    <script>
+        // Initialize language manager
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager = new LanguageManager();
+        });
+        
+        function switchLanguage(lang) {
+            if (window.languageManager) {
+                window.languageManager.switchLanguage(lang);
+            }
+        }
+    </script>
+</body>
+</html>

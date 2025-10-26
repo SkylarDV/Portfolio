@@ -46,17 +46,6 @@
             font-display: swap; /* Shows fallback font while loading */
         }
     </style>
-    <!-- Hotjar Tracking Code for SkylarV Portfolio -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:6535027,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -148,7 +137,19 @@
         </section>
         <section class="projects" id="projects">
             <h2 data-translate="section.featured-projects">Featured Projects</h2>
-            <div class="project-grid">
+            <div class="project-grid hidden">
+                 <div class="project-card" id="project2">
+                    <img src="Assets/P2.webp" alt="Data Organizer Project Icon" class="project-icon">
+                    <h3 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h3>
+                    <!--<p data-translate="project.dataorganizer.description">A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.</p>-->
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <a href="ProjectPages/dataorganizer.html" class="btn" data-translate="btn.view-project">View Project</a>
+                </div>
+                
                 <div class="project-card" id="project1">
                     <img src="Assets/P1.webp" alt="Webshop Project Icon" class="project-icon">
                     <h3 data-translate="project.webshop">Functional Webshop</h3>
@@ -162,18 +163,6 @@
                     <a href="ProjectPages/webshop.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
 
-                <div class="project-card" id="project2">
-                    <img src="Assets/P2.webp" alt="Data Organizer Project Icon" class="project-icon">
-                    <h3 data-translate="project.dataorganizer">Data Organizer & Formatter Prototype</h3>
-                    <!--<p data-translate="project.dataorganizer.description">A prototype designed to streamline the processing of sales data from multiple distributors, transforming diverging spreadsheets into organized, searchable tables.</p>-->
-                    <div class="project-tags">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                    </div>
-                    <a href="ProjectPages/dataorganizer.html" class="btn" data-translate="btn.view-project">View Project</a>
-                </div>
-
                 <div class="project-card" id="project3">
                     <img src="Assets/P3.webp" alt="3D Food Stall Project Icon" class="project-icon">
                     <h3 data-translate="project.foodstall">3D Model Food Stall</h3>
@@ -184,7 +173,7 @@
                     <a href="ProjectPages/foodstall.html" class="btn" data-translate="btn.view-project">View Project</a>
                 </div>
             </div>    
-            <div class="project-carousel hidden">
+            <div class="project-carousel">
                 <button class="project-carousel-arrow project-carousel-arrow-left" aria-label="Previous project">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
