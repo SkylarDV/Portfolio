@@ -6,7 +6,7 @@
     </url>
     <url>
         <loc>https://skylarv.tech/aboutMe.html</loc>
-        <priority>0.8</priority>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://skylarv.tech/ProjectPages/dataorganizer.html</loc>
@@ -22,6 +22,10 @@
     </url>
     <url>
         <loc>https://skylarv.tech/ProjectPages/insecthotel.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://skylarv.tech/ProjectPages/skyplanner.html</loc>
         <priority>0.7</priority>
     </url>
 </urlset>
